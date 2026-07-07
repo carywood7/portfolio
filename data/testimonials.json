@@ -1,0 +1,29 @@
+{
+    "testimonials": [
+        {
+            "id": 1,
+            "title": "100+ Client Campaigns Managed",
+            "text": "Managed Meta and Google Ads campaigns for 100+ clients while working with Seven Figure SMP."
+        },
+        {
+            "id": 2,
+            "title": "$60K Monthly Ad Spend",
+            "text": "Handled an average monthly ad spend of approximately $60,000 across client campaigns."
+        },
+        {
+            "id": 3,
+            "title": "186K Facebook Growth",
+            "text": "Helped scale NaviMumbai.com from 0 to 186,000 Facebook followers through content, strategy, and local audience growth."
+        },
+        {
+            "id": 4,
+            "title": "133K Facebook Audience",
+            "text": "Helped grow MumbaiIndia.com to 133,000 Facebook followers through social media strategy and digital engagement."
+        },
+        {
+            "id": 5,
+            "title": "CRM & Automation Product Work",
+            "text": "Worked on LeadsTrackr CRM features including automation workflows, media library systems, calendar tools, forms, email systems, and integration planning."
+        }
+    ]
+}

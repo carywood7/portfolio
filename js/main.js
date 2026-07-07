@@ -38,6 +38,8 @@ $(function () {
     gsap.registerPlugin(ScrollTrigger);
 
     const projectDataCache = {};
+    const testimonialDataCache = {};
+    let reviewsSwiperInstance = null;
 
     function escapeHtml(value) {
         return String(value || '').replace(/[&<>"']/g, function (character) {
@@ -135,6 +137,82 @@ $(function () {
         });
     }
 
+    function initReviewsSlider() {
+        const slider = document.querySelector(".mil-reviews-slider");
+
+        if (!slider) {
+            return;
+        }
+
+        if (reviewsSwiperInstance && reviewsSwiperInstance.destroy) {
+            reviewsSwiperInstance.destroy(true, true);
+        }
+
+        reviewsSwiperInstance = new Swiper('.mil-reviews-slider', {
+            spaceBetween: 30,
+            speed: 800,
+            parallax: true,
+            navigation: {
+                nextEl: '.mil-reviews-next',
+                prevEl: '.mil-reviews-prev',
+            },
+            pagination: {
+                el: '.swiper-reviews-pagination',
+                clickable: true,
+            },
+        });
+    }
+
+    function renderTestimonials(container, testimonials) {
+        container.innerHTML = testimonials.map(function (testimonial) {
+            const title = escapeHtml(testimonial.title || 'Selected Result');
+            const text = escapeHtml(testimonial.text || '');
+
+            return '<div class="swiper-slide">' +
+                '<div class="mil-review mil-center" data-swiper-parallax-opacity="0" data-swiper-parallax="-90" data-swiper-parallax-scale=".8">' +
+                '<div class="mil-review-top">' +
+                '<div class="mil-name">' +
+                '<h4 class="mil-upper mil-up">' + title + '</h4>' +
+                '</div>' +
+                '</div>' +
+                '<p class="mil-up">' + text + '</p>' +
+                '</div>' +
+                '</div>';
+        }).join('');
+
+        container.hidden = false;
+        initReviewsSlider();
+        animateProjectCards(container);
+    }
+
+    function initTestimonials() {
+        const container = document.querySelector("#testimonialsSlider");
+
+        if (!container) {
+            return;
+        }
+
+        const source = container.dataset.testimonialsSource || 'data/testimonials.json';
+
+        if (!testimonialDataCache[source]) {
+            testimonialDataCache[source] = fetch(source).then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Unable to load testimonial data.');
+                }
+
+                return response.json();
+            });
+        }
+
+        testimonialDataCache[source].then(function (data) {
+            renderTestimonials(container, data.testimonials || [], source);
+        }).catch(function () {
+            container.innerHTML = '<div class="swiper-slide"><div class="mil-review mil-center"><p class="mil-up">Testimonials could not be loaded right now.</p></div></div>';
+            container.hidden = false;
+            initReviewsSlider();
+        });
+    }
+
     function ensureProjectDialog() {
         let dialog = document.querySelector(".mil-project-dialog");
 
@@ -217,6 +295,7 @@ $(function () {
 
     setupProjectVideoDialog();
     initProjects();
+    initTestimonials();
 
     /***************************
 
@@ -282,6 +361,12 @@ $(function () {
 
         var target = $($.attr(this, 'href'));
         var offset = 90;
+
+        if (!target.length) {
+            return;
+        }
+
+        $(".mil-navigation , .mil-menu-btn").removeClass('mil-active');
 
         $('html, body').animate({
             scrollTop: target.offset().top - offset
@@ -437,19 +522,7 @@ $(function () {
     reviews slider
 
     ***************************/
-    var swiper = new Swiper('.mil-reviews-slider', {
-        spaceBetween: 30,
-        speed: 800,
-        parallax: true,
-        navigation: {
-            nextEl: '.mil-reviews-next',
-            prevEl: '.mil-reviews-prev',
-        },
-        pagination: {
-            el: '.swiper-reviews-pagination',
-            clickable: true,
-        },
-    });
+    initReviewsSlider();
 
     /***************************
 
@@ -563,6 +636,7 @@ $(function () {
 
         ScrollTrigger.refresh();
         initProjects();
+        initTestimonials();
 
         /***************************
 
@@ -704,19 +778,7 @@ $(function () {
         reviews slider
 
         ***************************/
-        var swiper = new Swiper('.mil-reviews-slider', {
-            spaceBetween: 30,
-            speed: 800,
-            parallax: true,
-            navigation: {
-                nextEl: '.mil-reviews-next',
-                prevEl: '.mil-reviews-prev',
-            },
-            pagination: {
-                el: '.swiper-reviews-pagination',
-                clickable: true,
-            },
-        });
+        initReviewsSlider();
 
         /***************************
 
