@@ -1,0 +1,20 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "Project 1",
+            "image": "../assets/projects/lewagon.png",
+            "title": "Title of project 1",
+            "category": "FUNNEL",
+            "video": "../assets/lewagon-page-vid.mp4"
+        },
+        {
+            "id": 2,
+            "name": "Project 2",
+            "image": "../assets/projects/lewagon.png",
+            "title": "Title of project 2",
+            "category": "LANDING PAGE",
+            "video": "../assets/lewagon-page-vid.mp4"
+        }
+    ]
+}
