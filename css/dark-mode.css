@@ -1313,7 +1313,7 @@ frame
 }
 
 .mil-content .mil-scroll-wrapper .mil-container {
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-right: 90px;
   padding-left: 90px;
   width: calc(63% + 1px);
