@@ -30,6 +30,46 @@ $(function () {
         prefix: '.mil-fw-page'
     });
 
+    function initPortfolioHoverVideos() {
+        document.querySelectorAll('.portfolio-hover-preview').forEach(function (preview) {
+            if (preview.dataset.hoverVideoReady === 'true') {
+                return;
+            }
+
+            const video = preview.querySelector('.portfolio-preview-video');
+
+            if (!video) {
+                return;
+            }
+
+            preview.dataset.hoverVideoReady = 'true';
+
+            preview.addEventListener('mouseenter', function () {
+                const playRequest = video.play();
+
+                if (playRequest !== undefined) {
+                    playRequest.then(function () {
+                        if (preview.matches(':hover')) {
+                            preview.classList.add('mil-video-playing');
+                        }
+                    }).catch(function () {
+                        preview.classList.remove('mil-video-playing');
+                    });
+                } else {
+                    preview.classList.add('mil-video-playing');
+                }
+            });
+
+            preview.addEventListener('mouseleave', function () {
+                preview.classList.remove('mil-video-playing');
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    }
+
+    initPortfolioHoverVideos();
+
     /***************************
 
     register gsap plugins
@@ -629,6 +669,7 @@ $(function () {
     document.addEventListener("swup:contentReplaced", function () {
 
         $(".mil-navigation , .mil-menu-btn").removeClass('mil-active');
+        initPortfolioHoverVideos();
 
         window.scrollTo({
             top: 0,
