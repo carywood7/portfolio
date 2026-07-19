@@ -2,19 +2,59 @@
     "projects": [
         {
             "id": 1,
-            "name": "Project 1",
-            "image": "../assets/projects/lewagon.png",
-            "title": "Title of project 1",
-            "category": "FUNNEL",
-            "video": "../assets/lewagon-page-vid.mp4"
+            "name": "Le Wagon Banglore",
+            "title": "Le Wagon Banglore",
+            "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/le-wagon.webp",
+            "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/le-wagon.mp4",
+            "category": "Websites & Funnels"
         },
         {
             "id": 2,
-            "name": "Project 2",
-            "image": "../assets/projects/lewagon.png",
-            "title": "Title of project 2",
-            "category": "LANDING PAGE",
-            "video": "../assets/lewagon-page-vid.mp4"
+            "name": "XAFE-ADS",
+            "title": "XAFE-ADS",
+            "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/XAFEADS.webp",
+            "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/XAFEADS.mp4",
+            "category": "Paid Ads & Growth"
+        },
+        {
+            "id": 3,
+            "name": "Sonya Hair Braiding",
+            "title": "Sonya Hair Braiding",
+            "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/sonya.webp",
+            "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/sonya.mp4",
+            "category": "Websites & Funnels"
+        },
+        {
+            "id": 4,
+            "name": "AR Homes Rise",
+            "title": "AR Homes Rise",
+            "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/homesrise.webp",
+            "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/homesrise.mp4",
+            "category": "Websites & Funnels"
+        },
+        {
+            "id": 5,
+            "name": "WCE ILTES",
+            "title": "WCE ILTES",
+            "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/WCE.webp",
+            "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/WCE.mp4",
+            "category": "Websites & Funnels"
+        },
+        {
+            "id": 6,
+            "name": "Bull Investors",
+            "title": "Bull Investors",
+            "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/Bull+Investors.webp",
+            "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/Bull+Investors.mp4",
+            "category": "Paid Ads & Growth"
+        },
+        {
+            "id": 7,
+            "name": "MAAC",
+            "title": "MAAC",
+            "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/Maac.webp",
+            "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/Maac.mp4",
+            "category": "Social Media & Branding"
         }
     ]
 }

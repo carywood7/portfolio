@@ -127,7 +127,10 @@ $(function () {
     }
 
     function renderProjectCards(container, projects, source) {
-        container.innerHTML = projects.map(function (project) {
+        // Show at most 4 projects on the index page
+        const projectsToShow = projects.slice(0, 4);
+
+        let html = projectsToShow.map(function (project) {
             const title = escapeHtml(project.title || project.name || 'Project');
             const category = escapeHtml(project.category || 'Project');
             const image = resolveProjectAsset(project.image, source);
@@ -145,6 +148,14 @@ $(function () {
                 '</button>' +
                 '</div>';
         }).join('');
+
+        if (projects.length > 4) {
+            html += '<div class="col-lg-12 mil-center mil-up mil-mb-60">' +
+                '<a href="projects.html" class="mil-btn mil-sm-btn" data-no-swup>Show more</a>' +
+                '</div>';
+        }
+
+        container.innerHTML = html;
         container.hidden = false;
 
         animateProjectCards(container);
@@ -174,6 +185,78 @@ $(function () {
         }).catch(function () {
             container.innerHTML = '<div class="col-lg-12"><p class="mil-up">Projects could not be loaded right now.</p></div>';
             container.hidden = false;
+        });
+    }
+
+    function renderProjectSlides(container, projects, source) {
+        container.innerHTML = projects.map(function (project) {
+            const title = escapeHtml(project.title || project.name || 'Project');
+            const image = resolveProjectAsset(project.image, source);
+            const video = resolveProjectAsset(project.video, source);
+
+            return '<div class="swiper-slide">' +
+                '<div class="mil-portfolio-item mil-item-2 mil-carousel-item">' +
+                '<div class="mil-cover-frame portfolio-hover-preview">' +
+                '<img src="' + escapeHtml(image) + '" alt="' + title + '" class="portfolio-preview-image" data-swiper-parallax="-130" data-swiper-parallax-scale="1.25">' +
+                '<video class="portfolio-preview-video" muted loop playsinline preload="metadata" data-swiper-parallax="-130" data-swiper-parallax-scale="1.25">' +
+                '<source src="' + escapeHtml(video) + '" type="video/mp4">' +
+                '</video>' +
+                '</div>' +
+                '<div class="mil-description" data-swiper-parallax-y="-100%" data-swiper-parallax-duration="400">' +
+                '<h4>' + title + '</h4>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        }).join('');
+    }
+
+    function initProjectsCarousel() {
+        const wrapper = document.querySelector("#projectsSwiperWrapper");
+        if (!wrapper) {
+            return;
+        }
+
+        const container = wrapper.closest('[data-projects-source]');
+        const source = container ? container.dataset.projectsSource : 'data/projects.json';
+
+        if (!projectDataCache[source]) {
+            projectDataCache[source] = fetch(source).then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Unable to load project data.');
+                }
+                return response.json();
+            });
+        }
+
+        projectDataCache[source].then(function (data) {
+            renderProjectSlides(wrapper, data.projects || [], source);
+            initPortfolioHoverVideos();
+
+            // Initialize Swiper after slides are loaded in DOM
+            new Swiper('.mil-portfolio-carousel', {
+                spaceBetween: 30,
+                speed: 800,
+                parallax: true,
+                mousewheel: {
+                    enable: true
+                },
+                navigation: {
+                    nextEl: '.mil-portfolio-next',
+                    prevEl: '.mil-portfolio-prev',
+                },
+                pagination: {
+                    el: '.mil-portfolio-pagination',
+                    type: 'fraction',
+                },
+                breakpoints: {
+                    1200: {
+                        spaceBetween: 90,
+                    },
+                },
+            });
+        }).catch(function (error) {
+            console.error(error);
+            wrapper.innerHTML = '<div class="swiper-slide"><p>Projects could not be loaded.</p></div>';
         });
     }
 
@@ -335,6 +418,7 @@ $(function () {
 
     setupProjectVideoDialog();
     initProjects();
+    initProjectsCarousel();
     initTestimonials();
 
     /***************************
@@ -569,27 +653,7 @@ $(function () {
     portfolio carousel
 
     ***************************/
-    var swiper = new Swiper('.mil-portfolio-carousel', {
-        spaceBetween: 30,
-        speed: 800,
-        parallax: true,
-        mousewheel: {
-            enable: true
-        },
-        navigation: {
-            nextEl: '.mil-portfolio-next',
-            prevEl: '.mil-portfolio-prev',
-        },
-        pagination: {
-            el: '.mil-portfolio-pagination',
-            type: 'fraction',
-        },
-        breakpoints: {
-            1200: {
-                spaceBetween: 90,
-            },
-        },
-    });
+    initProjectsCarousel();
 
     /***************************
 
@@ -677,6 +741,7 @@ $(function () {
 
         ScrollTrigger.refresh();
         initProjects();
+        initProjectsCarousel();
         initTestimonials();
 
         /***************************
@@ -826,22 +891,7 @@ $(function () {
         portfolio carousel
 
         ***************************/
-        var swiper = new Swiper('.mil-portfolio-carousel', {
-            spaceBetween: 90,
-            speed: 800,
-            parallax: true,
-            mousewheel: {
-                enable: true
-            },
-            navigation: {
-                nextEl: '.mil-portfolio-next',
-                prevEl: '.mil-portfolio-prev',
-            },
-            pagination: {
-                el: '.mil-portfolio-pagination',
-                type: 'fraction',
-            },
-        });
+        // Handled dynamically by initProjectsCarousel()
         /***************************
 
     accordion
