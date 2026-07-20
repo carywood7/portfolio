@@ -260,39 +260,6 @@ $(function () {
         });
     }
 
-    function initContactForm() {
-        const form = document.querySelector("#contact-form form");
-        if (!form) return;
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const container = document.querySelector("#contact-form");
-            if (container) {
-                gsap.to(form, {
-                    opacity: 0,
-                    y: -20,
-                    duration: 0.4,
-                    onComplete: function () {
-                        container.innerHTML = 
-                            '<div class="mil-center mil-up mil-mb-60" style="opacity: 0; transform: translateY(20px);">' +
-                            '<h4 class="mil-mb-15">Message Sent!</h4>' +
-                            '<p class="mil-mb-30">Thank you for getting in touch. I will get back to you as soon as possible.</p>' +
-                            '</div>';
-                        
-                        const successEl = container.querySelector(".mil-center");
-                        gsap.to(successEl, {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.4,
-                            ease: "sine"
-                        });
-                    }
-                });
-            }
-        });
-    }
-
     function initReviewsSlider() {
         const slider = document.querySelector(".mil-reviews-slider");
 
@@ -453,8 +420,6 @@ $(function () {
     initProjects();
     initProjectsCarousel();
     initTestimonials();
-    initContactForm();
-
     /***************************
 
     preloader
@@ -777,8 +742,6 @@ $(function () {
         initProjects();
         initProjectsCarousel();
         initTestimonials();
-        initContactForm();
-
         /***************************
 
         back to top
