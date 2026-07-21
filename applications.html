@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" class="is-animating">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- courtney css -->
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <!-- page name -->
+    <title>Web Applications | Cary Wood</title>
+<meta name="description" content="Explore web applications built by Cary Wood, including LeadsTrackr CRM and HookScribe, with product, architecture, feature and technology details.">
+
+<style>
+    /*
+    Applications page contrast correction.
+    Kept page-specific until the shared design system is finalized.
+    */
+
+    .mil-app-case-summary,
+    .mil-app-panel {
+        background: #f4f4f4 !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        color: #242424 !important;
+    }
+
+    .mil-app-case-summary *,
+    .mil-app-panel * {
+        color: #242424 !important;
+    }
+
+    .mil-app-case-summary .mil-upper,
+    .mil-app-panel .mil-upper {
+        color: rgba(0, 0, 0, 0.55) !important;
+    }
+
+    .mil-app-case-summary p,
+    .mil-app-panel p {
+        color: rgba(36, 36, 36, 0.7) !important;
+    }
+
+    .mil-app-panel h4,
+    .mil-app-panel h5,
+    .mil-app-case-summary h4,
+    .mil-app-case-summary h5 {
+        color: #242424 !important;
+    }
+
+    .mil-app-feature:nth-child(even) {
+        border-left-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .mil-app-feature:nth-child(n + 3) {
+        border-top-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .mil-app-meta-grid {
+        border-top-color: rgba(0, 0, 0, 0.12) !important;
+        border-bottom-color: rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .mil-app-meta-item + .mil-app-meta-item {
+        border-left-color: rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .mil-app-meta-label {
+        display: block !important;
+        margin-bottom: 10px !important;
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+    }
+
+    .mil-app-meta-item strong {
+        color: #242424 !important;
+        opacity: 1 !important;
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-app-meta-item + .mil-app-meta-item {
+            border-left: 0 !important;
+            border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+        }
+
+        .mil-app-feature:nth-child(even) {
+            border-left: 0 !important;
+        }
+    }
+</style>
+
+</head>
+
+<body class="mil-fw-page mil-100-page">
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- preloader -->
+        <div class="mil-preloader-frame">
+            <div class="mil-preloader-content" style="transform: scale(.6) translateY(200px); opacity: 0;">
+                <div class="mil-preloader">
+                    <div class="mil-circ-1"></div>
+                    <div class="mil-circ-2"></div>
+                    <div class="mil-circ-3"></div>
+                    <div class="mil-circ-4"></div>
+                </div>
+                <div class="mil-upper">Loading</div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+        <div class="mil-frame">
+
+            <!-- top bar -->
+            <div class="mil-top-panel">
+
+                <!-- You need to remove the "mil-dot" class if you don't need a dot -->
+                <a href="index.html#top" class="mil-logo" data-no-swup><span class="mil-dot">C</span></a>
+
+                <div class="mil-navigation">
+                    <nav id="swupMenu" class="mil-menu-transition">
+                        <ul>
+                            <li class="mil-has-children">
+                                <a href="index.html#home" data-no-swup>Home</a>
+                            </li>
+                            <li class="mil-has-children">
+                                <a href="index.html#about" data-no-swup>About</a>
+                            </li>
+                            <li class="mil-has-children">
+                                <a href="index.html#skills" data-no-swup>Capabilities</a>
+                            </li>
+                            <li class="mil-has-children mil-active">
+                              <a href="projects.html" data-no-swup>Projects</a>
+
+                              <ul>
+                                  <li>
+                                      <a href="applications.html" data-no-swup>
+                                          Software Products
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                      <a href="websites.html" data-no-swup>
+                                          Websites
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                      <a href="funnels.html" data-no-swup>
+                                          Funnels &amp; Landing Pages
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                            <li class="mil-has-children">
+                                <a href="index.html#testimonials" data-no-swup>Results</a>
+                            </li>
+                            <li><a href="index.html#contact" data-no-swup>Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="mil-top-panel-btns">
+                    <a href="index.html#contact" class="mil-contact-btn" data-no-swup>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- top bar end -->
+
+            <!-- left bar -->
+            <div class="mil-left-panel">
+
+                <div class="mil-page-name mil-upper mil-dark">PROJECTS · SOFTWARE PRODUCTS</div>
+
+                <ul class="mil-social-icons">
+                    <li>
+                        <a href="https://github.com/carywood7" target="_blank" class="social-icon">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>Instagram</title>
+                                <path
+                                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon">
+                            <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.959 45.959"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489
+			c0.96-0.935,1.489-2.224,1.488-3.653C10.659,2.589,8.464,0.492,5.392,0.492z M7.847,7.811C7.227,8.414,6.34,8.733,5.284,8.733
+			C3.351,8.733,2,7.451,2,5.614c0-1.867,1.363-3.122,3.392-3.122c1.983,0,3.293,1.235,3.338,3.123
+			C8.729,6.477,8.416,7.256,7.847,7.811z" />
+                                        <path
+                                            d="M0.959,45.467h8.988V12.422H0.959V45.467z M2.959,14.422h4.988v29.044H2.959V14.422z" />
+                                        <path d="M33.648,12.422c-4.168,0-6.72,1.439-8.198,2.792l-0.281-2.792H15v33.044h9.959V28.099c0-0.748,0.303-2.301,0.493-2.711
+			c1.203-2.591,2.826-2.591,5.284-2.591c2.831,0,5.223,2.655,5.223,5.797v16.874h10v-18.67
+			C45.959,16.92,39.577,12.422,33.648,12.422z M43.959,43.467h-6V28.593c0-4.227-3.308-7.797-7.223-7.797
+			c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473
+			c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><i class="far fa-circle"></i></li>
+                </ul>
+
+            </div>
+            <!-- left bar end -->
+
+            <!-- back to top -->
+            <div class="mil-back-to-top">
+                <a href="#top" class="mil-link mil-btt-icon">
+                    <span>Back to top</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-arrow-right">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <!-- back to top end -->
+
+        </div>
+
+        <!-- content -->
+        <div class="mil-content">
+
+            <div class="mil-scroll-wrapper transition-fade" id="swupMain">
+                <div class="mil-container-100">
+
+                    <section class="mil-p-90-30">
+
+                        <!-- applications introduction -->
+                        <div class="mil-apps-intro mil-mb-90">
+
+                            <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                Software Products
+                            </p>
+
+                            <h1 class="mil-up mil-mb-30">
+                                Products built from real operational problems.
+                            </h1>
+
+                            <p class="mil-up">
+                                I design and build software around workflows I understand firsthand:
+                                customer acquisition, CRM operations, campaign production, automation
+                                and agency management.
+                            </p>
+
+                        </div>
+                        <!-- applications introduction end -->
+
+
+                        <!-- LeadsTrackr case study -->
+                        <article id="leadstrackr" class="mil-app-case">
+
+                            <header class="mil-app-case-header mil-mb-60">
+
+                                <div class="mil-app-case-heading">
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                        Flagship Product · Active Development
+                                    </p>
+
+                                    <h2 class="mil-up mil-mb-30">
+                                        LeadsTrackr
+                                    </h2>
+
+                                    <p class="mil-app-case-lead mil-up mil-mb-30">
+                                        A multi-tenant CRM and growth platform for agencies and
+                                        businesses managing leads, pipelines, appointments,
+                                        automations, websites and client accounts.
+                                    </p>
+
+                                    <div class="mil-up">
+                                        <a
+                                            href="https://leadstrackr.in"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="mil-btn mil-sm-btn"
+                                        >
+                                            Explore LeadsTrackr
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class="mil-app-case-summary mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        The Product
+                                    </p>
+
+                                    <p>
+                                        LeadsTrackr is being built as a complete operating system for
+                                        agencies rather than another disconnected lead-management tool.
+                                    </p>
+
+                                    <p>
+                                        Agency owners can manage multiple client sub-accounts while
+                                        preserving clear access, ownership, data separation and team
+                                        permissions.
+                                    </p>
+
+                                </div>
+
+                            </header>
+
+
+                            <div class="mil-app-meta-grid mil-mb-60">
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">My Role</span>
+                                    <strong>Product strategy, architecture, UX and Rails development</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Product Stage</span>
+                                    <strong>Functional platform in active development</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Core Stack</span>
+                                    <strong>Ruby on Rails, PostgreSQL, Hotwire and Stimulus</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Product Focus</span>
+                                    <strong>CRM, automation, multi-tenancy and digital experiences</strong>
+                                </div>
+
+                            </div>
+
+
+                            <!-- LeadsTrackr product visuals -->
+                            <div
+                                class="mil-app-visual mil-app-visual--dual mil-mb-90"
+                                aria-label="LeadsTrackr product screenshots"
+                            >
+
+                                <figure class="mil-app-shot mil-app-shot--primary mil-up">
+
+                                    <div class="mil-app-shot-frame">
+                                        <img
+                                            src="img/leadstrackr-dashboard.png"
+                                            alt="LeadsTrackr agency CRM dashboard showing platform navigation, business metrics and account activity"
+                                            loading="lazy"
+                                            decoding="async"
+                                        >
+                                    </div>
+
+                                    <figcaption>
+                                        Agency dashboard connecting accounts, performance, pipeline
+                                        activity and operational work.
+                                    </figcaption>
+
+                                </figure>
+
+                                <figure class="mil-app-shot mil-app-shot--secondary mil-up">
+
+                                    <div class="mil-app-shot-frame">
+                                        <img
+                                            src="img/leadstrackr-website-builder.png"
+                                            alt="LeadsTrackr visual website builder showing page structure, editing controls and responsive tools"
+                                            loading="lazy"
+                                            decoding="async"
+                                        >
+                                    </div>
+
+                                    <figcaption>
+                                        Visual website and funnel builder with responsive editing and
+                                        public publishing.
+                                    </figcaption>
+
+                                </figure>
+
+                            </div>
+                            <!-- LeadsTrackr product visuals end -->
+
+
+                            <div class="mil-app-detail-grid mil-mb-90">
+
+                                <section class="mil-app-panel mil-app-panel--wide mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        What I Built
+                                    </p>
+
+                                    <div class="mil-app-feature-grid">
+
+                                        <div class="mil-app-feature">
+                                            <h5>Agency Architecture</h5>
+                                            <p>
+                                                Agency accounts, client sub-accounts, team memberships,
+                                                invitations and role-based access.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>CRM Operations</h5>
+                                            <p>
+                                                Leads, opportunities, pipelines, appointments, tasks,
+                                                notes, activities and conversations.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Automation Engine</h5>
+                                            <p>
+                                                Visual workflows with triggers, conditions, actions,
+                                                branching, execution logs and lead-based testing.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Sites Platform</h5>
+                                            <p>
+                                                Forms, surveys, funnels and websites with visual
+                                                builders, submissions and public publishing.
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <section class="mil-app-panel mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        Product Decision
+                                    </p>
+
+                                    <h4 class="mil-mb-20">
+                                        Multi-tenancy is part of the foundation.
+                                    </h4>
+
+                                    <p>
+                                        Account boundaries and permissions were designed before adding
+                                        more features so the product can grow without mixing agency,
+                                        client and platform-level responsibilities.
+                                    </p>
+
+                                </section>
+
+                                <section class="mil-app-panel mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        What It Demonstrates
+                                    </p>
+
+                                    <h4 class="mil-mb-20">
+                                        More than CRUD screens.
+                                    </h4>
+
+                                    <p>
+                                        LeadsTrackr demonstrates domain modelling, authorization,
+                                        workflow design, product architecture, automated testing and
+                                        full-stack implementation across a large connected system.
+                                    </p>
+
+                                </section>
+
+                            </div>
+
+                        </article>
+                        <!-- LeadsTrackr case study end -->
+
+
+                        <div class="mil-app-divider mil-up"></div>
+
+
+                        <!-- HookScribe case study -->
+                        <article id="hookscribe" class="mil-app-case">
+
+                            <header class="mil-app-case-header mil-mb-60">
+
+                                <div class="mil-app-case-heading">
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                        Private Tool · Launch-Ready MVP
+                                    </p>
+
+                                    <h2 class="mil-up mil-mb-30">
+                                        HookScribe
+                                    </h2>
+
+                                    <p class="mil-app-case-lead mil-up">
+                                        A private Rails application that turns uploaded video and audio
+                                        into transcripts, advertising hooks, campaign angles and
+                                        structured marketing copy.
+                                    </p>
+
+                                </div>
+
+                                <div class="mil-app-case-summary mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        The Product
+                                    </p>
+
+                                    <p>
+                                        HookScribe was created to remove repetitive work from campaign
+                                        production: reviewing footage, transcribing content, identifying
+                                        hooks and rewriting the same material into advertising assets.
+                                    </p>
+
+                                    <p>
+                                        Public registration is intentionally disabled because the
+                                        current version is an internal production tool.
+                                    </p>
+
+                                </div>
+
+                            </header>
+
+
+                            <div class="mil-app-meta-grid mil-mb-60">
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">My Role</span>
+                                    <strong>Product design, workflow architecture and Rails development</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Product Stage</span>
+                                    <strong>Completed private MVP</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Core Stack</span>
+                                    <strong>Rails, PostgreSQL, Active Storage and Stimulus</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Integrations</span>
+                                    <strong>FFmpeg and OpenAI APIs</strong>
+                                </div>
+
+                            </div>
+
+
+                            <!-- HookScribe product visual -->
+                            <div
+                                class="mil-app-visual mil-app-visual--single mil-mb-90"
+                                aria-label="HookScribe product screenshot"
+                            >
+
+                                <figure class="mil-app-shot mil-app-shot--wide mil-up">
+
+                                    <div class="mil-app-shot-frame">
+                                        <img
+                                            src="img/hookscribe-product-preview.png"
+                                            alt="HookScribe workspace showing a processed transcript and generated advertising content"
+                                            loading="lazy"
+                                            decoding="async"
+                                        >
+                                    </div>
+
+                                    <figcaption>
+                                        A reusable campaign workspace containing the transcript, hooks,
+                                        angles, primary copy, headlines, descriptions and creative notes.
+                                    </figcaption>
+
+                                </figure>
+
+                            </div>
+                            <!-- HookScribe product visual end -->
+
+
+                            <div class="mil-app-detail-grid mil-mb-90">
+
+                                <section class="mil-app-panel mil-app-panel--wide mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        What I Built
+                                    </p>
+
+                                    <div class="mil-app-feature-grid">
+
+                                        <div class="mil-app-feature">
+                                            <h5>Secure Upload Workflow</h5>
+                                            <p>
+                                                Private authentication, validated audio and video
+                                                uploads, processing states and saved requests.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Media Processing</h5>
+                                            <p>
+                                                FFmpeg extracts optimized audio before the file enters
+                                                the transcription workflow.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Structured AI Output</h5>
+                                            <p>
+                                                OpenAI generates cleaned transcripts, hooks, angles,
+                                                primary texts, headlines and creative notes.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Reusable Workspace</h5>
+                                            <p>
+                                                Every upload preserves the source file, transcript and
+                                                generated campaign material for future use.
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <section class="mil-app-panel mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        Product Decision
+                                    </p>
+
+                                    <h4 class="mil-mb-20">
+                                        Preserve the complete workflow.
+                                    </h4>
+
+                                    <p>
+                                        Instead of returning disposable AI text, HookScribe saves the
+                                        source media, processing status and generated outputs as one
+                                        reusable campaign record.
+                                    </p>
+
+                                </section>
+
+                                <section class="mil-app-panel mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        What It Demonstrates
+                                    </p>
+
+                                    <h4 class="mil-mb-20">
+                                        Practical external-service integration.
+                                    </h4>
+
+                                    <p>
+                                        HookScribe demonstrates file handling, authentication,
+                                        background processing workflows, external command execution,
+                                        API integration and structured AI-assisted output.
+                                    </p>
+
+                                </section>
+
+                            </div>
+
+                        </article>
+                        <!-- HookScribe case study end -->
+
+
+                        <!-- applications call to action -->
+                        <div class="mil-app-cta mil-center mil-up">
+
+                            <p class="mil-upper mil-dark mil-mb-20">
+                                Software · Systems · Growth
+                            </p>
+
+                            <h2 class="mil-mb-30">
+                                I build products where software and business operations meet.
+                            </h2>
+
+                            <p class="mil-mb-30">
+                                I’m continuing to develop LeadsTrackr, build focused internal tools
+                                and document the product decisions behind each project.
+                            </p>
+
+                            <a
+                                href="index.html#contact"
+                                class="mil-btn mil-sm-btn"
+                                data-no-swup
+                            >
+                                Start a Conversation
+                            </a>
+
+                        </div>
+                        <!-- applications call to action end -->
+
+                    </section>
+
+                </div>
+            </div>
+
+            <div class="mil-right-banner" id="scene">
+                <!-- scrollbar -->
+                <div class="mil-progress-track">
+                    <div class="mil-progress"></div>
+                </div>
+                <!-- scrollbar end -->
+                <div class="mil-banner-wrapper" data-depth="1">
+                    <div id="swupBg" class="mil-banner-frame"></div>
+                </div>
+                <div class="mil-banner-wrapper" data-depth="0.2">
+                    <div id="swupPerson" class="mil-banner-frame"></div>
+                </div>
+                <div class="mil-flying-skills" data-depth="0.1">
+                    <div id="swupSkills" class="mil-skills-frame">
+                        <div class="mil-item" style="top: 30%; left: 10%">
+                            <img src="img/logos/1.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 15%; left: 20%">
+                            <img src="img/logos/2.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 45%; right: 15%">
+                            <img src="img/logos/3.jpg" alt="logo">
+                        </div>
+                        <div class="mil-el mil-addition-el-1">+</div>
+                        <div class="mil-el mil-addition-el-2">+</div>
+                        <div class="mil-el mil-addition-el-3"></div>
+                        <div class="mil-el mil-addition-el-4"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- content -->
+    </div>
+    <!-- wrapper end -->
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swup body class plugin js -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- parallax js -->
+    <script src="js/plugins/parallax.js"></script>
+    <!-- courtney js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

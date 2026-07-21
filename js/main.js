@@ -80,6 +80,7 @@ $(function () {
     const projectDataCache = {};
     const testimonialDataCache = {};
     let reviewsSwiperInstance = null;
+    let portfolioSwiperInstance = null;
 
     function escapeHtml(value) {
         return String(value || '').replace(/[&<>"']/g, function (character) {
@@ -191,66 +192,119 @@ $(function () {
     function renderProjectSlides(container, projects, source) {
         container.innerHTML = projects.map(function (project) {
             const title = escapeHtml(project.title || project.name || 'Project');
+            const category = escapeHtml(project.category || 'Lead Generation Funnel');
+            const description = escapeHtml(project.description || '');
+            const status = escapeHtml(project.status || 'Campaign Showcase');
             const image = resolveProjectAsset(project.image, source);
             const video = resolveProjectAsset(project.video, source);
 
             return '<div class="swiper-slide">' +
-                '<div class="mil-portfolio-item mil-item-2 mil-carousel-item">' +
-                '<div class="mil-cover-frame portfolio-hover-preview">' +
-                '<img src="' + escapeHtml(image) + '" alt="' + title + '" class="portfolio-preview-image" data-swiper-parallax="-130" data-swiper-parallax-scale="1.25">' +
-                '<video class="portfolio-preview-video" muted loop playsinline preload="metadata" data-swiper-parallax="-130" data-swiper-parallax-scale="1.25">' +
-                '<source src="' + escapeHtml(video) + '" type="video/mp4">' +
-                '</video>' +
-                '</div>' +
-                '<div class="mil-description" data-swiper-parallax-y="-100%" data-swiper-parallax-duration="400">' +
-                '<h4>' + title + '</h4>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
+                '<article class="mil-funnel-slide">' +
+                    '<div class="mil-cover-frame portfolio-hover-preview">' +
+                        '<img ' +
+                            'src="' + escapeHtml(image) + '" ' +
+                            'alt="' + title + ' landing-page preview" ' +
+                            'class="portfolio-preview-image" ' +
+                            'loading="lazy" ' +
+                            'data-swiper-parallax="-130" ' +
+                            'data-swiper-parallax-scale="1.15"' +
+                        '>' +
+                        '<video ' +
+                            'class="portfolio-preview-video" ' +
+                            'muted ' +
+                            'loop ' +
+                            'playsinline ' +
+                            'preload="metadata" ' +
+                            'data-swiper-parallax="-130" ' +
+                            'data-swiper-parallax-scale="1.15"' +
+                        '>' +
+                            '<source src="' + escapeHtml(video) + '" type="video/mp4">' +
+                        '</video>' +
+                    '</div>' +
+                    '<div class="mil-funnel-slide-content">' +
+                        '<div class="mil-funnel-slide-meta">' +
+                            '<span>' + status + '</span>' +
+                            '<span>' + category + '</span>' +
+                        '</div>' +
+                        '<h4>' + title + '</h4>' +
+                        '<p>' + description + '</p>' +
+                        '<button ' +
+                            'type="button" ' +
+                            'class="mil-project-card mil-funnel-preview-btn" ' +
+                            'data-project-video="' + escapeHtml(video) + '" ' +
+                            'data-project-title="' + title + '" ' +
+                            'aria-label="View the page walkthrough for ' + title + '"' +
+                        '>' +
+                            'View Page Walkthrough ' +
+                            '<span aria-hidden="true">→</span>' +
+                        '</button>' +
+                    '</div>' +
+                '</article>' +
+            '</div>';
         }).join('');
     }
 
     function initProjectsCarousel() {
-        const wrapper = document.querySelector("#projectsSwiperWrapper");
+        const wrapper = document.querySelector('#projectsSwiperWrapper');
+
         if (!wrapper) {
             return;
         }
 
-        const container = wrapper.closest('[data-projects-source]');
-        const source = container ? container.dataset.projectsSource : 'data/projects.json';
+        const carousel = wrapper.closest('.mil-portfolio-carousel');
+        const showcase = wrapper.closest('.mil-funnel-showcase');
+
+        if (!carousel || !showcase) {
+            return;
+        }
+
+        const source = carousel.dataset.projectsSource || 'data/projects.json';
+        const previousButton = showcase.querySelector('.mil-portfolio-prev');
+        const nextButton = showcase.querySelector('.mil-portfolio-next');
+        const pagination = showcase.querySelector('.mil-portfolio-pagination');
 
         if (!projectDataCache[source]) {
             projectDataCache[source] = fetch(source).then(function (response) {
                 if (!response.ok) {
                     throw new Error('Unable to load project data.');
                 }
+
                 return response.json();
             });
         }
 
         projectDataCache[source].then(function (data) {
+            if (portfolioSwiperInstance && portfolioSwiperInstance.destroy) {
+                portfolioSwiperInstance.destroy(true, true);
+                portfolioSwiperInstance = null;
+            }
+
             renderProjectSlides(wrapper, data.projects || [], source);
             initPortfolioHoverVideos();
 
-            // Initialize Swiper after slides are loaded in DOM
-            new Swiper('.mil-portfolio-carousel', {
+            portfolioSwiperInstance = new Swiper(carousel, {
+                slidesPerView: 1,
                 spaceBetween: 30,
                 speed: 800,
                 parallax: true,
+                watchOverflow: true,
+                observer: true,
+                observeParents: true,
                 mousewheel: {
-                    enable: true
+                    enabled: true,
+                    forceToAxis: true,
                 },
                 navigation: {
-                    nextEl: '.mil-portfolio-next',
-                    prevEl: '.mil-portfolio-prev',
+                    nextEl: nextButton,
+                    prevEl: previousButton,
                 },
                 pagination: {
-                    el: '.mil-portfolio-pagination',
+                    el: pagination,
                     type: 'fraction',
                 },
                 breakpoints: {
                     1200: {
-                        spaceBetween: 90,
+                        spaceBetween: 60,
                     },
                 },
             });
@@ -274,12 +328,12 @@ $(function () {
                     y: -20,
                     duration: 0.4,
                     onComplete: function () {
-                        container.innerHTML = 
+                        container.innerHTML =
                             '<div class="mil-center mil-up mil-mb-60" style="opacity: 0; transform: translateY(20px);">' +
                             '<h4 class="mil-mb-15">Message Sent!</h4>' +
                             '<p class="mil-mb-30">Thank you for getting in touch. I will get back to you as soon as possible.</p>' +
                             '</div>';
-                        
+
                         const successEl = container.querySelector(".mil-center");
                         gsap.to(successEl, {
                             opacity: 1,
@@ -644,7 +698,7 @@ $(function () {
 
     /***************************
 
-    progressbars type 2 
+    progressbars type 2
 
     ***************************/
     const width = document.querySelectorAll(".mil-bar");
@@ -687,7 +741,7 @@ $(function () {
     portfolio carousel
 
     ***************************/
-    initProjectsCarousel();
+    // Initialized with the other dynamic page modules above.
 
     /***************************
 
@@ -893,7 +947,7 @@ $(function () {
 
         /***************************
 
-        progressbars type 2 
+        progressbars type 2
 
         ***************************/
         const width = document.querySelectorAll(".mil-bar");

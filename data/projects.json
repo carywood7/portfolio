@@ -2,59 +2,69 @@
     "projects": [
         {
             "id": 1,
-            "name": "Le Wagon Banglore",
-            "title": "Le Wagon Banglore",
+            "name": "Le Wagon Bangalore",
+            "title": "Le Wagon Bangalore",
+            "slug": "le-wagon-bangalore",
             "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/le-wagon.webp",
             "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/le-wagon.mp4",
-            "category": "Websites & Funnels"
+            "category": "Lead Generation Funnel",
+            "description": "A campaign landing page designed to introduce the offer clearly and generate prospective-student enquiries.",
+            "status": "Archived Showcase"
         },
         {
             "id": 2,
-            "name": "XAFE-ADS",
-            "title": "XAFE-ADS",
+            "name": "XAFE Ads",
+            "title": "XAFE Ads",
+            "slug": "xafe-ads",
             "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/XAFEADS.webp",
             "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/XAFEADS.mp4",
-            "category": "Paid Ads & Growth"
+            "category": "Lead Generation Funnel",
+            "description": "A focused advertising landing page structured around a clear campaign message and lead-capture journey.",
+            "status": "Archived Showcase"
         },
         {
             "id": 3,
             "name": "Sonya Hair Braiding",
             "title": "Sonya Hair Braiding",
+            "slug": "sonya-hair-braiding",
             "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/sonya.webp",
             "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/sonya.mp4",
-            "category": "Websites & Funnels"
+            "category": "Lead Generation Funnel",
+            "description": "A local-service landing page created to present hair-braiding services and convert campaign traffic into enquiries.",
+            "status": "Archived Showcase"
         },
         {
             "id": 4,
             "name": "AR Homes Rise",
             "title": "AR Homes Rise",
+            "slug": "ar-homes-rise",
             "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/homesrise.webp",
             "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/homesrise.mp4",
-            "category": "Websites & Funnels"
-        },
-        {
-            "id": 5,
-            "name": "WCE ILTES",
-            "title": "WCE ILTES",
-            "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/WCE.webp",
-            "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/WCE.mp4",
-            "category": "Websites & Funnels"
+            "category": "Lead Generation Funnel",
+            "description": "A real-estate campaign landing page designed to present the property opportunity and capture buyer interest.",
+            "status": "Archived Showcase"
         },
         {
             "id": 6,
             "name": "Bull Investors",
             "title": "Bull Investors",
+            "slug": "bull-investors",
             "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/Bull+Investors.webp",
             "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/Bull+Investors.mp4",
-            "category": "Paid Ads & Growth"
+            "category": "Lead Generation Funnel",
+            "description": "A campaign landing page structured to introduce the investment-focused offer and capture qualified interest.",
+            "status": "Archived Showcase"
         },
         {
             "id": 7,
             "name": "MAAC",
             "title": "MAAC",
+            "slug": "maac",
             "image": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/Maac.webp",
             "video": "https://cary-portfolio-res.s3.ap-south-1.amazonaws.com/portfolio/Maac.mp4",
-            "category": "Social Media & Branding"
+            "category": "Lead Generation Funnel",
+            "description": "A course-enquiry landing page created to support paid campaigns and guide prospective students toward conversion.",
+            "status": "Archived Showcase"
         }
     ]
 }
