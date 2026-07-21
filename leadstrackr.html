@@ -411,6 +411,87 @@
         text-transform: uppercase;
     }
 
+    .mil-lt-chatbot-flow {
+        display: grid;
+        gap: 14px;
+        padding: 42px;
+        background:
+            radial-gradient(circle at 86% 14%, rgba(255, 68, 56, 0.22), transparent 34%),
+            #202124;
+        border-radius: 22px;
+    }
+
+    .mil-lt-chatbot-step {
+        display: grid;
+        grid-template-columns: 54px minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        padding: 20px 22px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-lt-chatbot-step > span:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background: #ff4438;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-lt-chatbot-step h4 {
+        margin-bottom: 4px;
+        color: #ffffff;
+    }
+
+    .mil-lt-chatbot-step p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .mil-lt-chatbot-step > span:last-child {
+        color: rgba(255, 255, 255, 0.48);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-lt-chatbot-connector {
+        width: 1px;
+        height: 13px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .mil-lt-deployment-note {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-top: 24px;
+        color: rgba(36, 36, 36, 0.62) !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        line-height: 1.6;
+        text-transform: uppercase;
+    }
+
+    .mil-lt-deployment-note::before {
+        width: 8px;
+        height: 8px;
+        background: #ff4438;
+        border-radius: 50%;
+        content: "";
+    }
+
     .mil-lt-stage {
         display: grid;
         grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
@@ -526,6 +607,19 @@
     }
 
     @media screen and (max-width: 767px) {
+        .mil-lt-architecture,
+        .mil-lt-chatbot-flow {
+            padding: 26px;
+        }
+
+        .mil-lt-chatbot-step {
+            grid-template-columns: 48px minmax(0, 1fr);
+        }
+
+        .mil-lt-chatbot-step > span:last-child {
+            display: none;
+        }
+
         .mil-lt-architecture {
             padding: 26px;
         }
@@ -587,9 +681,15 @@
             border-radius: 16px;
         }
 
-        .mil-lt-architecture {
+        .mil-lt-architecture,
+        .mil-lt-chatbot-flow {
             padding: 18px;
             border-radius: 16px;
+        }
+
+        .mil-lt-chatbot-step {
+            gap: 12px;
+            padding: 16px;
         }
 
         .mil-lt-architecture-layer {
@@ -646,24 +746,30 @@
                                 <a href="about.html" data-no-swup>About</a>
                             </li>
                             <li>
-                                <a href="index.html#skills" data-no-swup>Capabilities</a>
+                                <a href="tools.html" data-no-swup>Tools</a>
                             </li>
                             <li class="mil-has-children mil-active">
                                 <a href="projects.html" data-no-swup>Projects</a>
+
                                 <ul>
                                     <li>
-                                        <a href="applications.html" data-no-swup>Software Products</a>
+                                        <a href="applications.html" data-no-swup>
+                                            Software Products
+                                        </a>
                                     </li>
+
                                     <li>
-                                        <a href="websites.html" data-no-swup>Websites</a>
+                                        <a href="websites.html" data-no-swup>
+                                            Websites
+                                        </a>
                                     </li>
+
                                     <li>
-                                        <a href="funnels.html" data-no-swup>Funnels &amp; Landing Pages</a>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="index.html#testimonials" data-no-swup>Results</a>
                             </li>
                             <li>
                                 <a href="index.html#contact" data-no-swup>Contact</a>
@@ -770,7 +876,7 @@
                     <section class="mil-lt-hero mil-p-90-60">
 
                         <p class="mil-upper mil-dark mil-up mil-mb-30">
-                            Flagship Product · Functional Platform · Active Development
+                            Flagship Product · Functional Platform · Deployment Pending
                         </p>
 
                         <h1 class="mil-up mil-mb-30">
@@ -780,7 +886,7 @@
                         <p class="mil-lt-hero-lead mil-up mil-mb-30">
                             A multi-tenant CRM and growth platform designed for agencies and businesses
                             that need one connected system for leads, pipelines, appointments,
-                            automation, websites and client operations.
+                            automation, websites, AI chatbots and client operations.
                         </p>
 
                         <div class="mil-lt-actions mil-up">
@@ -790,7 +896,7 @@
                                 rel="noopener noreferrer"
                                 class="mil-btn mil-sm-btn"
                             >
-                                Visit LeadsTrackr
+                                Visit LeadsTrackr Website
                             </a>
 
                             <a href="applications.html" class="mil-lt-text-link" data-no-swup>
@@ -823,7 +929,7 @@
 
                         <div class="mil-lt-meta-item">
                             <span class="mil-lt-meta-label">Current Stage</span>
-                            <strong>Functional platform in active development</strong>
+                            <strong>Functional locally; public deployment pending</strong>
                         </div>
 
                     </div>
@@ -882,6 +988,7 @@
                                     <li>Each workspace keeps its customers, activities and permissions clear.</li>
                                     <li>Platform administration remains separate from agency operations.</li>
                                     <li>Public signup creates a usable agency foundation from day one.</li>
+                                    <li>Embeddable AI chat widgets connect website conversations with CRM context.</li>
                                 </ul>
 
                             </aside>
@@ -976,7 +1083,7 @@
                                     <span class="mil-lt-architecture-number">03</span>
                                     <div>
                                         <h4>Client Sub-Accounts</h4>
-                                        <p>Isolated leads, pipelines, appointments, automations, forms, websites and customer activity.</p>
+                                        <p>Isolated leads, pipelines, appointments, automations, forms, websites, chatbots and customer activity.</p>
                                     </div>
                                     <span>Workspace Layer</span>
                                 </div>
@@ -1083,10 +1190,132 @@
                                 </ul>
                             </article>
 
+                            <article class="mil-lt-feature-card mil-up">
+                                <p class="mil-lt-feature-number">07 · AI WEBSITE CHATBOTS</p>
+                                <h4>Sub-Account Chat Agents &amp; Widgets</h4>
+                                <p>
+                                    Configurable AI agents and publishable website widgets scoped to the
+                                    correct sub-account, with instructions, knowledge, welcome messaging and
+                                    autopilot or handoff response modes.
+                                </p>
+                                <ul class="mil-lt-feature-list">
+                                    <li>Agent and widget configuration</li>
+                                    <li>Draft, publish, unpublish and archive lifecycle</li>
+                                    <li>Embeddable website chat experience</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lt-feature-card mil-up">
+                                <p class="mil-lt-feature-number">08 · CONVERSATIONS</p>
+                                <h4>Webchat, Lead Context &amp; Activity</h4>
+                                <p>
+                                    Persistent conversations and messages preserve website-chat context,
+                                    connect activity to the correct workspace and can associate a visitor with
+                                    an existing or newly captured CRM lead.
+                                </p>
+                                <ul class="mil-lt-feature-list">
+                                    <li>Conversation and message records</li>
+                                    <li>Lead association and webchat activity events</li>
+                                    <li>Widget embeds added to LeadsTrackr and CaryWood.co</li>
+                                </ul>
+                            </article>
+
                         </div>
 
                     </section>
                     <!-- capability system end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>AI Website Chatbots</h3>
+                    </div>
+
+
+                    <!-- AI website chatbots -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lt-split mil-mb-60">
+
+                            <div class="mil-lt-copy">
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    From Website Visitor to CRM Context
+                                </p>
+                                <h2 class="mil-up mil-mb-30">
+                                    The chatbot is part of the customer system—not a disconnected popup.
+                                </h2>
+                                <p class="mil-up mil-mb-30">
+                                    I built an AI website-chat system inside LeadsTrackr so each sub-account
+                                    can configure its own agent and widget while conversations remain attached
+                                    to the correct workspace, lead and activity history.
+                                </p>
+                                <p class="mil-up">
+                                    Widget embeds have already been added to the LeadsTrackr marketing website
+                                    and CaryWood.co. Public conversations will activate once the Rails
+                                    application is deployed to a production host.
+                                </p>
+                            </div>
+
+                            <aside class="mil-lt-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Built for Real Websites</p>
+                                <h4 class="mil-mb-20">Two internal sub-accounts, two website deployments.</h4>
+                                <p>
+                                    The LeadsTrackr agency contains dedicated sub-accounts for the LeadsTrackr
+                                    website and CaryWood.co, keeping each widget, agent, conversation and lead
+                                    inside the correct operational context.
+                                </p>
+                            </aside>
+
+                        </div>
+
+                        <div class="mil-lt-chatbot-flow mil-up">
+
+                            <div class="mil-lt-chatbot-step">
+                                <span>01</span>
+                                <div>
+                                    <h4>Website Embed</h4>
+                                    <p>The published widget is installed on LeadsTrackr and CaryWood.co.</p>
+                                </div>
+                                <span>Public Surface</span>
+                            </div>
+
+                            <div class="mil-lt-chatbot-connector"></div>
+
+                            <div class="mil-lt-chatbot-step">
+                                <span>02</span>
+                                <div>
+                                    <h4>Sub-Account AI Agent</h4>
+                                    <p>Instructions, knowledge, response mode and widget messaging stay workspace-specific.</p>
+                                </div>
+                                <span>Agent Layer</span>
+                            </div>
+
+                            <div class="mil-lt-chatbot-connector"></div>
+
+                            <div class="mil-lt-chatbot-step">
+                                <span>03</span>
+                                <div>
+                                    <h4>Conversation &amp; Messages</h4>
+                                    <p>Persistent records preserve status, timing and the complete webchat exchange.</p>
+                                </div>
+                                <span>Conversation Layer</span>
+                            </div>
+
+                            <div class="mil-lt-chatbot-connector"></div>
+
+                            <div class="mil-lt-chatbot-step">
+                                <span>04</span>
+                                <div>
+                                    <h4>Lead &amp; Activity Context</h4>
+                                    <p>Chat activity can connect with the CRM lead record and operational timeline.</p>
+                                </div>
+                                <span>CRM Layer</span>
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <!-- AI website chatbots end -->
 
 
                     <!-- builder visual pair -->
@@ -1212,6 +1441,7 @@
                                     <span>Stimulus</span>
                                     <span>Active Storage</span>
                                     <span>Minitest</span>
+                                    <span>OpenAI API</span>
                                 </div>
                             </article>
 
@@ -1243,30 +1473,33 @@
                         <div class="mil-lt-stage">
 
                             <article class="mil-lt-stage-card mil-lt-stage-card--dark mil-up">
-                                <p class="mil-upper mil-mb-20">Functional Platform · Active Development</p>
-                                <h3 class="mil-mb-20">The foundation is working; the product is still evolving.</h3>
+                                <p class="mil-upper mil-mb-20">Functional Platform · Deployment Pending</p>
+                                <h3 class="mil-mb-20">The product is built and tested; public hosting is the remaining launch dependency.</h3>
                                 <p>
                                     LeadsTrackr already contains a connected CRM, automation engine,
-                                    multi-tenant account structure and Sites platform. The current focus is
-                                    expanding platform capabilities without losing the boundaries and
-                                    reliability established in the foundation.
+                                    multi-tenant account structure, Sites platform and AI website-chat system.
+                                    The Rails application currently runs locally, so the installed website
+                                    widgets cannot serve public conversations until production deployment.
                                 </p>
 
                                 <div class="mil-lt-stage-progress">
                                     <div><span>Core CRM</span><strong>Functional</strong></div>
                                     <div><span>Automations</span><strong>Functional MVP</strong></div>
                                     <div><span>Sites Platform</span><strong>Functional Builder</strong></div>
+                                    <div><span>AI Website Chatbots</span><strong>Functional · Awaiting Deployment</strong></div>
                                     <div><span>Platform Administration</span><strong>Foundation Complete</strong></div>
+                                    <div><span>Public Deployment</span><strong>Hosting Setup Pending</strong></div>
                                 </div>
                             </article>
 
                             <article class="mil-lt-stage-card mil-up">
-                                <p class="mil-upper mil-dark mil-mb-20">Direction</p>
-                                <h4 class="mil-mb-20">A platform ready to grow into commercial SaaS.</h4>
+                                <p class="mil-upper mil-dark mil-mb-20">Deployment Status</p>
+                                <h4 class="mil-mb-20">Ready to deploy once hosting is confirmed.</h4>
                                 <p>
-                                    Future work can build on the existing hierarchy with subscription plans,
-                                    deeper communications, reporting, integrations and operational tools for
-                                    LeadsTrackr’s own support and commercial teams.
+                                    The Heroku GitHub Student offer application is currently under review.
+                                    Once hosting is available, the remaining work is production configuration,
+                                    database setup, asset deployment and end-to-end verification of the embedded
+                                    chat widgets on both websites.
                                 </p>
                                 <div class="mil-lt-card-actions">
                                     <a
@@ -1275,9 +1508,12 @@
                                         rel="noopener noreferrer"
                                         class="mil-btn mil-sm-btn"
                                     >
-                                        Visit LeadsTrackr
+                                        Visit LeadsTrackr Website
                                     </a>
                                 </div>
+                                <span class="mil-lt-deployment-note">
+                                    Marketing website live · Rails application deployment pending
+                                </span>
                             </article>
 
                         </div>
