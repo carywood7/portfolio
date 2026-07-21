@@ -290,6 +290,47 @@
             bottom: 16px;
         }
     }
+
+/* Homepage product-card alignment */
+
+#building .row {
+    align-items: stretch;
+}
+
+#building .row > [class*="col-"] {
+    display: flex;
+}
+
+#building .mil-product-card {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+}
+
+#building .mil-product-actions {
+    margin-top: auto;
+}
+
+#building .mil-product-actions .mil-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 310px;
+}
+
+@media screen and (max-width: 575px) {
+    #building .mil-product-actions {
+        width: 100%;
+    }
+
+    #building .mil-product-actions .mil-btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
 </style>
 
 
@@ -507,7 +548,7 @@
                       <div class="row justify-content-between">
 
                           <div class="col-lg-6">
-                              <div class="mil-icon-box mil-center mil-mb-60">
+                              <div class="mil-icon-box mil-product-card mil-center mil-mb-60">
                                   <div class="mil-service-icon mil-up">
                                       <img
                                           src="img/icons/icons8-coding-50.png"
@@ -534,7 +575,7 @@
                                       CRM · Automations · Website Builder · AI Chatbots
                                   </p>
 
-                                  <div class="mil-up">
+                                  <div class="mil-up mil-product-actions">
                                       <a
                                           href="leadstrackr.html"
                                           class="mil-btn mil-sm-btn"
@@ -547,7 +588,7 @@
                           </div>
 
                           <div class="col-lg-6">
-                              <div class="mil-icon-box mil-center mil-mb-60">
+                              <div class="mil-icon-box mil-product-card mil-center mil-mb-60">
                                   <div class="mil-service-icon mil-up">
                                       <img
                                           src="img/icons/icons8-browser-50.png"
@@ -564,20 +605,23 @@
 
                                   <h5 class="mil-up mil-mb-30">HookScribe</h5>
 
-                                  <p class="mil-up mil-mb-30">
-                                      A private Rails application that turns uploaded video and audio into
-                                      transcripts, hooks, advertising angles and structured campaign copy
-                                      using OpenAI and FFmpeg.
+                                  <p class="mil-up mil-mb-20">
+                                      A private Ruby on Rails application that transforms uploaded video and
+                                      audio into transcripts, campaign hooks, advertising angles and structured
+                                      copy through a reusable OpenAI and FFmpeg-powered workflow.
                                   </p>
 
-                                  <div class="mil-up">
+                                  <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                      Transcription · Media Processing · AI Ad Copy
+                                  </p>
+
+                                  <div class="mil-up mil-product-actions">
                                       <a
-                                          href="https://hookscribe.carywood.co"
-                                          target="_blank"
-                                          rel="noopener noreferrer"
+                                          href="hookscribe.html"
                                           class="mil-btn mil-sm-btn"
+                                          data-no-swup
                                       >
-                                          Explore HookScribe
+                                          View HookScribe Case Study
                                       </a>
                                   </div>
                               </div>
@@ -769,15 +813,11 @@
 
 
 
-                    <div id="projects" class="mil-section-title mil-up">
-                        <div class="mil-divider"></div>
-                        <h3>Selected Work</h3>
-                    </div>
 
                     <div id="projects" class="mil-section-title mil-up">
-    <div class="mil-divider"></div>
-    <h3>Selected Client Work</h3>
-</div>
+                        <div class="mil-divider"></div>
+                        <h3>Selected Client Work</h3>
+                    </div>
 
                     <!-- selected client work -->
                     <section class="mil-home-work mil-p-90-60">
