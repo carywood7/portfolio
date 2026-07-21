@@ -93,6 +93,46 @@
             border-left: 0 !important;
         }
     }
+
+/* Product case-study actions */
+
+.mil-app-product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin-top: 42px;
+}
+
+.mil-app-product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #242424 !important;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.mil-app-product-link span {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.mil-app-product-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+@media screen and (max-width: 575px) {
+    .mil-app-product-actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
 </style>
 
 </head>
@@ -681,7 +721,30 @@
 
                             </div>
 
+                            <div class="mil-app-product-actions mil-up">
+
+                                <a
+                                    href="hookscribe.html"
+                                    class="mil-btn mil-sm-btn"
+                                    data-no-swup
+                                >
+                                    View Full Case Study
+                                </a>
+
+                                <a
+                                    href="https://hookscribe.carywood.co"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="mil-app-product-link"
+                                >
+                                    Open Private Tool
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+
+                            </div>
+
                         </article>
+
                         <!-- HookScribe case study end -->
 
 
