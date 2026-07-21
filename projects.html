@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" class="is-animating">
+<html lang="en" class="is-animating">
 
 <head>
 
@@ -16,7 +16,284 @@
     <!-- courtney css -->
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- page name -->
-    <title>Cary Wood | Projects</title>
+    <title>Projects | Cary Wood — Software, Websites &amp; Growth Systems</title>
+<meta name="description" content="Explore software applications, websites, lead-generation funnels and digital systems built by Cary Wood.">
+
+<style>
+    /*
+    Projects hub featured-product cards.
+    These styles can move into the shared stylesheet during final refinement.
+    */
+
+    .mil-featured-projects {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px;
+    }
+
+    .mil-featured-project {
+        min-width: 0;
+        overflow: hidden;
+        background: #f4f4f4;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 22px;
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease;
+    }
+
+    .mil-featured-project:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 28px 65px rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-featured-project-image {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+        background: #e9ebef;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .mil-featured-project-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.5s ease;
+    }
+
+    .mil-featured-project:hover .mil-featured-project-image img {
+        transform: scale(1.025);
+    }
+
+    .mil-featured-project-content {
+        padding: 34px;
+    }
+
+    .mil-featured-project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px 20px;
+        margin-bottom: 20px;
+    }
+
+    .mil-featured-project-meta span {
+        color: rgba(0, 0, 0, 0.52);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.7px;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+
+    .mil-featured-project h3 {
+        margin-bottom: 20px;
+    }
+
+    .mil-featured-project h3 a {
+        color: #242424;
+        text-decoration: none;
+    }
+
+    .mil-featured-project p {
+        margin-bottom: 28px;
+        color: rgba(36, 36, 36, 0.68);
+    }
+
+    .mil-featured-project-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .mil-featured-project-link {
+        color: #242424;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .mil-featured-project-link span {
+        display: inline-block;
+        margin-left: 5px;
+        transition: transform 0.25s ease;
+    }
+
+    .mil-featured-project-link:hover span {
+        transform: translate(3px, -3px);
+    }
+
+    @media screen and (max-width: 991px) {
+        .mil-featured-projects {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-featured-projects {
+            gap: 24px;
+        }
+
+        .mil-featured-project {
+            border-radius: 17px;
+        }
+
+        .mil-featured-project-content {
+            padding: 25px;
+        }
+
+        .mil-featured-project-actions {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+/* -------------------------------------------
+
+Featured client work
+
+------------------------------------------- */
+
+.mil-featured-client-work {
+    padding-bottom: 60px;
+}
+
+.mil-featured-project--client {
+    display: flex;
+    flex-direction: column;
+}
+
+.mil-featured-project--client .mil-featured-project-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.mil-featured-project--client .mil-featured-project-actions {
+    margin-top: auto;
+}
+
+.mil-featured-project-image--system {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 42px;
+    background:
+        radial-gradient(
+            circle at 82% 16%,
+            rgba(255, 68, 56, 0.22),
+            transparent 38%
+        ),
+        #202124;
+}
+
+.mil-project-system-flow {
+    width: 100%;
+    max-width: 420px;
+}
+
+.mil-project-system-step {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.mil-project-system-step > span {
+    display: flex;
+    flex: 0 0 36px;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #ff4438;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.mil-project-system-step div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mil-project-system-step small {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.mil-project-system-step strong {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mil-project-system-line {
+    width: 1px;
+    height: 13px;
+    margin-left: 38px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* Final projects CTA */
+
+.mil-projects-final-cta {
+    max-width: 900px;
+    margin: 20px auto 60px;
+}
+
+.mil-projects-final-cta h2 {
+    max-width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mil-projects-final-cta > p {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mil-projects-final-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+@media screen and (max-width: 575px) {
+    .mil-featured-project-image--system {
+        padding: 28px 22px;
+    }
+
+    .mil-project-system-step {
+        padding: 14px 16px;
+    }
+
+    .mil-projects-final-actions {
+        flex-direction: column;
+    }
+}
+
+
+</style>
 
 </head>
 
@@ -50,28 +327,46 @@
                 <div class="mil-navigation">
                     <nav id="swupMenu" class="mil-menu-transition">
                         <ul>
-                            <li class="mil-has-children">
-                                <a href="index.html#home" data-no-swup>Home</a>
-                            </li>
-                            <li class="mil-has-children">
-                                <a href="index.html#about" data-no-swup>About Me</a>
-                            </li>
-                            <li class="mil-has-children">
-                                <a href="index.html#skills" data-no-swup>Skills</a>
-                            </li>
                             <li class="mil-has-children mil-active">
-                                <a href="projects.html" data-no-swup>Projects</a>
+                                <a href="index.html" data-no-swup>Home</a>
                             </li>
                             <li class="mil-has-children">
-                                <a href="index.html#testimonials" data-no-swup>Testimonials</a>
+                                <a href="about.html" data-no-swup>About</a>
                             </li>
-                            <li><a href="index.html#contact" data-no-swup>Contact</a></li>
+                            <li class="mil-has-children">
+                                <a href="tools.html" data-no-swup>Tools</a>
+                            </li>
+                            <li class="mil-has-children">
+                                <a href="projects.html" data-no-swup>Projects</a>
+
+                                <ul>
+                                    <li>
+                                        <a href="applications.html" data-no-swup>
+                                            Software Products
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="websites.html" data-no-swup>
+                                            Websites
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            </li>
+                            <li><a href="contact.html" data-no-swup>Contact</a></li>
                         </ul>
                     </nav>
                 </div>
 
                 <div class="mil-top-panel-btns">
-                    <a href="index.html#contact" class="mil-contact-btn" data-no-swup>
+                    <a href="contact.html" class="mil-contact-btn" data-no-swup>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="feather feather-mail">
@@ -92,11 +387,11 @@
             <!-- left bar -->
             <div class="mil-left-panel">
 
-                <div class="mil-page-name mil-upper mil-dark">Portfolio</div>
+                <div class="mil-page-name mil-upper mil-dark">Projects · Selected Work</div>
 
                 <ul class="mil-social-icons">
                     <li>
-                        <a href="https://github.com/carywood7" target="_blank" class="social-icon">
+                        <a href="https://github.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
                             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
                                 <title>GitHub</title>
                                 <path
@@ -105,7 +400,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon">
+                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
                             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
                                 <title>Instagram</title>
                                 <path
@@ -114,7 +409,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon">
+                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon" rel="noopener noreferrer">
                             <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.959 45.959"
                                 xml:space="preserve">
@@ -164,41 +459,493 @@
             <div class="mil-scroll-wrapper transition-fade" id="swupMain">
                 <div class="mil-container-100">
 
-                    <section class="mil-p-90-0">
-                        <div class="row">
+                    <section class="mil-p-90-30">
+
+                        <!-- projects introduction -->
+                        <div class="row justify-content-center mil-mb-90">
                             <div class="col-lg-9">
+                                <div class="mil-center">
 
-                                <div class="mil-swiper-container mil-portfolio-carousel mil-up" data-projects-source="data/projects.json">
-                                    <div class="swiper-wrapper" id="projectsSwiperWrapper">
-                                        <!-- Dynamic projects will be loaded here via JavaScript -->
-                                    </div>
-                                </div>
+                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                        Selected Projects
+                                    </p>
 
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="mil-carousel-nav">
-                                    <div class="mil-carousel-nav-arrow mil-portfolio-prev">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-arrow-right">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg>
-                                    </div>
-                                    <div class="mil-carousel-nav-arrow mil-portfolio-next">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-arrow-right">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg>
-                                    </div>
-                                    <div class="mil-portfolio-pagination mil-upper mil-dark"></div>
+                                    <h1 class="mil-up mil-mb-30">
+                                        Software, websites and growth systems built around real business
+                                        workflows.
+                                    </h1>
+
+                                    <p class="mil-up">
+                                        Explore applications, products, websites and lead-generation
+                                        experiences that bring together software development, automation,
+                                        CRM systems and digital growth.
+                                    </p>
+
                                 </div>
                             </div>
                         </div>
+                        <!-- projects introduction end -->
+
+                        <div class="mil-section-title mil-up">
+                            <div class="mil-divider"></div>
+                            <h3>Explore by Category</h3>
+                        </div>
+
+                        <!-- project categories -->
+                        <div class="row justify-content-between mil-p-90-30">
+
+                            <div class="col-lg-4">
+                                <div class="mil-icon-box mil-center mil-mb-60">
+
+                                    <div class="mil-service-icon mil-up">
+                                        <img
+                                            src="img/icons/icons8-coding-50.png"
+                                            alt=""
+                                            class="mil-mb-30"
+                                            width="50"
+                                            height="50"
+                                        >
+                                    </div>
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
+                                        Products · Internal Tools · SaaS
+                                    </p>
+
+                                    <h5 class="mil-up mil-mb-30">Web Applications</h5>
+
+                                    <p class="mil-up mil-mb-30">
+                                        Product and technical case studies covering the problems,
+                                        architecture, features and decisions behind the applications
+                                        I’m building.
+                                    </p>
+
+                                    <div class="mil-up">
+                                        <a
+                                            href="applications.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            Explore Applications
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="mil-icon-box mil-center mil-mb-60">
+
+                                    <div class="mil-service-icon mil-up">
+                                        <img
+                                            src="img/icons/icons8-browser-50.png"
+                                            alt=""
+                                            class="mil-mb-30"
+                                            width="50"
+                                            height="50"
+                                        >
+                                    </div>
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
+                                        Business · Ecommerce · Campaigns
+                                    </p>
+
+                                    <h5 class="mil-up mil-mb-30">Websites</h5>
+
+                                    <p class="mil-up mil-mb-30">
+                                        A gallery of websites created across business, ecommerce,
+                                        marketing and campaign use cases using custom code and established
+                                        web platforms.
+                                    </p>
+
+                                    <div class="mil-up">
+                                        <a
+                                            href="websites.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            Explore Websites
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="mil-icon-box mil-center mil-mb-60">
+
+                                    <div class="mil-service-icon mil-up">
+                                        <img
+                                            src="img/icons/icons8-chart-50.png"
+                                            alt=""
+                                            class="mil-mb-30"
+                                            width="50"
+                                            height="50"
+                                        >
+                                    </div>
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
+                                        Google Ads · Meta Ads · Lead Generation
+                                    </p>
+
+                                    <h5 class="mil-up mil-mb-30">Funnels &amp; Landing Pages</h5>
+
+                                    <p class="mil-up mil-mb-30">
+                                        Focused landing pages built to communicate campaign offers,
+                                        capture enquiries and support measurable customer-acquisition
+                                        goals.
+                                    </p>
+
+                                    <div class="mil-up">
+                                        <a
+                                            href="funnels.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            Explore Funnels
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- project categories end -->
+
+                        <div class="mil-section-title mil-up">
+                            <div class="mil-divider"></div>
+                            <h3>Featured Software Products</h3>
+                        </div>
+
+                        <!-- featured builds -->
+                        <div class="mil-featured-projects mil-p-90-30">
+
+                            <!-- LeadsTrackr -->
+                            <article class="mil-featured-project mil-up">
+
+                                <a
+                                    href="leadstrackr.html"
+                                    class="mil-featured-project-image"
+                                    data-no-swup
+                                    aria-label="View the LeadsTrackr product case study"
+                                >
+                                    <img
+                                        src="img/leadstrackr-dashboard.png"
+                                        alt="LeadsTrackr CRM dashboard showing agency performance, pipeline activity and platform navigation"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </a>
+
+                                <div class="mil-featured-project-content">
+
+                                    <div class="mil-featured-project-meta">
+                                        <span>Flagship Product</span>
+                                        <span>Ruby on Rails</span>
+                                    </div>
+
+                                    <h3>
+                                        <a href="leadstrackr.html" data-no-swup>
+                                            LeadsTrackr
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        A multi-tenant CRM and growth platform for agencies and
+                                        businesses, connecting leads, pipelines, appointments,
+                                        automations, client accounts and digital experiences.
+                                    </p>
+
+                                    <div class="mil-featured-project-actions">
+
+                                        <a
+                                            href="leadstrackr.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View Case Study
+                                        </a>
+
+                                        <a
+                                            href="https://leadstrackr.in"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="mil-featured-project-link"
+                                        >
+                                            Visit Product
+                                            <span aria-hidden="true">↗</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- HookScribe -->
+                            <article class="mil-featured-project mil-up">
+
+                                <a
+                                    href="hookscribe.html"
+                                    class="mil-featured-project-image"
+                                    data-no-swup
+                                    aria-label="View the HookScribe product case study"
+                                >
+                                    <img
+                                        src="img/hookscribe-product-preview.png"
+                                        alt="HookScribe workspace showing a transcript and generated advertising content"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </a>
+
+                                <div class="mil-featured-project-content">
+
+                                    <div class="mil-featured-project-meta">
+                                        <span>Private Product</span>
+                                        <span>Rails · OpenAI · FFmpeg</span>
+                                    </div>
+
+                                    <h3>
+                                        <a href="hookscribe.html" data-no-swup>
+                                            HookScribe
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        A private Rails application that turns uploaded video and audio
+                                        into transcripts, campaign hooks, advertising angles and
+                                        structured marketing copy.
+                                    </p>
+
+                                    <div class="mil-featured-project-actions">
+
+                                        <a
+                                            href="hookscribe.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View Case Study
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+                        <!-- featured builds end -->
+
+                        <div class="mil-section-title mil-up">
+                            <div class="mil-divider"></div>
+                            <h3>Featured Client Work</h3>
+                        </div>
+
+                        <!-- featured client work -->
+                        <div class="mil-featured-projects mil-featured-client-work mil-p-90-30">
+
+                            <!-- Wednesday Technology -->
+                            <article class="mil-featured-project mil-featured-project--client mil-up">
+
+                                <a
+                                    href="websites.html"
+                                    class="mil-featured-project-image"
+                                    data-no-swup
+                                    aria-label="Explore selected website projects"
+                                >
+                                    <img
+                                        src="img/websites/wednesday-tech.png"
+                                        alt="Wednesday Technology business technology and managed-services website"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </a>
+
+                                <div class="mil-featured-project-content">
+
+                                    <div class="mil-featured-project-meta">
+                                        <span>Featured Website</span>
+                                        <span>WordPress</span>
+                                    </div>
+
+                                    <h3>
+                                        <a href="websites.html" data-no-swup>
+                                            Wednesday Technology
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        A B2B technology-services website presenting managed delivery
+                                        capabilities across cybersecurity, cloud, DevOps, AI and
+                                        automation.
+                                    </p>
+
+                                    <div class="mil-featured-project-actions">
+
+                                        <a
+                                            href="websites.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            Explore Websites
+                                        </a>
+
+                                        <a
+                                            href="https://wednesdaytech.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="mil-featured-project-link"
+                                        >
+                                            Visit Live Website
+                                            <span aria-hidden="true">↗</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <!-- Wednesday Technology end -->
+
+
+                            <!-- Funnels and Landing Pages -->
+                            <article class="mil-featured-project mil-featured-project--client mil-up">
+
+                                <a
+                                    href="funnels.html"
+                                    class="mil-featured-project-image mil-featured-project-image--system"
+                                    data-no-swup
+                                    aria-label="Explore funnel and landing-page projects"
+                                >
+
+                                    <div class="mil-project-system-flow">
+
+                                        <div class="mil-project-system-step">
+                                            <span>01</span>
+                                            <div>
+                                                <small>Campaign</small>
+                                                <strong>Offer &amp; Message</strong>
+                                            </div>
+                                        </div>
+
+                                        <div class="mil-project-system-line"></div>
+
+                                        <div class="mil-project-system-step">
+                                            <span>02</span>
+                                            <div>
+                                                <small>Experience</small>
+                                                <strong>Landing Page</strong>
+                                            </div>
+                                        </div>
+
+                                        <div class="mil-project-system-line"></div>
+
+                                        <div class="mil-project-system-step">
+                                            <span>03</span>
+                                            <div>
+                                                <small>Conversion</small>
+                                                <strong>Lead Capture</strong>
+                                            </div>
+                                        </div>
+
+                                        <div class="mil-project-system-line"></div>
+
+                                        <div class="mil-project-system-step">
+                                            <span>04</span>
+                                            <div>
+                                                <small>Operations</small>
+                                                <strong>CRM Follow-Up</strong>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                                <div class="mil-featured-project-content">
+
+                                    <div class="mil-featured-project-meta">
+                                        <span>Campaign Portfolio</span>
+                                        <span>Google Ads · Meta Ads</span>
+                                    </div>
+
+                                    <h3>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        Lead-generation experiences built to communicate campaign
+                                        offers, capture enquiries and connect paid traffic with
+                                        measurable follow-up systems.
+                                    </p>
+
+                                    <div class="mil-featured-project-actions">
+
+                                        <a
+                                            href="funnels.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            Explore Funnels
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <!-- Funnels and Landing Pages end -->
+
+                        </div>
+                        <!-- featured client work end -->
+
+                        <div class="mil-divider mil-up mil-mb-90"></div>
+
+                        <!-- projects call to action -->
+                        <div class="mil-projects-final-cta mil-center mil-up">
+
+                            <p class="mil-upper mil-dark mil-mb-20">
+                                Software · Websites · Acquisition Systems
+                            </p>
+
+                            <h2 class="mil-mb-30">
+                                Software products, client websites and acquisition systems—built
+                                around real operational goals.
+                            </h2>
+
+                            <p class="mil-mb-30">
+                                The work brings together product thinking, development, automation,
+                                customer journeys and hands-on growth experience.
+                            </p>
+
+                            <div class="mil-projects-final-actions">
+
+                                <a
+                                    href="contact.html"
+                                    class="mil-btn mil-sm-btn"
+                                    data-no-swup
+                                >
+                                    Start a Conversation
+                                </a>
+
+                                <a
+                                    href="https://github.com/carywood7"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="mil-featured-project-link"
+                                >
+                                    View GitHub
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                        <!-- projects call to action end -->
+
                     </section>
 
                 </div>

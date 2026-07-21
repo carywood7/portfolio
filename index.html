@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="zxx" class="is-animating">
+<html lang="en" class="is-animating">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Cary Wood is a software developer and growth systems builder creating Ruby on Rails products, AI tools, websites, funnels and automation systems.">
 
     <!-- bootstrap grid css -->
     <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
@@ -16,10 +17,323 @@
     <!-- courtney css -->
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- page name -->
-    <title>Cary Wood | Portfolio</title>
+    <title>Cary Wood | Software Developer &amp; Growth Systems Builder</title>
 
     <!-- Place this script tag in the <head> of your website -->
     <script src="https://app.leadstrackr.com/tracker.js?key=RhO0tmIfk6bvM1UJ1YOO648ZzmKXvlAQ" async></script>
+
+<style>
+    /*
+    Homepage selected client work.
+    Move into the shared stylesheet during the final design-system pass.
+    */
+
+    .mil-home-work-intro {
+        max-width: 900px;
+    }
+
+    .mil-home-work-intro h2 {
+        max-width: 850px;
+        font-size: clamp(38px, 5vw, 66px);
+        line-height: 1.05;
+    }
+
+    .mil-home-work-intro > p:last-child {
+        max-width: 760px;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .mil-home-work-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px;
+    }
+
+    .mil-home-work-card {
+        min-width: 0;
+        overflow: hidden;
+        background: #f4f4f4 !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 22px;
+        color: #242424 !important;
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease;
+    }
+
+    .mil-home-work-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 28px 65px rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-home-work-media {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        background: #e8ebef;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .mil-home-work-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.55s ease;
+    }
+
+    .mil-home-work-card:hover .mil-home-work-media img {
+        transform: scale(1.025);
+    }
+
+    .mil-home-work-media-label {
+        position: absolute;
+        right: 22px;
+        bottom: 22px;
+        padding: 10px 14px;
+        background: #ffffff;
+        color: #242424;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    .mil-home-work-content {
+        padding: 34px;
+        color: #242424 !important;
+    }
+
+    .mil-home-work-content h3 {
+        margin-bottom: 20px;
+        color: #242424 !important;
+    }
+
+    .mil-home-work-content h3 a {
+        color: #242424 !important;
+        text-decoration: none;
+    }
+
+    .mil-home-work-content p {
+        margin-bottom: 26px;
+        color: rgba(36, 36, 36, 0.68) !important;
+    }
+
+    .mil-home-work-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px 20px;
+        margin-bottom: 20px;
+    }
+
+    .mil-home-work-meta span {
+        color: rgba(0, 0, 0, 0.5) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+
+    .mil-home-work-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #242424 !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .mil-home-work-link span {
+        display: inline-block;
+        transition: transform 0.25s ease;
+    }
+
+    .mil-home-work-link:hover span {
+        transform: translateX(4px);
+    }
+
+
+    /* Funnel system visual */
+
+    .mil-home-funnel-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 42px;
+        background:
+            radial-gradient(
+                circle at 80% 20%,
+                rgba(255, 68, 56, 0.2),
+                transparent 38%
+            ),
+            #202124;
+    }
+
+    .mil-home-funnel-system {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 410px;
+    }
+
+    .mil-home-funnel-step {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 17px 20px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+    }
+
+    .mil-home-funnel-step span {
+        display: flex;
+        flex: 0 0 34px;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        background: #ff4438;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-home-funnel-step strong {
+        color: #ffffff;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+    }
+
+    .mil-home-funnel-connector {
+        width: 1px;
+        height: 15px;
+        margin-left: 37px;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+
+    /* Projects hub CTA */
+
+    .mil-home-work-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 35px;
+        margin-top: 45px;
+        padding: 34px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-home-work-footer h4 {
+        margin-bottom: 0;
+    }
+
+
+    /* Responsive */
+
+    @media screen and (max-width: 991px) {
+        .mil-home-work-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .mil-home-work-footer {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-home-work-intro h2 {
+            font-size: 42px;
+        }
+
+        .mil-home-work-intro > p:last-child {
+            font-size: 16px;
+        }
+
+        .mil-home-work-grid {
+            gap: 24px;
+        }
+
+        .mil-home-work-card {
+            border-radius: 17px;
+        }
+
+        .mil-home-work-content {
+            padding: 25px;
+        }
+
+        .mil-home-funnel-media {
+            padding: 28px 22px;
+        }
+
+        .mil-home-work-meta {
+            flex-direction: column;
+        }
+
+        .mil-home-work-media-label {
+            right: 16px;
+            bottom: 16px;
+        }
+    }
+
+/* Homepage product-card alignment */
+
+#building .row {
+    align-items: stretch;
+}
+
+#building .row > [class*="col-"] {
+    display: flex;
+}
+
+#building .mil-product-card {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+}
+
+#building .mil-product-actions {
+    margin-top: auto;
+}
+
+#building .mil-product-actions .mil-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 310px;
+}
+
+@media screen and (max-width: 575px) {
+    #building .mil-product-actions {
+        width: 100%;
+    }
+
+    #building .mil-product-actions .mil-btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+</style>
+
 
 </head>
 
@@ -54,27 +368,45 @@
                     <nav id="swupMenu" class="mil-menu-transition">
                         <ul>
                             <li class="mil-has-children mil-active">
-                                <a href="#home" data-no-swup>Home</a>
+                                <a href="index.html" data-no-swup>Home</a>
                             </li>
                             <li class="mil-has-children">
-                                <a href="#about" data-no-swup>About Me</a>
+                                <a href="about.html" data-no-swup>About</a>
                             </li>
                             <li class="mil-has-children">
-                                <a href="#skills" data-no-swup>Skills</a>
+                                <a href="tools.html" data-no-swup>Tools</a>
                             </li>
                             <li class="mil-has-children">
                                 <a href="projects.html" data-no-swup>Projects</a>
+
+                                <ul>
+                                    <li>
+                                        <a href="applications.html" data-no-swup>
+                                            Software Products
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="websites.html" data-no-swup>
+                                            Websites
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="mil-has-children">
-                                <a href="#testimonials" data-no-swup>Testimonials</a>
                             </li>
-                            <li><a href="#contact" data-no-swup>Contact</a></li>
+                            <li><a href="contact.html" data-no-swup>Contact</a></li>
                         </ul>
                     </nav>
                 </div>
 
                 <div class="mil-top-panel-btns">
-                    <a href="#contact" class="mil-contact-btn" data-no-swup>
+                    <a href="contact.html" class="mil-contact-btn" data-no-swup>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="feather feather-mail">
@@ -95,11 +427,11 @@
             <!-- left bar -->
             <div class="mil-left-panel">
 
-                <div class="mil-page-name mil-upper mil-dark">Portfolio</div>
+                <div class="mil-page-name mil-upper mil-dark">Developer · Builder</div>
 
                 <ul class="mil-social-icons">
                     <li>
-                        <a href="https://github.com/carywood7" target="_blank" class="social-icon">
+                        <a href="https://github.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
                             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
                                 <title>GitHub</title>
                                 <path
@@ -108,7 +440,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon">
+                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
                             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
                                 <title>Instagram</title>
                                 <path
@@ -117,7 +449,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon">
+                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon" rel="noopener noreferrer">
                             <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.959 45.959"
                                 xml:space="preserve">
@@ -166,14 +498,26 @@
 
             <div class="mil-scroll-wrapper transition-fade" id="swupMain">
                 <div class="mil-container">
-                    <!-- banner -->
+
+                    <!-- compact mobile and tablet portrait -->
+                    <div class="mil-mobile-profile">
+                        <img
+                            src="img/person/avtar.png"
+                            alt="Cary Wood, software developer and growth systems builder"
+                            loading="eager"
+                            decoding="async"
+                        >
+                    </div>
+                    <!-- compact mobile and tablet portrait end -->
+
+<!-- banner -->
                     <section id="home" class="mil-side-banner mil-center">
                         <div class="mil-banner-top mil-up"></div>
                         <div class="mil-banner-title">
-                            <div class="mil-upper mil-dark mil-up mil-mb-30">Hello! My name is</div>
-                            <h1 class="mil-up mil-mb-30">Cary<br>Wood</h1>
-                            <p class="mil-upper mil-dark mil-up">SOFTWARE DEVELOPER &</p>
-                            <p class="mil-upper mil-dark mil-up">GROWTH SYSTEMS BUILDER</p>
+                            <div class="mil-upper mil-dark mil-up mil-mb-30">Cary Wood · Software Developer &amp; Builder</div>
+                            <h1 class="mil-up mil-mb-30">Building useful<br>software &amp;<br>growth systems.</h1>
+                            <p class="mil-upper mil-dark mil-up">APPLICATIONS · TOOLS · WEBSITES</p>
+                            <p class="mil-upper mil-dark mil-up">CRM · AUTOMATION · GROWTH</p>
                         </div>
                         <div class="mil-up mil-oval-frame">
                             <div class="mil-circle-text">
@@ -194,7 +538,7 @@
                                         </text>
                                     </g>
                                 </svg>
-                                <a href="#about" class="mil-button" data-no-swup>
+                                <a href="#building" class="mil-button" data-no-swup>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" class="feather feather-arrow-down">
@@ -208,159 +552,101 @@
                     <!-- banner end -->
 
                     <!-- about -->
-                    <section id="about" class="mil-p-0-90">
-                        <div class="mil-oval-frame-2 mil-mb-90">
-                            <img src="img/person/potrait.png" alt="avatar">
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="mil-center">
-                                    <h2 class="mil-up mil-mb-30">Hi! My name is Cary Wood, <br>I’m a Software Developer
-                                        & Growth Systems Builder based in India.</h2>
-                                    <div class="mil-quote mil-up mil-mb-30"><i class="fas fa-quote-left"></i></div>
-                                    <p class="mil-up mil-mb-30">I’m a software developer and growth systems builder with
-                                        13+ years of experience across CRM automation, websites, funnels, paid ads, SEO,
-                                        social media, and digital strategy.
-
-                                        My work combines software development with real-world marketing experience,
-                                        allowing me to build systems that are not just functional, but also
-                                        conversion-focused and business-driven.
-
-                                    </p>
-                                    <p class="mil-upper mil-dark mil-up">Software development backed by 13+ years of
-                                        marketing and growth experience.
-                                        <!-- <img src="img/person/sign.png" alt="signature" class="mil-up mil-sign"> -->
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- about end -->
-
                     <div class="mil-section-title mil-up">
-                        <div class="mil-divider"></div>
-                        <h3>What I Do</h3>
-                    </div>
+                      <div class="mil-divider"></div>
+                      <h3>What I’m Building</h3>
+                  </div>
 
-                    <!-- services -->
-                    <section class="mil-p-90-30">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-lg-4">
-                                <div class="mil-icon-box mil-center mil-mb-60">
-                                    <div class="mil-service-icon mil-up">
-                                        <img src="img/icons/icons8-coding-50.png" alt="icon" class="mil-mb-30">
-                                    </div>
-                                    <h5 class="mil-up mil-mb-30">Software Development</h5>
-                                    <p class="mil-up mil-mb-30">CRM systems, automation workflows, calendar tools, media
-                                        libraries, forms, API integrations, and SaaS product features built around real
-                                        business use cases.</p>
-                                    <div class="mil-up">
-                                        <a href="#projects" class="mil-link mil-icon-link" data-no-swup>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="mil-icon-box mil-center mil-mb-60">
-                                    <div class="mil-service-icon mil-up">
-                                        <img src="img/icons/icons8-browser-50.png" alt="icon" class="mil-mb-30">
-                                    </div>
-                                    <h5 class="mil-up mil-mb-30">Websites & Funnels</h5>
-                                    <p class="mil-up mil-mb-30">Conversion-focused websites, landing pages, booking
-                                        funnels, forms, and thank-you pages using Go High Level, WordPress, Shopify,
-                                        Wix, Kajabi, and custom-coded solutions.</p>
-                                    <div class="mil-up">
-                                        <a href="#projects" class="mil-link mil-icon-link" data-no-swup>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="mil-icon-box mil-center mil-mb-60">
-                                    <div class="mil-service-icon mil-up">
-                                        <img src="img/icons/icons8-chart-50.png" alt="icon" class="mil-mb-30">
-                                    </div>
-                                    <h5 class="mil-up mil-mb-30">Paid Ads & Growth</h5>
-                                    <p class="mil-up mil-mb-30">Meta Ads, Google Ads, lead generation, campaign
-                                        strategy, landing page alignment, tracking, creative testing, and
-                                        conversion-focused optimization.</p>
-                                    <div class="mil-up">
-                                        <a href="#projects" class="mil-link mil-icon-link" data-no-swup>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="mil-icon-box mil-center mil-mb-60">
-                                    <div class="mil-service-icon mil-up">
-                                        <img src="img/icons/icons8-strategy-50.png" alt="icon" class="mil-mb-30">
-                                    </div>
-                                    <h5 class="mil-up mil-mb-30">Creative Strategy</h5>
-                                    <p class="mil-up mil-mb-30">Image ads, video ads, hooks, ad copy, reel concepts,
-                                        carousel ideas, and campaign angles designed for paid ads and organic social
-                                        media.</p>
-                                    <div class="mil-up">
-                                        <a href="#projects" class="mil-link mil-icon-link" data-no-swup>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="mil-icon-box mil-center mil-mb-60">
-                                    <div class="mil-service-icon mil-up">
-                                        <img src="img/icons/icons8-brand-48.png" alt="icon" class="mil-mb-30">
-                                    </div>
-                                    <h5 class="mil-up mil-mb-30">Social Media & Branding</h5>
-                                    <p class="mil-up mil-mb-30">Content strategy, brand positioning, SEO/AEO/GEO
-                                        captions, social media revamps, local business branding, and engagement-focused
-                                        content planning.</p>
-                                    <div class="mil-up">
-                                        <a href="#projects" class="mil-link mil-icon-link" data-no-swup>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                  <section id="building" class="mil-p-90-30">
+                      <div class="row justify-content-between">
+
+                          <div class="col-lg-6">
+                              <div class="mil-icon-box mil-product-card mil-center mil-mb-60">
+                                  <div class="mil-service-icon mil-up">
+                                      <img
+                                          src="img/icons/icons8-coding-50.png"
+                                          alt=""
+                                          class="mil-mb-30"
+                                          width="50"
+                                          height="50"
+                                      >
+                                  </div>
+
+                                  <p class="mil-upper mil-dark mil-up mil-mb-15">
+                                      Live product · Active development
+                                  </p>
+
+                                  <h5 class="mil-up mil-mb-30">LeadsTrackr</h5>
+
+                                  <p class="mil-up mil-mb-20">
+                                      A Ruby on Rails CRM and growth platform for agencies and businesses,
+                                      connecting leads, pipelines, appointments, automations, websites and
+                                      AI-powered customer conversations in one system.
+                                  </p>
+
+                                  <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                      CRM · Automations · Website Builder · AI Chatbots
+                                  </p>
+
+                                  <div class="mil-up mil-product-actions">
+                                      <a
+                                          href="leadstrackr.html"
+                                          class="mil-btn mil-sm-btn"
+                                          data-no-swup
+                                      >
+                                          View LeadsTrackr Case Study
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-lg-6">
+                              <div class="mil-icon-box mil-product-card mil-center mil-mb-60">
+                                  <div class="mil-service-icon mil-up">
+                                      <img
+                                          src="img/icons/icons8-browser-50.png"
+                                          alt=""
+                                          class="mil-mb-30"
+                                          width="50"
+                                          height="50"
+                                      >
+                                  </div>
+
+                                  <p class="mil-upper mil-dark mil-up mil-mb-15">
+                                      Private tool · Launch-ready MVP
+                                  </p>
+
+                                  <h5 class="mil-up mil-mb-30">HookScribe</h5>
+
+                                  <p class="mil-up mil-mb-20">
+                                      A private Ruby on Rails application that transforms uploaded video and
+                                      audio into transcripts, campaign hooks, advertising angles and structured
+                                      copy through a reusable OpenAI and FFmpeg-powered workflow.
+                                  </p>
+
+                                  <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                      Transcription · Media Processing · AI Ad Copy
+                                  </p>
+
+                                  <div class="mil-up mil-product-actions">
+                                      <a
+                                          href="hookscribe.html"
+                                          class="mil-btn mil-sm-btn"
+                                          data-no-swup
+                                      >
+                                          View HookScribe Case Study
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+                  </section>
                     <!-- services end -->
 
                     <div id="skills" class="mil-section-title mil-up">
                         <div class="mil-divider"></div>
-                        <h3>Language Skills</h3>
+                        <h3>Core Capabilities</h3>
                     </div>
 
                     <!-- language -->
@@ -427,7 +713,7 @@
 
                     <div class="mil-section-title mil-up">
                         <div class="mil-divider"></div>
-                        <h3>Tools & Technical Skills</h3>
+                        <h3>Technologies &amp; Platforms</h3>
                     </div>
 
                     <!-- hard skills -->
@@ -436,7 +722,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">HTML / CSS</h6>
+                                    <h6 class="mil-up mil-mb-30">Ruby on Rails</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="90%"></div>
                                     </div>
@@ -446,7 +732,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">JavaScript / React</h6>
+                                    <h6 class="mil-up mil-mb-30">JavaScript / Stimulus</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="75%"></div>
                                     </div>
@@ -456,7 +742,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">Go High Level</h6>
+                                    <h6 class="mil-up mil-mb-30">PostgreSQL / SQL</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="95%"></div>
                                     </div>
@@ -466,7 +752,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">WordPress & Shopify</h6>
+                                    <h6 class="mil-up mil-mb-30">HTML / CSS / WordPress / Shopify</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="90%"></div>
                                     </div>
@@ -476,7 +762,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">APIs</h6>
+                                    <h6 class="mil-up mil-mb-30">REST APIs &amp; Integrations</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="80%"></div>
                                     </div>
@@ -486,7 +772,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">Meta Ads / Google Ads</h6>
+                                    <h6 class="mil-up mil-mb-30">CRM / GoHighLevel / Automation</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="95%"></div>
                                     </div>
@@ -496,7 +782,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">CRM Automation</h6>
+                                    <h6 class="mil-up mil-mb-30">Meta Ads / Google Ads</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="90%"></div>
                                     </div>
@@ -506,7 +792,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">AWS</h6>
+                                    <h6 class="mil-up mil-mb-30">AWS / Active Storage</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="75%"></div>
                                     </div>
@@ -516,7 +802,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">Google Analytics / GTM</h6>
+                                    <h6 class="mil-up mil-mb-30">Analytics / GTM</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="85%"></div>
                                     </div>
@@ -526,7 +812,7 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-lang-skills-item mil-mb-30">
-                                    <h6 class="mil-up mil-mb-30">Canva / Adobe Premiere Pro</h6>
+                                    <h6 class="mil-up mil-mb-30">FFmpeg / OpenAI APIs</h6>
                                     <div class="mil-line-progress mil-up">
                                         <div class="mil-bar" data-value="90%"></div>
                                     </div>
@@ -540,116 +826,201 @@
 
 
 
+
                     <div id="projects" class="mil-section-title mil-up">
                         <div class="mil-divider"></div>
-                        <h3>My Projects</h3>
+                        <h3>Selected Client Work</h3>
                     </div>
 
-                    <!-- portfolio -->
-                    <section class="mil-p-90-60">
-                        <div class="row" id="projectsGrid" data-projects-source="data/projects.json" hidden>
-                            <div class="col-lg-6">
+                    <!-- selected client work -->
+                    <section class="mil-home-work mil-p-90-60">
 
-                                <a href="#projects" class="mil-portfolio-item mil-mb-60" data-no-swup>
-                                    <div class="mil-cover-frame mil-up">
-                                        <img src="img/portfolio/1.jpg" alt="cover">
-                                    </div>
-                                    <div class="mil-description mil-up">
-                                        <div>
-                                            <p class="mil-upper mil-mb-5">Branding</p>
-                                            <h4>Aevoe. Visual Identity</h4>
-                                        </div>
-                                        <div class="mil-link mil-icon-link">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </a>
+                        <div class="mil-home-work-intro mil-mb-60">
 
-                            </div>
-                            <div class="col-lg-6">
+                            <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                Websites · Funnels · Growth Systems
+                            </p>
 
-                                <a href="#projects" class="mil-portfolio-item mil-mb-60" data-no-swup>
-                                    <div class="mil-cover-frame mil-up">
-                                        <img src="img/portfolio/2.jpg" alt="cover">
-                                    </div>
-                                    <div class="mil-description mil-up">
-                                        <div>
-                                            <p class="mil-upper mil-mb-5">Branding</p>
-                                            <h4>Monograph TS</h4>
-                                        </div>
-                                        <div class="mil-link mil-icon-link">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </a>
+                            <h2 class="mil-up mil-mb-30">
+                                Digital experiences built for real businesses and active campaigns.
+                            </h2>
 
-                            </div>
-                            <div class="col-lg-6">
+                            <p class="mil-up">
+                                Beyond the software products I’m building, I also create websites,
+                                landing pages and customer-acquisition systems designed around
+                                specific audiences, offers and business goals.
+                            </p>
 
-                                <a href="#projects" class="mil-portfolio-item mil-mb-60" data-no-swup>
-                                    <div class="mil-cover-frame mil-up">
-                                        <img src="img/portfolio/3.jpg" alt="cover">
-                                    </div>
-                                    <div class="mil-description mil-up">
-                                        <div>
-                                            <p class="mil-upper mil-mb-5">Branding</p>
-                                            <h4>Home sequrity camera</h4>
-                                        </div>
-                                        <div class="mil-link mil-icon-link">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class="col-lg-6">
-
-                                <a href="#projects" class="mil-portfolio-item mil-mb-60" data-no-swup>
-                                    <div class="mil-cover-frame mil-up">
-                                        <img src="img/portfolio/4.jpg" alt="cover">
-                                    </div>
-                                    <div class="mil-description mil-up">
-                                        <div>
-                                            <p class="mil-upper mil-mb-5">Branding</p>
-                                            <h4>Unique card holder</h4>
-                                        </div>
-                                        <div class="mil-link mil-icon-link">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-arrow-right">
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                <polyline points="12 5 19 12 12 19"></polyline>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class="col-lg-12 mil-center mil-up mil-mb-60">
-                                <a href="projects.html" class="mil-btn mil-sm-btn" data-no-swup>Show more</a>
-                            </div>
                         </div>
+
+
+                        <div class="mil-home-work-grid">
+
+
+                            <!-- websites -->
+                            <article class="mil-home-work-card mil-up">
+
+                                <a
+                                    href="websites.html"
+                                    class="mil-home-work-media"
+                                    data-no-swup
+                                    aria-label="Explore selected website projects"
+                                >
+                                    <img
+                                        src="img/websites/wednesday-tech.png"
+                                        alt="Wednesday Technology website displayed as an example of Cary Wood's website work"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+
+                                    <span class="mil-home-work-media-label">
+                                        Selected Live Website
+                                    </span>
+                                </a>
+
+                                <div class="mil-home-work-content">
+
+                                    <div class="mil-home-work-meta">
+                                        <span>WordPress · GoHighLevel</span>
+                                        <span>Live Client Work</span>
+                                    </div>
+
+                                    <h3>
+                                        <a href="websites.html" data-no-swup>
+                                            Websites
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        Business, ecommerce, ministry and real-estate websites built
+                                        around clear positioning, useful customer journeys and
+                                        practical lead-generation goals.
+                                    </p>
+
+                                    <a
+                                        href="websites.html"
+                                        class="mil-home-work-link"
+                                        data-no-swup
+                                    >
+                                        Explore Websites
+                                        <span aria-hidden="true">→</span>
+                                    </a>
+
+                                </div>
+
+                            </article>
+                            <!-- websites end -->
+
+
+                            <!-- funnels -->
+                            <article class="mil-home-work-card mil-up">
+
+                                <a
+                                    href="funnels.html"
+                                    class="mil-home-work-media mil-home-funnel-media"
+                                    data-no-swup
+                                    aria-label="Explore selected funnel and landing-page projects"
+                                >
+
+                                    <div class="mil-home-funnel-system">
+
+                                        <div class="mil-home-funnel-step">
+                                            <span>01</span>
+                                            <strong>Campaign Message</strong>
+                                        </div>
+
+                                        <div class="mil-home-funnel-connector"></div>
+
+                                        <div class="mil-home-funnel-step">
+                                            <span>02</span>
+                                            <strong>Landing Page</strong>
+                                        </div>
+
+                                        <div class="mil-home-funnel-connector"></div>
+
+                                        <div class="mil-home-funnel-step">
+                                            <span>03</span>
+                                            <strong>Lead Capture</strong>
+                                        </div>
+
+                                        <div class="mil-home-funnel-connector"></div>
+
+                                        <div class="mil-home-funnel-step">
+                                            <span>04</span>
+                                            <strong>CRM Follow-Up</strong>
+                                        </div>
+
+                                    </div>
+
+                                    <span class="mil-home-work-media-label">
+                                        Campaign Portfolio
+                                    </span>
+
+                                </a>
+
+                                <div class="mil-home-work-content">
+
+                                    <div class="mil-home-work-meta">
+                                        <span>Google Ads · Meta Ads</span>
+                                        <span>Lead Generation</span>
+                                    </div>
+
+                                    <h3>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        Focused campaign experiences designed to communicate the
+                                        offer, capture enquiries and connect paid traffic with CRM
+                                        follow-up.
+                                    </p>
+
+                                    <a
+                                        href="funnels.html"
+                                        class="mil-home-work-link"
+                                        data-no-swup
+                                    >
+                                        Explore Funnels
+                                        <span aria-hidden="true">→</span>
+                                    </a>
+
+                                </div>
+
+                            </article>
+                            <!-- funnels end -->
+
+
+                        </div>
+
+
+                        <div class="mil-home-work-footer mil-up">
+
+                            <div>
+
+                                <p class="mil-upper mil-dark mil-mb-10">
+                                    Complete Project Library
+                                </p>
+
+                                <h4>
+                                    Explore software products, websites and campaign work.
+                                </h4>
+
+                            </div>
+
+                            <a
+                                href="projects.html"
+                                class="mil-btn mil-sm-btn"
+                                data-no-swup
+                            >
+                                View All Projects
+                            </a>
+
+                        </div>
+
                     </section>
-                    <!-- portfolio end -->
+                    <!-- selected client work end -->
 
 
                     <div id="testimonials" class="mil-section-title mil-up">
@@ -697,86 +1068,61 @@
 
                     <div id="contact" class="mil-section-title mil-up">
                         <div class="mil-divider"></div>
-                        <h3>Get in touch</h3>
+                        <h3>Start a Conversation</h3>
                     </div>
 
-                    <!-- info -->
-                    <div class="mil-p-90-60">
-                        <ul class="mil-puplication-details mil-up">
-                            <li><span class="mil-upper mil-accent">Call: </span>&nbsp;&nbsp;<span
-                                    class="mil-upper mil-dark">+91 74003 80622</span>
-                            </li>
-                            <li><span class="mil-upper mil-accent">Write: </span>&nbsp;&nbsp;<span
-                                    class="mil-upper mil-dark">cary.wood.777@gmail.com</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- map -->
-                    <!-- <div class="mil-map mil-mb-90">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15082.834695794107!2d72.9882602650458!3d19.07654221404838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c136b519107b%3A0x8452b99754be0fc8!2sVashi%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1783444009059!5m2!1sen!2sin"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div> -->
-                    <!-- map end -->
-
-                    <div class="mil-section-title mil-up">
-                        <div class="mil-divider"></div>
-                        <h3>Send a message </h3>
-                    </div>
-
-                    <!-- contact -->
-                    <div id="contact-form" class="mil-p-90-60">
-                        <form class="row align-items-center" data-leadstrackr-key method="POST">
-                            <div class="col-lg-6 mil-up">
-                                <input type="text" placeholder="What's your name" name="name" required>
-                            </div>
-                            <div class="col-lg-6 mil-up">
-                                <input type="email" placeholder="Your Email" name="email" required>
-                            </div>
-                            <div class="col-lg-12 mil-up">
-                                <textarea placeholder="Tell us about our project" name="message" required></textarea>
-                            </div>
-                            <div class="col-lg-8">
-                                <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We promise not to disclose
-                                    your personal information to third parties.</p>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="mil-adaptive-right mil-up mil-mb-30">
-                                    <button type="submit" class="mil-btn mil-sm-btn">
-                                        <span>Send message</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- contact end -->
-
-
-
-                    <div class="mil-divider mil-up mil-mb-90"></div>
-
-                    <!-- call to action -->
-                    <div class="mil-p-0-90">
+                    <section class="mil-p-90-90">
                         <div class="row justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-9">
                                 <div class="mil-center">
-                                    <h2 class="mil-up mil-mb-30">Ready to build software, funnels, or growth systems?
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                        Software · Systems · Growth
+                                    </p>
+
+                                    <h2 class="mil-up mil-mb-30">
+                                        Follow what I’m building—or start a conversation about something
+                                        worth creating.
                                     </h2>
-                                    <p class="mil-up mil-mb-30">I’m open to software development, SaaS, CRM, automation,
-                                        marketing technology, and growth-focused opportunities.</p>
-                                    <div class="mil-up">
-                                        <a href="#contact" class="mil-btn mil-sm-btn" data-no-swup>Contact me</a>
+
+                                    <p class="mil-up mil-mb-30">
+                                        I’m actively building software products, internal tools and growth
+                                        systems. Connect with me on LinkedIn or explore the code and projects
+                                        I’m sharing on GitHub.
+                                    </p>
+
+                                    <div class="mil-up mil-mb-30">
+                                        <a
+                                            href="https://www.linkedin.com/in/carywood777/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="mil-btn mil-sm-btn"
+                                        >
+                                            Start a Conversation
+                                        </a>
                                     </div>
+
+                                    <div class="mil-up">
+                                        <a
+                                            href="https://github.com/carywood7"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="mil-link"
+                                        >
+                                            Explore My GitHub →
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- call to action end -->
+                    </section>
+
+                    <div class="mil-divider mil-up mil-mb-90"></div>
 
                     <!-- footer -->
                     <footer class="mil-fw">
-                        <p class="mil-light-soft">© 2026 Cary Wood Portfolio. All rights reserved.</p>
+                        <p class="mil-light-soft">© 2026 Cary Wood. Building software, tools and digital systems.</p>
 
                     </footer>
                     <!-- footer end -->

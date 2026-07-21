@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en" class="is-animating">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Explore the HookScribe case study: a private Ruby on Rails product that processes uploaded audio and video into transcripts, campaign hooks, advertising angles and reusable content workflows.">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- courtney css -->
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <!-- page name -->
+    <title>HookScribe Case Study | AI Media Workflow by Cary Wood</title>
+
+    <!-- Place this script tag in the <head> of your website -->
+    <script src="https://app.leadstrackr.com/tracker.js?key=RhO0tmIfk6bvM1UJ1YOO648ZzmKXvlAQ" async></script>
+
+
+<style>
+    /*
+    HookScribe product case study.
+    Move into the shared stylesheet during the final design-system pass.
+    */
+
+    .mil-hs-hero {
+        max-width: 1060px;
+    }
+
+    .mil-hs-hero h1 {
+        max-width: 980px;
+        font-size: clamp(58px, 8vw, 108px);
+        line-height: 0.92;
+    }
+
+    .mil-hs-hero-lead {
+        max-width: 860px;
+        font-size: 20px;
+        line-height: 1.75;
+    }
+
+    .mil-hs-actions,
+    .mil-hs-cta-actions,
+    .mil-hs-card-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .mil-hs-text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #242424 !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .mil-hs-text-link span {
+        display: inline-block;
+        transition: transform 0.25s ease;
+    }
+
+    .mil-hs-text-link:hover span {
+        transform: translate(3px, -3px);
+    }
+
+    .mil-hs-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-hs-meta-item {
+        padding: 26px 26px 26px 0;
+    }
+
+    .mil-hs-meta-item + .mil-hs-meta-item {
+        padding-left: 26px;
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-hs-meta-label {
+        display: block;
+        margin-bottom: 10px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.7px;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    .mil-hs-meta-item strong {
+        display: block;
+        color: #242424;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .mil-hs-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(310px, 0.85fr);
+        gap: 60px;
+        align-items: start;
+    }
+
+    .mil-hs-copy h2 {
+        max-width: 760px;
+    }
+
+    .mil-hs-copy p {
+        max-width: 740px;
+    }
+
+    .mil-hs-summary-card,
+    .mil-hs-panel,
+    .mil-hs-feature-card,
+    .mil-hs-decision-card,
+    .mil-hs-stage-card {
+        background: #f4f4f4 !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        color: #242424 !important;
+    }
+
+    .mil-hs-summary-card,
+    .mil-hs-panel,
+    .mil-hs-decision-card,
+    .mil-hs-stage-card {
+        padding: 34px;
+    }
+
+    .mil-hs-summary-card *,
+    .mil-hs-panel *,
+    .mil-hs-feature-card *,
+    .mil-hs-decision-card *,
+    .mil-hs-stage-card * {
+        color: #242424;
+    }
+
+    .mil-hs-summary-card p,
+    .mil-hs-panel p,
+    .mil-hs-feature-card p,
+    .mil-hs-decision-card p,
+    .mil-hs-stage-card p {
+        color: rgba(36, 36, 36, 0.68) !important;
+    }
+
+    .mil-hs-summary-list,
+    .mil-hs-ownership-list {
+        margin: 26px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mil-hs-summary-list li {
+        position: relative;
+        padding: 16px 0 16px 24px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(36, 36, 36, 0.72);
+        line-height: 1.65;
+    }
+
+    .mil-hs-summary-list li::before {
+        position: absolute;
+        top: 23px;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        background: #ff4438;
+        border-radius: 50%;
+        content: "";
+    }
+
+    .mil-hs-shot {
+        margin: 0;
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.14);
+        border-radius: 22px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.13);
+    }
+
+    .mil-hs-shot-frame {
+        overflow: hidden;
+        background: #f5f7fa;
+    }
+
+    .mil-hs-shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .mil-hs-shot figcaption {
+        padding: 20px 24px;
+        background: #171717;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .mil-hs-workflow {
+        padding: 42px;
+        background:
+            radial-gradient(circle at 86% 12%, rgba(255, 68, 56, 0.22), transparent 33%),
+            #202124;
+        border-radius: 22px;
+    }
+
+    .mil-hs-workflow-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .mil-hs-workflow-step {
+        min-height: 190px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-hs-workflow-step span,
+    .mil-hs-workflow-step h4,
+    .mil-hs-workflow-step p {
+        color: #ffffff;
+    }
+
+    .mil-hs-workflow-step > span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 34px;
+        background: #ff4438;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-hs-workflow-step h4 {
+        margin-bottom: 10px;
+    }
+
+    .mil-hs-workflow-step p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .mil-hs-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-hs-feature-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 290px;
+        padding: 34px;
+    }
+
+    .mil-hs-feature-number {
+        margin-bottom: 48px;
+        color: #ff4438 !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+    }
+
+    .mil-hs-feature-card h4 {
+        margin-bottom: 16px;
+    }
+
+    .mil-hs-feature-list {
+        margin: auto 0 0;
+        padding: 24px 0 0;
+        list-style: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .mil-hs-feature-list li {
+        padding: 5px 0;
+        color: rgba(36, 36, 36, 0.65) !important;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .mil-hs-pipeline {
+        display: grid;
+        gap: 12px;
+        padding: 34px;
+        background: #202124;
+        border-radius: 20px;
+    }
+
+    .mil-hs-pipeline-row {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .mil-hs-pipeline-row > span:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background: #ff4438;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-hs-pipeline-row h4 {
+        margin-bottom: 4px;
+        color: #ffffff;
+    }
+
+    .mil-hs-pipeline-row p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .mil-hs-pipeline-row > span:last-child {
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-hs-decision-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-hs-decision-card {
+        min-height: 300px;
+    }
+
+    .mil-hs-decision-label {
+        display: block;
+        margin-bottom: 50px;
+        color: #ff4438 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+    }
+
+    .mil-hs-role-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-hs-role-grid .mil-hs-panel:first-child {
+        grid-row: span 2;
+    }
+
+    .mil-hs-ownership-list li {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(36, 36, 36, 0.68) !important;
+        line-height: 1.6;
+    }
+
+    .mil-hs-ownership-list span {
+        flex: 0 0 28px;
+        color: #ff4438 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-hs-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+    }
+
+    .mil-hs-stack span {
+        padding: 10px 13px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #242424 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+    }
+
+    .mil-hs-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        gap: 30px;
+    }
+
+    .mil-hs-stage-card--dark {
+        background: #202124 !important;
+        border-color: #202124;
+    }
+
+    .mil-hs-stage-card--dark h3,
+    .mil-hs-stage-card--dark p,
+    .mil-hs-stage-card--dark strong,
+    .mil-hs-stage-card--dark span {
+        color: #ffffff !important;
+    }
+
+    .mil-hs-stage-card--dark p {
+        color: rgba(255, 255, 255, 0.66) !important;
+    }
+
+    .mil-hs-stage-progress {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .mil-hs-stage-progress div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-hs-stage-progress span {
+        color: rgba(255, 255, 255, 0.58) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-hs-stage-progress strong {
+        font-size: 13px;
+    }
+
+    .mil-hs-cta {
+        max-width: 900px;
+        margin: 10px auto 60px;
+        text-align: center;
+    }
+
+    .mil-hs-cta p {
+        max-width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .mil-hs-cta-actions {
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .mil-hs-meta-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-hs-meta-item:nth-child(3) {
+            padding-left: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-hs-meta-item:nth-child(4) {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .mil-hs-split,
+        .mil-hs-stage {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-hs-workflow-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-hs-decision-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-hs-decision-card {
+            min-height: 0;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .mil-hs-feature-grid,
+        .mil-hs-role-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-hs-role-grid .mil-hs-panel:first-child {
+            grid-row: auto;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .mil-hs-workflow {
+            padding: 26px;
+        }
+
+        .mil-hs-workflow-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-hs-pipeline-row {
+            grid-template-columns: 48px minmax(0, 1fr);
+        }
+
+        .mil-hs-pipeline-row > span:last-child {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-hs-hero h1 {
+            font-size: 55px;
+        }
+
+        .mil-hs-hero-lead {
+            font-size: 16px;
+        }
+
+        .mil-hs-meta-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-hs-meta-item,
+        .mil-hs-meta-item + .mil-hs-meta-item,
+        .mil-hs-meta-item:nth-child(3),
+        .mil-hs-meta-item:nth-child(4) {
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-hs-meta-item:first-child {
+            border-top: 0;
+        }
+
+        .mil-hs-summary-card,
+        .mil-hs-panel,
+        .mil-hs-feature-card,
+        .mil-hs-decision-card,
+        .mil-hs-stage-card {
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .mil-hs-feature-card {
+            min-height: 0;
+        }
+
+        .mil-hs-feature-number,
+        .mil-hs-decision-label {
+            margin-bottom: 30px;
+        }
+
+        .mil-hs-shot,
+        .mil-hs-workflow,
+        .mil-hs-pipeline {
+            border-radius: 16px;
+        }
+
+        .mil-hs-workflow,
+        .mil-hs-pipeline {
+            padding: 18px;
+        }
+
+        .mil-hs-actions,
+        .mil-hs-card-actions,
+        .mil-hs-cta-actions {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+</style>
+
+
+
+</head>
+
+<body>
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- preloader -->
+        <div class="mil-preloader-frame">
+            <div class="mil-preloader-content" style="transform: scale(.6) translateY(200px); opacity: 0;">
+                <div class="mil-preloader">
+                    <div class="mil-circ-1"></div>
+                    <div class="mil-circ-2"></div>
+                    <div class="mil-circ-3"></div>
+                    <div class="mil-circ-4"></div>
+                </div>
+                <div class="mil-upper">Loading</div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+        <div class="mil-frame">
+
+            <!-- top bar -->
+            <div class="mil-top-panel">
+
+                <!-- You need to remove the "mil-dot" class if you don't need a dot -->
+                <a href="index.html" class="mil-logo" data-no-swup><span class="mil-dot">C</span></a>
+
+                <div class="mil-navigation">
+                    <nav id="swupMenu" class="mil-menu-transition">
+                        <ul>
+                            <li>
+                                <a href="index.html" data-no-swup>Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html" data-no-swup>About</a>
+                            </li>
+                            <li>
+                                <a href="tools.html" data-no-swup>Tools</a>
+                            </li>
+                            <li class="mil-has-children mil-active">
+                                <a href="projects.html" data-no-swup>Projects</a>
+
+                                <ul>
+                                    <li>
+                                        <a href="applications.html" data-no-swup>
+                                            Software Products
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="websites.html" data-no-swup>
+                                            Websites
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html" data-no-swup>Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="mil-top-panel-btns">
+                    <a href="contact.html" class="mil-contact-btn" data-no-swup>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- top bar end -->
+
+            <!-- left bar -->
+            <div class="mil-left-panel">
+
+                <div class="mil-page-name mil-upper mil-dark">CASE STUDY · HOOKSCRIBE</div>
+
+                <ul class="mil-social-icons">
+                    <li>
+                        <a href="https://github.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>Instagram</title>
+                                <path
+                                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.959 45.959"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489
+			c0.96-0.935,1.489-2.224,1.488-3.653C10.659,2.589,8.464,0.492,5.392,0.492z M7.847,7.811C7.227,8.414,6.34,8.733,5.284,8.733
+			C3.351,8.733,2,7.451,2,5.614c0-1.867,1.363-3.122,3.392-3.122c1.983,0,3.293,1.235,3.338,3.123
+			C8.729,6.477,8.416,7.256,7.847,7.811z" />
+                                        <path
+                                            d="M0.959,45.467h8.988V12.422H0.959V45.467z M2.959,14.422h4.988v29.044H2.959V14.422z" />
+                                        <path d="M33.648,12.422c-4.168,0-6.72,1.439-8.198,2.792l-0.281-2.792H15v33.044h9.959V28.099c0-0.748,0.303-2.301,0.493-2.711
+			c1.203-2.591,2.826-2.591,5.284-2.591c2.831,0,5.223,2.655,5.223,5.797v16.874h10v-18.67
+			C45.959,16.92,39.577,12.422,33.648,12.422z M43.959,43.467h-6V28.593c0-4.227-3.308-7.797-7.223-7.797
+			c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473
+			c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><i class="far fa-circle"></i></li>
+                </ul>
+
+            </div>
+            <!-- left bar end -->
+
+            <!-- back to top -->
+            <div class="mil-back-to-top">
+                <a href="#top" class="mil-link mil-btt-icon" data-no-swup>
+                    <span>Back to top</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-arrow-right">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <!-- back to top end -->
+
+        </div>
+
+        <!-- content -->
+        <div class="mil-content">
+
+            <div class="mil-scroll-wrapper transition-fade" id="swupMain">
+                <div class="mil-container">
+                    <!-- HookScribe hero -->
+                    <section class="mil-hs-hero mil-p-90-60">
+
+                        <p class="mil-upper mil-dark mil-up mil-mb-30">
+                            Private Product · Functional MVP · AI Media Workflow
+                        </p>
+
+                        <h1 class="mil-up mil-mb-30">
+                            HookScribe
+                        </h1>
+
+                        <p class="mil-hs-hero-lead mil-up mil-mb-30">
+                            A focused Ruby on Rails application that turns uploaded audio and video into
+                            transcripts, campaign hooks, advertising angles and structured copy—inside one
+                            reusable workflow instead of scattered files, repeated playback and one-off chats.
+                        </p>
+
+                        <div class="mil-hs-actions mil-up">
+                            <a href="applications.html" class="mil-btn mil-sm-btn" data-no-swup>
+                                View Software Products
+                            </a>
+
+                            <a
+                                href="https://hookscribe.carywood.co"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="mil-hs-text-link"
+                            >
+                                Visit Private Tool
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+
+                    </section>
+                    <!-- HookScribe hero end -->
+
+
+                    <!-- product metadata -->
+                    <div class="mil-hs-meta-grid mil-up mil-mb-90">
+
+                        <div class="mil-hs-meta-item">
+                            <span class="mil-hs-meta-label">My Role</span>
+                            <strong>Product strategy, workflow design, UX and Rails development</strong>
+                        </div>
+
+                        <div class="mil-hs-meta-item">
+                            <span class="mil-hs-meta-label">Product Model</span>
+                            <strong>Private, authenticated media-processing workspace</strong>
+                        </div>
+
+                        <div class="mil-hs-meta-item">
+                            <span class="mil-hs-meta-label">Core Stack</span>
+                            <strong>Rails, PostgreSQL, Active Storage, FFmpeg and OpenAI</strong>
+                        </div>
+
+                        <div class="mil-hs-meta-item">
+                            <span class="mil-hs-meta-label">Current Stage</span>
+                            <strong>Functional private MVP ready for continued productisation</strong>
+                        </div>
+
+                    </div>
+                    <!-- product metadata end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>The Product</h3>
+                    </div>
+
+
+                    <!-- overview -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-hs-split">
+
+                            <div class="mil-hs-copy">
+
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    The Problem
+                                </p>
+
+                                <h2 class="mil-up mil-mb-30">
+                                    Useful campaign ideas were trapped inside repetitive media work.
+                                </h2>
+
+                                <p class="mil-up mil-mb-30">
+                                    Producing advertising content from interviews, testimonials and raw campaign
+                                    footage often meant replaying the same media, manually transcribing it,
+                                    copying fragments into documents and asking separate tools to generate hooks
+                                    or ad copy without preserving the source workflow.
+                                </p>
+
+                                <p class="mil-up">
+                                    HookScribe turns that repeated process into a product. Each upload becomes a
+                                    persistent request with its source media, processing state, transcript and
+                                    reusable campaign outputs kept together in one private workspace.
+                                </p>
+
+                            </div>
+
+                            <aside class="mil-hs-summary-card mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Product Objective
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    Move from raw media to usable campaign material without losing context.
+                                </h4>
+
+                                <ul class="mil-hs-summary-list">
+                                    <li>Accept real audio and video files through one controlled workflow.</li>
+                                    <li>Keep source media, transcript and generated outputs together.</li>
+                                    <li>Reduce repeated playback, copying and context switching.</li>
+                                    <li>Make useful hooks and copy easy to review, save and reuse.</li>
+                                </ul>
+
+                            </aside>
+
+                        </div>
+
+                    </section>
+                    <!-- overview end -->
+
+
+                    <!-- primary product image -->
+                    <figure class="mil-hs-shot mil-up mil-mb-90">
+                        <div class="mil-hs-shot-frame">
+                            <img
+                                src="img/hookscribe-product-preview.png"
+                                alt="HookScribe private Rails application showing its media transcription and advertising-content workflow"
+                                loading="eager"
+                                decoding="async"
+                            >
+                        </div>
+                        <figcaption>
+                            HookScribe keeps the upload, transcript and campaign-generation workflow inside one
+                            focused interface built for repeated internal use.
+                        </figcaption>
+                    </figure>
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Product Workflow</h3>
+                    </div>
+
+
+                    <!-- workflow -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-hs-copy mil-mb-60">
+                            <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                From Media to Campaign Material
+                            </p>
+
+                            <h2 class="mil-up mil-mb-30">
+                                One request carries the work from upload through reusable output.
+                            </h2>
+
+                            <p class="mil-up">
+                                The workflow is intentionally linear. Each stage has a clear responsibility,
+                                reducing the chance of losing the source, duplicating work or separating the
+                                generated content from the media that created it.
+                            </p>
+                        </div>
+
+                        <div class="mil-hs-workflow mil-up">
+                            <div class="mil-hs-workflow-grid">
+
+                                <article class="mil-hs-workflow-step">
+                                    <span>01</span>
+                                    <h4>Upload Media</h4>
+                                    <p>Choose a supported audio or video file and create a persistent transcript request.</p>
+                                </article>
+
+                                <article class="mil-hs-workflow-step">
+                                    <span>02</span>
+                                    <h4>Validate &amp; Store</h4>
+                                    <p>Confirm file type and size, then attach the source securely through Active Storage.</p>
+                                </article>
+
+                                <article class="mil-hs-workflow-step">
+                                    <span>03</span>
+                                    <h4>Prepare Audio</h4>
+                                    <p>Use FFmpeg where needed to produce an audio source suitable for transcription.</p>
+                                </article>
+
+                                <article class="mil-hs-workflow-step">
+                                    <span>04</span>
+                                    <h4>Generate Transcript</h4>
+                                    <p>Convert spoken material into editable text while preserving the original request context.</p>
+                                </article>
+
+                                <article class="mil-hs-workflow-step">
+                                    <span>05</span>
+                                    <h4>Create Campaign Outputs</h4>
+                                    <p>Turn the transcript into hooks, angles and structured advertising copy using OpenAI.</p>
+                                </article>
+
+                                <article class="mil-hs-workflow-step">
+                                    <span>06</span>
+                                    <h4>Review &amp; Reuse</h4>
+                                    <p>Keep outputs available for copying, refining, campaign planning and later reference.</p>
+                                </article>
+
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- workflow end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>What I Built</h3>
+                    </div>
+
+
+                    <!-- feature system -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-hs-feature-grid">
+
+                            <article class="mil-hs-feature-card mil-up">
+                                <p class="mil-hs-feature-number">01 · ACCESS</p>
+                                <h4>Private Authentication</h4>
+                                <p>
+                                    A Devise-backed login-only product with no unnecessary public signup or
+                                    multi-tenant complexity for an internal workflow.
+                                </p>
+                                <ul class="mil-hs-feature-list">
+                                    <li>Authenticated access</li>
+                                    <li>Private request history</li>
+                                    <li>Controlled internal product scope</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-hs-feature-card mil-up">
+                                <p class="mil-hs-feature-number">02 · MEDIA</p>
+                                <h4>Audio &amp; Video Uploads</h4>
+                                <p>
+                                    Active Storage attachments with supported-media validation and a practical
+                                    250 MB limit for real campaign files.
+                                </p>
+                                <ul class="mil-hs-feature-list">
+                                    <li>Audio and video validation</li>
+                                    <li>Source-file persistence</li>
+                                    <li>Clear validation feedback</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-hs-feature-card mil-up">
+                                <p class="mil-hs-feature-number">03 · PROCESSING</p>
+                                <h4>FFmpeg Media Preparation</h4>
+                                <p>
+                                    A server-side processing step that can prepare uploaded video for
+                                    transcription without asking the user to convert files manually.
+                                </p>
+                                <ul class="mil-hs-feature-list">
+                                    <li>Video-to-audio preparation</li>
+                                    <li>External command integration</li>
+                                    <li>Failure-aware processing flow</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-hs-feature-card mil-up">
+                                <p class="mil-hs-feature-number">04 · TRANSCRIPTION</p>
+                                <h4>Persistent Transcript Requests</h4>
+                                <p>
+                                    A dedicated record tracks the uploaded media, transcript workflow and
+                                    results rather than treating the output as disposable text.
+                                </p>
+                                <ul class="mil-hs-feature-list">
+                                    <li>Saved request history</li>
+                                    <li>Source and output association</li>
+                                    <li>Delete and workflow controls</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-hs-feature-card mil-up">
+                                <p class="mil-hs-feature-number">05 · AI OUTPUTS</p>
+                                <h4>Hooks, Angles &amp; Ad Copy</h4>
+                                <p>
+                                    OpenAI-backed actions transform the transcript into structured campaign
+                                    material designed for practical advertising use.
+                                </p>
+                                <ul class="mil-hs-feature-list">
+                                    <li>Campaign hooks</li>
+                                    <li>Advertising angles</li>
+                                    <li>Structured copy outputs</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-hs-feature-card mil-up">
+                                <p class="mil-hs-feature-number">06 · PRODUCT EXPERIENCE</p>
+                                <h4>Review, Copy &amp; Reuse</h4>
+                                <p>
+                                    A focused interface with workflow context, advanced actions and Stimulus
+                                    clipboard controls for moving useful outputs into active campaign work.
+                                </p>
+                                <ul class="mil-hs-feature-list">
+                                    <li>Stimulus clipboard actions</li>
+                                    <li>Clear request workflow panel</li>
+                                    <li>Reusable generated material</li>
+                                </ul>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- feature system end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Processing Architecture</h3>
+                    </div>
+
+
+                    <!-- processing architecture -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-hs-split mil-mb-60">
+
+                            <div class="mil-hs-copy">
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    A Product Pipeline, Not a Prompt Box
+                                </p>
+
+                                <h2 class="mil-up mil-mb-30">
+                                    The application coordinates storage, media processing and AI services.
+                                </h2>
+
+                                <p class="mil-up">
+                                    HookScribe is useful because it manages the work around the model call:
+                                    authentication, validation, file storage, media preparation, persistent
+                                    records, output presentation and recovery from invalid input. AI is one
+                                    service inside the product rather than the product’s entire architecture.
+                                </p>
+                            </div>
+
+                            <aside class="mil-hs-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Engineering Boundary</p>
+                                <h4 class="mil-mb-20">Keep each stage independently understandable.</h4>
+                                <p>
+                                    Upload handling, FFmpeg preparation, transcription and content generation
+                                    have different failure modes. Keeping those responsibilities distinct makes
+                                    the workflow easier to test, diagnose and move into background processing
+                                    as usage grows.
+                                </p>
+                            </aside>
+
+                        </div>
+
+                        <div class="mil-hs-pipeline mil-up">
+
+                            <div class="mil-hs-pipeline-row">
+                                <span>01</span>
+                                <div>
+                                    <h4>Rails Request Layer</h4>
+                                    <p>Authentication, validation, record creation and workflow actions.</p>
+                                </div>
+                                <span>Application</span>
+                            </div>
+
+                            <div class="mil-hs-pipeline-row">
+                                <span>02</span>
+                                <div>
+                                    <h4>Active Storage</h4>
+                                    <p>Persistent attachment of the original audio or video source.</p>
+                                </div>
+                                <span>Storage</span>
+                            </div>
+
+                            <div class="mil-hs-pipeline-row">
+                                <span>03</span>
+                                <div>
+                                    <h4>FFmpeg</h4>
+                                    <p>Media preparation and audio extraction for supported video uploads.</p>
+                                </div>
+                                <span>Processing</span>
+                            </div>
+
+                            <div class="mil-hs-pipeline-row">
+                                <span>04</span>
+                                <div>
+                                    <h4>OpenAI Services</h4>
+                                    <p>Transcription and structured generation from the stored request context.</p>
+                                </div>
+                                <span>AI</span>
+                            </div>
+
+                            <div class="mil-hs-pipeline-row">
+                                <span>05</span>
+                                <div>
+                                    <h4>Saved Product Output</h4>
+                                    <p>Transcript, hooks and copy remain connected to the request for reuse.</p>
+                                </div>
+                                <span>Workspace</span>
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <!-- processing architecture end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Key Product Decisions</h3>
+                    </div>
+
+
+                    <!-- decisions -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-hs-decision-grid">
+
+                            <article class="mil-hs-decision-card mil-up">
+                                <span class="mil-hs-decision-label">Decision 01</span>
+                                <h4 class="mil-mb-20">Keep the first version private.</h4>
+                                <p>
+                                    The MVP solves a real internal workflow without adding public onboarding,
+                                    subscriptions, teams or permissions before the core processing experience
+                                    has earned that complexity.
+                                </p>
+                            </article>
+
+                            <article class="mil-hs-decision-card mil-up">
+                                <span class="mil-hs-decision-label">Decision 02</span>
+                                <h4 class="mil-mb-20">Store the workflow, not only the answer.</h4>
+                                <p>
+                                    A transcript request preserves the source media and generated material so
+                                    useful campaign work is not lost inside a temporary chat response.
+                                </p>
+                            </article>
+
+                            <article class="mil-hs-decision-card mil-up">
+                                <span class="mil-hs-decision-label">Decision 03</span>
+                                <h4 class="mil-mb-20">Use AI for structured assistance.</h4>
+                                <p>
+                                    Generated hooks and copy support the campaign workflow, while the product
+                                    keeps review, selection and final judgment in the user’s hands.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- decisions end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>My Role &amp; Engineering Approach</h3>
+                    </div>
+
+
+                    <!-- role and engineering -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-hs-role-grid">
+
+                            <article class="mil-hs-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">End-to-End Ownership</p>
+                                <h3 class="mil-mb-20">I turned a repeated marketing task into a focused product.</h3>
+                                <p>
+                                    The workflow came from direct experience producing paid-advertising
+                                    campaigns. I defined the product boundary, modelled the request lifecycle,
+                                    built the Rails application and shaped the interface around the work that
+                                    actually needed to happen.
+                                </p>
+
+                                <ul class="mil-hs-ownership-list">
+                                    <li><span>01</span> Product problem, workflow and MVP scope</li>
+                                    <li><span>02</span> Rails models, validations, controllers and views</li>
+                                    <li><span>03</span> Authentication and private-access decisions</li>
+                                    <li><span>04</span> Active Storage, FFmpeg and OpenAI integration</li>
+                                    <li><span>05</span> Interface design, clipboard actions and browser checks</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-hs-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Technology</p>
+                                <h4 class="mil-mb-20">A focused Rails product with practical integrations.</h4>
+                                <p>
+                                    The stack stays conventional while using the right external tools for media
+                                    handling and AI-assisted content generation.
+                                </p>
+
+                                <div class="mil-hs-stack">
+                                    <span>Ruby on Rails</span>
+                                    <span>PostgreSQL</span>
+                                    <span>Active Storage</span>
+                                    <span>Devise</span>
+                                    <span>Stimulus</span>
+                                    <span>FFmpeg</span>
+                                    <span>OpenAI APIs</span>
+                                    <span>Minitest</span>
+                                </div>
+                            </article>
+
+                            <article class="mil-hs-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Development Practice</p>
+                                <h4 class="mil-mb-20">Build the complete workflow before expanding the market.</h4>
+                                <p>
+                                    The MVP prioritised a reliable end-to-end path—authentication, upload,
+                                    processing, output and reuse—before introducing broader SaaS features that
+                                    would not improve the core job.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- role and engineering end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Current Stage</h3>
+                    </div>
+
+
+                    <!-- current stage -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-hs-stage">
+
+                            <article class="mil-hs-stage-card mil-hs-stage-card--dark mil-up">
+                                <p class="mil-upper mil-mb-20">Private MVP · Functional Workflow</p>
+                                <h3 class="mil-mb-20">The product solves the original internal use case.</h3>
+                                <p>
+                                    HookScribe supports authenticated access, real media uploads, transcript
+                                    requests, advanced campaign actions and reusable outputs. It is intentionally
+                                    private while the workflow is used and refined.
+                                </p>
+
+                                <div class="mil-hs-stage-progress">
+                                    <div><span>Authentication</span><strong>Functional</strong></div>
+                                    <div><span>Media Uploads</span><strong>Functional</strong></div>
+                                    <div><span>Transcription Workflow</span><strong>Functional MVP</strong></div>
+                                    <div><span>Campaign Outputs</span><strong>Functional MVP</strong></div>
+                                </div>
+                            </article>
+
+                            <article class="mil-hs-stage-card mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Direction</p>
+                                <h4 class="mil-mb-20">Productise further only when usage justifies it.</h4>
+                                <p>
+                                    Future development could add background processing, richer output templates,
+                                    team workspaces, usage controls and public plans. Those additions should
+                                    follow real demand rather than turning a focused tool into premature SaaS.
+                                </p>
+
+                                <div class="mil-hs-card-actions">
+                                    <a
+                                        href="https://hookscribe.carywood.co"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="mil-btn mil-sm-btn"
+                                    >
+                                        Visit Private Tool
+                                    </a>
+                                </div>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- current stage end -->
+
+
+                    <div class="mil-divider mil-up mil-mb-90"></div>
+
+
+                    <!-- HookScribe CTA -->
+                    <section class="mil-hs-cta mil-up">
+
+                        <p class="mil-upper mil-dark mil-mb-20">
+                            Rails Development · Media Processing · AI Integration
+                        </p>
+
+                        <h2 class="mil-mb-30">
+                            HookScribe demonstrates how I turn a repeated workflow into focused, usable software.
+                        </h2>
+
+                        <p class="mil-mb-30">
+                            Explore the rest of my software and client work, review my development profile or
+                            start a conversation about practical products and workflow automation.
+                        </p>
+
+                        <div class="mil-hs-cta-actions">
+
+                            <a href="applications.html" class="mil-btn mil-sm-btn" data-no-swup>
+                                Explore Software Products
+                            </a>
+
+                            <a
+                                href="https://github.com/carywood7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="mil-hs-text-link"
+                            >
+                                View GitHub
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a href="contact.html" class="mil-hs-text-link" data-no-swup>
+                                Start a Conversation
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
+                    </section>
+                    <!-- HookScribe CTA end -->
+
+
+                    <footer class="mil-fw">
+                        <p class="mil-light-soft">
+                            © 2026 Cary Wood. Building software, tools and digital systems.
+                        </p>
+                    </footer>
+</div>
+
+            </div>
+
+            <div class="mil-right-banner" id="scene">
+                <!-- scrollbar -->
+                <div class="mil-progress-track">
+                    <div class="mil-progress"></div>
+                </div>
+                <!-- scrollbar end -->
+                <div class="mil-banner-wrapper" data-depth="1">
+                    <div id="swupBg" class="mil-banner-frame">
+                        <img src="img/person/bg-1.jpg" alt="background" class="mil-banner-bg mil-blur">
+                    </div>
+                </div>
+                <div class="mil-banner-wrapper" data-depth="0.2">
+                    <div id="swupPerson" class="mil-banner-frame">
+                        <img src="img/person/avtar.png" alt="person" class="mil-banner-person">
+                    </div>
+                </div>
+                <div class="mil-flying-skills" data-depth="0.1">
+                    <div id="swupSkills" class="mil-skills-frame">
+                        <!-- <div class="mil-item" style="top: 30%; left: 10%">
+                            <img src="img/logos/1.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 15%; left: 20%">
+                            <img src="img/logos/2.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 45%; right: 15%">
+                            <img src="img/logos/3.jpg" alt="logo">
+                        </div> -->
+                        <div class="mil-el mil-addition-el-1">+</div>
+                        <div class="mil-el mil-addition-el-2">+</div>
+                        <div class="mil-el mil-addition-el-3"></div>
+                        <div class="mil-el mil-addition-el-4"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- content -->
+    </div>
+    <!-- wrapper end -->
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swup body class plugin js -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- parallax js -->
+    <script src="js/plugins/parallax.js"></script>
+    <!-- courtney js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

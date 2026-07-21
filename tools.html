@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en" class="is-animating">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- courtney css -->
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <!-- page name -->
+    <title>Tools by Cary Wood | Software Products &amp; Utilities</title>
+<meta name="description" content="Explore tools built by Cary Wood, including LeadsTrackr and HookScribe—software products for CRM, automation, AI chatbots, media processing and campaign workflows.">
+
+
+<style>
+    /*
+    Tools product directory.
+    Move into the shared stylesheet during the final design-system pass.
+    */
+
+    .mil-tools-hero {
+        max-width: 1080px;
+    }
+
+    .mil-tools-hero h1 {
+        max-width: 980px;
+        font-size: clamp(58px, 8vw, 108px);
+        line-height: 0.92;
+    }
+
+    .mil-tools-hero-lead {
+        max-width: 850px;
+        font-size: 20px;
+        line-height: 1.75;
+    }
+
+    .mil-tools-summary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-bottom: 90px;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-tools-summary-item {
+        padding: 26px 26px 26px 0;
+    }
+
+    .mil-tools-summary-item + .mil-tools-summary-item {
+        padding-left: 26px;
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-tools-summary-item span {
+        display: block;
+        margin-bottom: 9px;
+        color: rgba(0, 0, 0, 0.48);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    .mil-tools-summary-item strong {
+        display: block;
+        color: #242424;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .mil-tools-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 38px;
+    }
+
+    .mil-tool-card {
+        display: flex;
+        overflow: hidden;
+        min-width: 0;
+        background: #f4f4f4 !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        color: #242424 !important;
+        flex-direction: column;
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease;
+    }
+
+    .mil-tool-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 30px 75px rgba(0, 0, 0, 0.13);
+    }
+
+    .mil-tool-card *,
+    .mil-tool-card h2,
+    .mil-tool-card h3,
+    .mil-tool-card h4 {
+        color: #242424;
+    }
+
+    .mil-tool-media {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+        background: #e8ebef;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .mil-tool-media > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.55s ease;
+    }
+
+    .mil-tool-card:hover .mil-tool-media > img {
+        transform: scale(1.025);
+    }
+
+    .mil-tool-media--leadstrackr {
+        padding: 24px;
+        background:
+            radial-gradient(circle at 85% 12%, rgba(255, 68, 56, 0.16), transparent 34%),
+            #e9edf3;
+    }
+
+    .mil-tool-media--leadstrackr > img {
+        height: calc(100% - 28px);
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+        object-fit: cover;
+    }
+
+    .mil-tool-media-secondary {
+        position: absolute;
+        right: 24px;
+        bottom: 20px;
+        width: 42%;
+        border: 5px solid #ffffff;
+        border-radius: 9px;
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.23);
+    }
+
+    .mil-tool-status {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        padding: 10px 13px;
+        background: #ffffff;
+        color: #242424 !important;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.35px;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    .mil-tool-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 36px;
+    }
+
+    .mil-tool-card-eyebrow {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 20px;
+        margin-bottom: 20px;
+    }
+
+    .mil-tool-card-eyebrow span {
+        color: rgba(0, 0, 0, 0.48) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+
+    .mil-tool-card h2 {
+        margin-bottom: 18px;
+    }
+
+    .mil-tool-card-copy {
+        margin-bottom: 26px;
+        color: rgba(36, 36, 36, 0.69) !important;
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .mil-tool-note {
+        margin-bottom: 26px;
+        padding: 16px 18px;
+        background: #ffffff;
+        border-left: 3px solid #ff4438;
+        color: rgba(36, 36, 36, 0.65) !important;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .mil-tool-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .mil-tool-tags span {
+        padding: 9px 11px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        color: #242424 !important;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+    }
+
+    .mil-tool-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 22px;
+        margin-top: auto;
+    }
+
+    .mil-tool-text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #242424 !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .mil-tool-text-link span {
+        display: inline-block;
+        transition: transform 0.25s ease;
+    }
+
+    .mil-tool-text-link:hover span {
+        transform: translate(3px, -3px);
+    }
+
+    .mil-tools-principles {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-tools-principle {
+        min-height: 270px;
+        padding: 34px;
+        background: #f4f4f4 !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        color: #242424 !important;
+    }
+
+    .mil-tools-principle * {
+        color: #242424;
+    }
+
+    .mil-tools-principle-number {
+        display: block;
+        margin-bottom: 48px;
+        color: #ff4438 !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+    }
+
+    .mil-tools-principle h4 {
+        margin-bottom: 16px;
+    }
+
+    .mil-tools-principle p {
+        color: rgba(36, 36, 36, 0.68) !important;
+        line-height: 1.7;
+    }
+
+    .mil-tools-future {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+        gap: 60px;
+        align-items: center;
+        padding: 58px;
+        background:
+            radial-gradient(circle at 88% 14%, rgba(255, 68, 56, 0.22), transparent 33%),
+            #202124;
+        border-radius: 24px;
+    }
+
+    .mil-tools-future h2,
+    .mil-tools-future h3,
+    .mil-tools-future p,
+    .mil-tools-future span,
+    .mil-tools-future strong {
+        color: #ffffff;
+    }
+
+    .mil-tools-future-copy > p:last-child {
+        max-width: 680px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.75;
+    }
+
+    .mil-tools-future-list {
+        display: grid;
+        gap: 12px;
+    }
+
+    .mil-tools-future-list div {
+        padding: 18px 20px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .mil-tools-future-list span {
+        display: block;
+        margin-bottom: 5px;
+        color: rgba(255, 255, 255, 0.46);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+    }
+
+    .mil-tools-future-list strong {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .mil-tools-cta {
+        max-width: 900px;
+        margin: 10px auto 60px;
+        text-align: center;
+    }
+
+    .mil-tools-cta p {
+        max-width: 710px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .mil-tools-cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .mil-tools-summary {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-tools-summary-item:nth-child(3) {
+            padding-left: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-tools-summary-item:nth-child(4) {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .mil-tools-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-tools-future {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .mil-tools-principles {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-tools-principle {
+            min-height: 0;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-tools-hero h1 {
+            font-size: 55px;
+        }
+
+        .mil-tools-hero-lead {
+            font-size: 16px;
+        }
+
+        .mil-tools-summary {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-tools-summary-item,
+        .mil-tools-summary-item + .mil-tools-summary-item,
+        .mil-tools-summary-item:nth-child(3),
+        .mil-tools-summary-item:nth-child(4) {
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-tools-summary-item:first-child {
+            border-top: 0;
+        }
+
+        .mil-tool-card {
+            border-radius: 17px;
+        }
+
+        .mil-tool-card-body {
+            padding: 25px;
+        }
+
+        .mil-tool-media--leadstrackr {
+            padding: 16px;
+        }
+
+        .mil-tool-media-secondary {
+            right: 14px;
+            bottom: 14px;
+            border-width: 3px;
+        }
+
+        .mil-tool-actions,
+        .mil-tools-cta-actions {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .mil-tool-actions .mil-btn,
+        .mil-tools-cta-actions .mil-btn {
+            width: 100%;
+        }
+
+        .mil-tools-principle {
+            padding: 25px;
+            border-radius: 16px;
+        }
+
+        .mil-tools-principle-number {
+            margin-bottom: 30px;
+        }
+
+        .mil-tools-future {
+            gap: 36px;
+            padding: 30px 24px;
+            border-radius: 17px;
+        }
+    }
+</style>
+
+
+</head>
+
+<body class="mil-fw-page mil-100-page">
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- preloader -->
+        <div class="mil-preloader-frame">
+            <div class="mil-preloader-content" style="transform: scale(.6) translateY(200px); opacity: 0;">
+                <div class="mil-preloader">
+                    <div class="mil-circ-1"></div>
+                    <div class="mil-circ-2"></div>
+                    <div class="mil-circ-3"></div>
+                    <div class="mil-circ-4"></div>
+                </div>
+                <div class="mil-upper">Loading</div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+        <div class="mil-frame">
+
+            <!-- top bar -->
+            <div class="mil-top-panel">
+
+                <!-- You need to remove the "mil-dot" class if you don't need a dot -->
+                <a href="index.html" class="mil-logo" data-no-swup><span class="mil-dot">C</span></a>
+
+                <div class="mil-navigation">
+                    <nav id="swupMenu" class="mil-menu-transition">
+                        <ul>
+                            <li>
+                                <a href="index.html" data-no-swup>Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html" data-no-swup>About</a>
+                            </li>
+                            <li class="mil-active">
+                                <a href="tools.html" data-no-swup>Tools</a>
+                            </li>
+                            <li class="mil-has-children">
+                                <a href="projects.html" data-no-swup>Projects</a>
+                                <ul>
+                                    <li>
+                                        <a href="applications.html" data-no-swup>Software Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="websites.html" data-no-swup>Websites</a>
+                                    </li>
+                                    <li>
+                                        <a href="funnels.html" data-no-swup>Funnels &amp; Landing Pages</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html" data-no-swup>Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="mil-top-panel-btns">
+                    <a href="contact.html" class="mil-contact-btn" data-no-swup>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- top bar end -->
+
+            <!-- left bar -->
+            <div class="mil-left-panel">
+
+                <div class="mil-page-name mil-upper mil-dark">TOOLS · PRODUCT DIRECTORY</div>
+
+                <ul class="mil-social-icons">
+                    <li>
+                        <a href="https://github.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>Instagram</title>
+                                <path
+                                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.959 45.959"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489
+			c0.96-0.935,1.489-2.224,1.488-3.653C10.659,2.589,8.464,0.492,5.392,0.492z M7.847,7.811C7.227,8.414,6.34,8.733,5.284,8.733
+			C3.351,8.733,2,7.451,2,5.614c0-1.867,1.363-3.122,3.392-3.122c1.983,0,3.293,1.235,3.338,3.123
+			C8.729,6.477,8.416,7.256,7.847,7.811z" />
+                                        <path
+                                            d="M0.959,45.467h8.988V12.422H0.959V45.467z M2.959,14.422h4.988v29.044H2.959V14.422z" />
+                                        <path d="M33.648,12.422c-4.168,0-6.72,1.439-8.198,2.792l-0.281-2.792H15v33.044h9.959V28.099c0-0.748,0.303-2.301,0.493-2.711
+			c1.203-2.591,2.826-2.591,5.284-2.591c2.831,0,5.223,2.655,5.223,5.797v16.874h10v-18.67
+			C45.959,16.92,39.577,12.422,33.648,12.422z M43.959,43.467h-6V28.593c0-4.227-3.308-7.797-7.223-7.797
+			c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473
+			c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><i class="far fa-circle"></i></li>
+                </ul>
+
+            </div>
+            <!-- left bar end -->
+
+            <!-- back to top -->
+            <div class="mil-back-to-top">
+                <a href="#top" class="mil-link mil-btt-icon">
+                    <span>Back to top</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-arrow-right">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <!-- back to top end -->
+
+        </div>
+
+        <!-- content -->
+        <div class="mil-content">
+
+            <div class="mil-scroll-wrapper transition-fade" id="swupMain">
+                <div class="mil-container-100">
+                    <!-- tools hero -->
+                    <section class="mil-tools-hero mil-p-90-60">
+
+                        <p class="mil-upper mil-dark mil-up mil-mb-30">
+                            Software Products · Focused Utilities · Active Development
+                        </p>
+
+                        <h1 class="mil-up mil-mb-30">
+                            Tools I’m building.
+                        </h1>
+
+                        <p class="mil-tools-hero-lead mil-up">
+                            Products designed around real operational work—from CRM and customer
+                            conversations to media processing, campaign production and automation.
+                            Each tool begins with a workflow worth improving, then earns complexity
+                            through practical use.
+                        </p>
+
+                    </section>
+                    <!-- tools hero end -->
+
+
+                    <!-- tools summary -->
+                    <div class="mil-tools-summary mil-up">
+
+                        <div class="mil-tools-summary-item">
+                            <span>Products Available</span>
+                            <strong>Two focused Rails products</strong>
+                        </div>
+
+                        <div class="mil-tools-summary-item">
+                            <span>Product Areas</span>
+                            <strong>CRM, automation, AI and campaign workflows</strong>
+                        </div>
+
+                        <div class="mil-tools-summary-item">
+                            <span>Development Model</span>
+                            <strong>Built from real operational problems</strong>
+                        </div>
+
+                        <div class="mil-tools-summary-item">
+                            <span>Directory Direction</span>
+                            <strong>More useful tools added over time</strong>
+                        </div>
+
+                    </div>
+                    <!-- tools summary end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Available Tools</h3>
+                    </div>
+
+
+                    <!-- tool directory -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-tools-grid">
+
+
+                            <!-- LeadsTrackr -->
+                            <article class="mil-tool-card mil-up">
+
+                                <div class="mil-tool-media mil-tool-media--leadstrackr">
+
+                                    <span class="mil-tool-status">
+                                        Marketing Site Live · App Deployment Pending
+                                    </span>
+
+                                    <img
+                                        src="img/leadstrackr-dashboard.png"
+                                        alt="LeadsTrackr CRM dashboard showing agency performance, pipelines and workspace activity"
+                                        loading="eager"
+                                        decoding="async"
+                                    >
+
+                                    <img
+                                        src="img/leadstrackr-website-builder.png"
+                                        alt=""
+                                        class="mil-tool-media-secondary"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+
+                                </div>
+
+                                <div class="mil-tool-card-body">
+
+                                    <div class="mil-tool-card-eyebrow">
+                                        <span>Flagship Product</span>
+                                        <span>Ruby on Rails</span>
+                                    </div>
+
+                                    <h2>LeadsTrackr</h2>
+
+                                    <p class="mil-tool-card-copy">
+                                        A multi-tenant CRM and growth platform for agencies and businesses,
+                                        connecting leads, pipelines, appointments, automations, websites,
+                                        AI chatbots and client operations inside one system.
+                                    </p>
+
+                                    <p class="mil-tool-note">
+                                        The product is functional and in active development. Its public Rails
+                                        application is awaiting production deployment; the LeadsTrackr marketing
+                                        website is available now.
+                                    </p>
+
+                                    <div class="mil-tool-tags">
+                                        <span>CRM</span>
+                                        <span>Automations</span>
+                                        <span>AI Chatbots</span>
+                                        <span>Sites Builder</span>
+                                        <span>Multi-Tenancy</span>
+                                    </div>
+
+                                    <div class="mil-tool-actions">
+
+                                        <a
+                                            href="https://leadstrackr.in"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="mil-btn mil-sm-btn"
+                                        >
+                                            Visit LeadsTrackr Website
+                                        </a>
+
+                                        <a
+                                            href="leadstrackr.html"
+                                            class="mil-tool-text-link"
+                                            data-no-swup
+                                        >
+                                            View Case Study
+                                            <span aria-hidden="true">→</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <!-- LeadsTrackr end -->
+
+
+                            <!-- HookScribe -->
+                            <article class="mil-tool-card mil-up">
+
+                                <div class="mil-tool-media">
+
+                                    <span class="mil-tool-status">
+                                        Private Tool · Functional MVP
+                                    </span>
+
+                                    <img
+                                        src="img/hookscribe-product-preview.png"
+                                        alt="HookScribe workspace showing a processed transcript and generated advertising content"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+
+                                </div>
+
+                                <div class="mil-tool-card-body">
+
+                                    <div class="mil-tool-card-eyebrow">
+                                        <span>Internal Production Tool</span>
+                                        <span>Rails · AI · FFmpeg</span>
+                                    </div>
+
+                                    <h2>HookScribe</h2>
+
+                                    <p class="mil-tool-card-copy">
+                                        A private Rails application that turns uploaded audio and video into
+                                        transcripts, campaign hooks, advertising angles and structured copy
+                                        through one reusable media-processing workflow.
+                                    </p>
+
+                                    <p class="mil-tool-note">
+                                        HookScribe is intentionally private. The functional MVP was built for
+                                        internal campaign production rather than broad public registration.
+                                    </p>
+
+                                    <div class="mil-tool-tags">
+                                        <span>Transcription</span>
+                                        <span>Media Processing</span>
+                                        <span>AI Ad Copy</span>
+                                        <span>Active Storage</span>
+                                        <span>FFmpeg</span>
+                                    </div>
+
+                                    <div class="mil-tool-actions">
+
+                                        <a
+                                            href="https://hookscribe.carywood.co"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="mil-btn mil-sm-btn"
+                                        >
+                                            Open Private Tool
+                                        </a>
+
+                                        <a
+                                            href="hookscribe.html"
+                                            class="mil-tool-text-link"
+                                            data-no-swup
+                                        >
+                                            View Case Study
+                                            <span aria-hidden="true">→</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <!-- HookScribe end -->
+
+
+                        </div>
+
+                    </section>
+                    <!-- tool directory end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>How I Choose What to Build</h3>
+                    </div>
+
+
+                    <!-- principles -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-tools-principles">
+
+                            <article class="mil-tools-principle mil-up">
+                                <span class="mil-tools-principle-number">01 · REPEATED WORK</span>
+                                <h4>Solve a workflow that keeps happening.</h4>
+                                <p>
+                                    Strong tool ideas usually begin with a task that consumes time,
+                                    creates repeated handoffs or forces people to work across disconnected systems.
+                                </p>
+                            </article>
+
+                            <article class="mil-tools-principle mil-up">
+                                <span class="mil-tools-principle-number">02 · FOCUSED PRODUCT</span>
+                                <h4>Build the complete useful path first.</h4>
+                                <p>
+                                    I prioritise the end-to-end job—data, interface, processing, output
+                                    and reliability—before adding complexity that does not improve the core work.
+                                </p>
+                            </article>
+
+                            <article class="mil-tools-principle mil-up">
+                                <span class="mil-tools-principle-number">03 · REAL USAGE</span>
+                                <h4>Let use determine what grows next.</h4>
+                                <p>
+                                    The first working version starts the feedback loop. Features, plans and
+                                    wider access should follow evidence rather than premature product expansion.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- principles end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>What’s Next</h3>
+                    </div>
+
+
+                    <!-- future tools -->
+                    <section class="mil-p-90-90">
+
+                        <div class="mil-tools-future mil-up">
+
+                            <div class="mil-tools-future-copy">
+
+                                <p class="mil-upper mil-mb-20">
+                                    More Tools in Development
+                                </p>
+
+                                <h2 class="mil-mb-30">
+                                    This directory will grow as new products become useful enough to share.
+                                </h2>
+
+                                <p>
+                                    I’m continuing to build focused software around growth operations,
+                                    customer communication, automation and practical AI workflows. New tools
+                                    will appear here when they are stable, purposeful and ready for real use—not
+                                    as empty placeholders.
+                                </p>
+
+                            </div>
+
+                            <div class="mil-tools-future-list">
+
+                                <div>
+                                    <span>Release Standard</span>
+                                    <strong>Useful before public</strong>
+                                </div>
+
+                                <div>
+                                    <span>Product Direction</span>
+                                    <strong>Workflow and automation tools</strong>
+                                </div>
+
+                                <div>
+                                    <span>Build Approach</span>
+                                    <strong>Focused Rails products</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <!-- future tools end -->
+
+
+                    <div class="mil-divider mil-up mil-mb-90"></div>
+
+
+                    <!-- tools CTA -->
+                    <section class="mil-tools-cta mil-up">
+
+                        <p class="mil-upper mil-dark mil-mb-20">
+                            Products · Case Studies · Client Work
+                        </p>
+
+                        <h2 class="mil-mb-30">
+                            Explore how the tools were built—or see the broader systems behind my work.
+                        </h2>
+
+                        <p class="mil-mb-30">
+                            The case studies document the product decisions and engineering behind each
+                            tool, while the Projects library includes websites, funnels and client systems.
+                        </p>
+
+                        <div class="mil-tools-cta-actions">
+
+                            <a
+                                href="applications.html"
+                                class="mil-btn mil-sm-btn"
+                                data-no-swup
+                            >
+                                View Software Case Studies
+                            </a>
+
+                            <a
+                                href="projects.html"
+                                class="mil-tool-text-link"
+                                data-no-swup
+                            >
+                                Explore All Projects
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
+                    </section>
+                    <!-- tools CTA end -->
+
+
+                    <footer class="mil-fw">
+                        <p class="mil-light-soft">
+                            © 2026 Cary Wood. Building software, tools and digital systems.
+                        </p>
+                    </footer>
+</div>
+            </div>
+
+            <div class="mil-right-banner" id="scene">
+                <!-- scrollbar -->
+                <div class="mil-progress-track">
+                    <div class="mil-progress"></div>
+                </div>
+                <!-- scrollbar end -->
+                <div class="mil-banner-wrapper" data-depth="1">
+                    <div id="swupBg" class="mil-banner-frame"></div>
+                </div>
+                <div class="mil-banner-wrapper" data-depth="0.2">
+                    <div id="swupPerson" class="mil-banner-frame"></div>
+                </div>
+                <div class="mil-flying-skills" data-depth="0.1">
+                    <div id="swupSkills" class="mil-skills-frame">
+                        <div class="mil-item" style="top: 30%; left: 10%">
+                            <img src="img/logos/1.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 15%; left: 20%">
+                            <img src="img/logos/2.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 45%; right: 15%">
+                            <img src="img/logos/3.jpg" alt="logo">
+                        </div>
+                        <div class="mil-el mil-addition-el-1">+</div>
+                        <div class="mil-el mil-addition-el-2">+</div>
+                        <div class="mil-el mil-addition-el-3"></div>
+                        <div class="mil-el mil-addition-el-4"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- content -->
+    </div>
+    <!-- wrapper end -->
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swup body class plugin js -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- parallax js -->
+    <script src="js/plugins/parallax.js"></script>
+    <!-- courtney js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

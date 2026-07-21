@@ -15,7 +15,7 @@ p.s. I am available for Freelance hire (UI design, web development). email: mill
     - main
     - typography
     - button
-    - link 
+    - link
     - divider
     - section title
     - spaces
@@ -3450,4 +3450,380 @@ html.is-animating .mil-menu-transition {
 html.is-animating .mil-menu-transition ul li.mil-active a:before {
   -webkit-transform: scale(0);
   transform: scale(0);
+}
+
+
+/* -------------------------------------------
+
+Software product case studies
+
+------------------------------------------- */
+
+.mil-apps-intro {
+  max-width: 900px;
+}
+
+.mil-apps-intro h1 {
+  max-width: 850px;
+}
+
+.mil-apps-intro > p:last-child {
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.mil-app-case {
+  padding: 10px 0 0;
+}
+
+.mil-app-case-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  gap: 70px;
+  align-items: start;
+}
+
+.mil-app-case-heading h2 {
+  font-size: clamp(46px, 6vw, 82px);
+  line-height: 0.95;
+}
+
+.mil-app-case-lead {
+  max-width: 720px;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.mil-app-case-summary {
+  padding: 32px;
+  background: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.mil-app-case-summary p:last-child {
+  margin-bottom: 0;
+}
+
+.mil-app-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mil-app-meta-item {
+  padding: 25px 25px 25px 0;
+}
+
+.mil-app-meta-item + .mil-app-meta-item {
+  padding-left: 25px;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mil-app-meta-label {
+  display: block;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.48);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.mil-app-meta-item strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mil-app-visual {
+  width: 100%;
+}
+
+.mil-app-visual--dual {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.65fr);
+  align-items: end;
+}
+
+.mil-app-shot {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.13);
+}
+
+.mil-app-shot--primary {
+  position: relative;
+  z-index: 1;
+}
+
+.mil-app-shot--secondary {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 42px;
+  margin-left: -90px;
+}
+
+.mil-app-shot-frame {
+  overflow: hidden;
+  background: #f5f7fa;
+}
+
+.mil-app-shot-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mil-app-shot figcaption {
+  min-height: 78px;
+  padding: 20px 24px;
+  background: #171717;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.mil-app-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.mil-app-panel {
+  padding: 36px;
+  background: #f6f6f6;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.mil-app-panel--wide {
+  grid-column: 1 / -1;
+}
+
+.mil-app-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.mil-app-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+}
+
+.mil-app-feature {
+  padding: 28px 30px 28px 0;
+}
+
+.mil-app-feature:nth-child(even) {
+  padding-right: 0;
+  padding-left: 30px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mil-app-feature:nth-child(n + 3) {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mil-app-feature h5 {
+  margin-bottom: 14px;
+}
+
+.mil-app-feature p {
+  margin: 0;
+}
+
+.mil-app-divider {
+  width: 100%;
+  height: 1px;
+  margin: 30px 0 110px;
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.mil-app-cta {
+  max-width: 850px;
+  margin: 20px auto 60px;
+  padding-top: 30px;
+}
+
+.mil-app-cta p {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .mil-app-case-header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .mil-app-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mil-app-meta-item:nth-child(3) {
+    padding-left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-left: 0;
+  }
+
+  .mil-app-meta-item:nth-child(4) {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .mil-app-visual--dual {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .mil-app-shot--secondary {
+    margin: 0;
+  }
+
+  .mil-app-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mil-app-panel--wide {
+    grid-column: auto;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .mil-apps-intro > p:last-child,
+  .mil-app-case-lead {
+    font-size: 16px;
+  }
+
+  .mil-app-case-heading h2 {
+    font-size: 44px;
+  }
+
+  .mil-app-case-summary,
+  .mil-app-panel {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .mil-app-meta-grid,
+  .mil-app-feature-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mil-app-meta-item,
+  .mil-app-meta-item + .mil-app-meta-item {
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-left: 0;
+  }
+
+  .mil-app-meta-item:first-child {
+    border-top: 0;
+  }
+
+  .mil-app-feature,
+  .mil-app-feature:nth-child(even),
+  .mil-app-feature:nth-child(n + 3) {
+    padding: 24px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 0;
+  }
+
+  .mil-app-feature:first-child {
+    border-top: 0;
+  }
+
+  .mil-app-shot {
+    border-radius: 16px;
+  }
+
+  .mil-app-shot figcaption {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .mil-app-divider {
+    margin-bottom: 80px;
+  }
+}
+
+/* -------------------------------------------
+
+Software case-study light-mode correction
+
+------------------------------------------- */
+
+.mil-app-case-summary {
+  background: #f4f4f4;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #242424;
+}
+
+.mil-app-case-summary p,
+.mil-app-case-summary h1,
+.mil-app-case-summary h2,
+.mil-app-case-summary h3,
+.mil-app-case-summary h4,
+.mil-app-case-summary h5,
+.mil-app-case-summary strong {
+  color: #242424;
+}
+
+.mil-app-case-summary .mil-upper {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.mil-app-panel {
+  background: #f4f4f4;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #242424;
+}
+
+.mil-app-panel p,
+.mil-app-panel h1,
+.mil-app-panel h2,
+.mil-app-panel h3,
+.mil-app-panel h4,
+.mil-app-panel h5,
+.mil-app-panel strong {
+  color: #242424;
+}
+
+.mil-app-panel .mil-upper {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.mil-app-feature:nth-child(even) {
+  border-left-color: rgba(0, 0, 0, 0.1);
+}
+
+.mil-app-feature:nth-child(n + 3) {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.mil-app-meta-grid {
+  border-top-color: rgba(0, 0, 0, 0.12);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+
+.mil-app-meta-item + .mil-app-meta-item {
+  border-left-color: rgba(0, 0, 0, 0.12);
+}
+
+.mil-app-meta-label {
+  color: rgba(0, 0, 0, 0.52);
+}
+
+.mil-app-meta-item strong {
+  color: #242424;
 }
