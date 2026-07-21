@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en" class="is-animating">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta
+        name="description"
+        content="Explore the LeadsTrackr case study: a multi-tenant Ruby on Rails CRM and growth platform designed for agencies, client sub-accounts, automation, pipelines and digital experiences."
+    >
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- courtney css -->
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <!-- page name -->
+    <title>LeadsTrackr Case Study | CRM &amp; Growth Platform by Cary Wood</title>
+
+    <!-- Place this script tag in the <head> of your website -->
+    <script src="https://app.leadstrackr.com/tracker.js?key=RhO0tmIfk6bvM1UJ1YOO648ZzmKXvlAQ" async></script>
+
+<style>
+    /*
+    LeadsTrackr product case study.
+    Move into the shared stylesheet during the final design-system pass.
+    */
+
+    .mil-lt-hero {
+        max-width: 1060px;
+    }
+
+    .mil-lt-hero h1 {
+        max-width: 980px;
+        font-size: clamp(58px, 8vw, 108px);
+        line-height: 0.92;
+    }
+
+    .mil-lt-hero-lead {
+        max-width: 860px;
+        font-size: 20px;
+        line-height: 1.75;
+    }
+
+    .mil-lt-actions,
+    .mil-lt-cta-actions,
+    .mil-lt-card-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .mil-lt-text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #242424 !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .mil-lt-text-link span {
+        display: inline-block;
+        transition: transform 0.25s ease;
+    }
+
+    .mil-lt-text-link:hover span {
+        transform: translate(3px, -3px);
+    }
+
+    .mil-lt-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-lt-meta-item {
+        padding: 26px 26px 26px 0;
+    }
+
+    .mil-lt-meta-item + .mil-lt-meta-item {
+        padding-left: 26px;
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-lt-meta-label {
+        display: block;
+        margin-bottom: 10px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.7px;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    .mil-lt-meta-item strong {
+        display: block;
+        color: #242424;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .mil-lt-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(310px, 0.85fr);
+        gap: 60px;
+        align-items: start;
+    }
+
+    .mil-lt-copy h2 {
+        max-width: 760px;
+    }
+
+    .mil-lt-copy p {
+        max-width: 740px;
+    }
+
+    .mil-lt-summary-card,
+    .mil-lt-panel,
+    .mil-lt-feature-card,
+    .mil-lt-decision-card,
+    .mil-lt-stage-card {
+        background: #f4f4f4 !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        color: #242424 !important;
+    }
+
+    .mil-lt-summary-card,
+    .mil-lt-panel,
+    .mil-lt-decision-card,
+    .mil-lt-stage-card {
+        padding: 34px;
+    }
+
+    .mil-lt-summary-card *,
+    .mil-lt-panel *,
+    .mil-lt-feature-card *,
+    .mil-lt-decision-card *,
+    .mil-lt-stage-card * {
+        color: #242424;
+    }
+
+    .mil-lt-summary-card p,
+    .mil-lt-panel p,
+    .mil-lt-feature-card p,
+    .mil-lt-decision-card p,
+    .mil-lt-stage-card p {
+        color: rgba(36, 36, 36, 0.68) !important;
+    }
+
+    .mil-lt-summary-list {
+        margin: 26px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mil-lt-summary-list li {
+        position: relative;
+        padding: 16px 0 16px 24px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(36, 36, 36, 0.72);
+        line-height: 1.65;
+    }
+
+    .mil-lt-summary-list li::before {
+        position: absolute;
+        top: 23px;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        background: #ff4438;
+        border-radius: 50%;
+        content: "";
+    }
+
+    .mil-lt-shot {
+        margin: 0;
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.14);
+        border-radius: 22px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.13);
+    }
+
+    .mil-lt-shot-frame {
+        overflow: hidden;
+        background: #f5f7fa;
+    }
+
+    .mil-lt-shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .mil-lt-shot figcaption {
+        padding: 20px 24px;
+        background: #171717;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .mil-lt-architecture {
+        padding: 42px;
+        background:
+            radial-gradient(circle at 85% 12%, rgba(255, 68, 56, 0.2), transparent 32%),
+            #202124;
+        border-radius: 22px;
+    }
+
+    .mil-lt-architecture-flow {
+        display: grid;
+        gap: 14px;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .mil-lt-architecture-layer {
+        display: grid;
+        grid-template-columns: 60px minmax(0, 1fr) auto;
+        gap: 20px;
+        align-items: center;
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-lt-architecture-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        background: #ff4438;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-lt-architecture-layer h4,
+    .mil-lt-architecture-layer p,
+    .mil-lt-architecture-layer span {
+        color: #ffffff;
+    }
+
+    .mil-lt-architecture-layer h4 {
+        margin-bottom: 4px;
+    }
+
+    .mil-lt-architecture-layer p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .mil-lt-architecture-layer > span:last-child {
+        color: rgba(255, 255, 255, 0.46);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+    }
+
+    .mil-lt-architecture-connector {
+        width: 1px;
+        height: 15px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .mil-lt-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-lt-feature-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 280px;
+        padding: 34px;
+    }
+
+    .mil-lt-feature-number {
+        margin-bottom: 48px;
+        color: #ff4438 !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+    }
+
+    .mil-lt-feature-card h4 {
+        margin-bottom: 16px;
+    }
+
+    .mil-lt-feature-list {
+        margin: auto 0 0;
+        padding: 24px 0 0;
+        list-style: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .mil-lt-feature-list li {
+        padding: 5px 0;
+        color: rgba(36, 36, 36, 0.65) !important;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .mil-lt-visual-pair {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.65fr);
+        align-items: end;
+    }
+
+    .mil-lt-visual-pair .mil-lt-shot:first-child {
+        position: relative;
+        z-index: 1;
+    }
+
+    .mil-lt-visual-pair .mil-lt-shot:last-child {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 44px;
+        margin-left: -80px;
+    }
+
+    .mil-lt-decision-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-lt-decision-card {
+        min-height: 300px;
+    }
+
+    .mil-lt-decision-label {
+        display: block;
+        margin-bottom: 50px;
+        color: #ff4438 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+    }
+
+    .mil-lt-role-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-lt-role-grid .mil-lt-panel:first-child {
+        grid-row: span 2;
+    }
+
+    .mil-lt-ownership-list {
+        margin: 28px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mil-lt-ownership-list li {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(36, 36, 36, 0.68) !important;
+        line-height: 1.6;
+    }
+
+    .mil-lt-ownership-list span {
+        flex: 0 0 28px;
+        color: #ff4438 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-lt-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+    }
+
+    .mil-lt-stack span {
+        padding: 10px 13px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #242424 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+    }
+
+    .mil-lt-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        gap: 30px;
+    }
+
+    .mil-lt-stage-card--dark {
+        background: #202124 !important;
+        border-color: #202124;
+    }
+
+    .mil-lt-stage-card--dark h3,
+    .mil-lt-stage-card--dark p,
+    .mil-lt-stage-card--dark strong,
+    .mil-lt-stage-card--dark span {
+        color: #ffffff !important;
+    }
+
+    .mil-lt-stage-card--dark p {
+        color: rgba(255, 255, 255, 0.66) !important;
+    }
+
+    .mil-lt-stage-progress {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .mil-lt-stage-progress div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-lt-stage-progress span {
+        color: rgba(255, 255, 255, 0.58) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-lt-stage-progress strong {
+        font-size: 13px;
+    }
+
+    .mil-lt-cta {
+        max-width: 900px;
+        margin: 10px auto 60px;
+        text-align: center;
+    }
+
+    .mil-lt-cta p {
+        max-width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .mil-lt-cta-actions {
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .mil-lt-meta-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-lt-meta-item:nth-child(3) {
+            padding-left: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-lt-meta-item:nth-child(4) {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .mil-lt-split,
+        .mil-lt-stage {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lt-decision-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lt-decision-card {
+            min-height: 0;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .mil-lt-feature-grid,
+        .mil-lt-role-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lt-role-grid .mil-lt-panel:first-child {
+            grid-row: auto;
+        }
+
+        .mil-lt-visual-pair {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
+        }
+
+        .mil-lt-visual-pair .mil-lt-shot:last-child {
+            margin: 0;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .mil-lt-architecture {
+            padding: 26px;
+        }
+
+        .mil-lt-architecture-layer {
+            grid-template-columns: 48px minmax(0, 1fr);
+        }
+
+        .mil-lt-architecture-layer > span:last-child {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-lt-hero h1 {
+            font-size: 55px;
+        }
+
+        .mil-lt-hero-lead {
+            font-size: 16px;
+        }
+
+        .mil-lt-meta-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lt-meta-item,
+        .mil-lt-meta-item + .mil-lt-meta-item,
+        .mil-lt-meta-item:nth-child(3),
+        .mil-lt-meta-item:nth-child(4) {
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-lt-meta-item:first-child {
+            border-top: 0;
+        }
+
+        .mil-lt-summary-card,
+        .mil-lt-panel,
+        .mil-lt-feature-card,
+        .mil-lt-decision-card,
+        .mil-lt-stage-card {
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .mil-lt-feature-card {
+            min-height: 0;
+        }
+
+        .mil-lt-feature-number,
+        .mil-lt-decision-label {
+            margin-bottom: 30px;
+        }
+
+        .mil-lt-shot {
+            border-radius: 16px;
+        }
+
+        .mil-lt-architecture {
+            padding: 18px;
+            border-radius: 16px;
+        }
+
+        .mil-lt-architecture-layer {
+            gap: 12px;
+            padding: 16px;
+        }
+
+        .mil-lt-actions,
+        .mil-lt-card-actions,
+        .mil-lt-cta-actions {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+</style>
+
+
+</head>
+
+<body>
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- preloader -->
+        <div class="mil-preloader-frame">
+            <div class="mil-preloader-content" style="transform: scale(.6) translateY(200px); opacity: 0;">
+                <div class="mil-preloader">
+                    <div class="mil-circ-1"></div>
+                    <div class="mil-circ-2"></div>
+                    <div class="mil-circ-3"></div>
+                    <div class="mil-circ-4"></div>
+                </div>
+                <div class="mil-upper">Loading</div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+        <div class="mil-frame">
+
+            <!-- top bar -->
+            <div class="mil-top-panel">
+
+                <!-- You need to remove the "mil-dot" class if you don't need a dot -->
+                <a href="index.html" class="mil-logo" data-no-swup><span class="mil-dot">C</span></a>
+
+                <div class="mil-navigation">
+                    <nav id="swupMenu" class="mil-menu-transition">
+                        <ul>
+                            <li>
+                                <a href="index.html" data-no-swup>Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html" data-no-swup>About</a>
+                            </li>
+                            <li>
+                                <a href="index.html#skills" data-no-swup>Capabilities</a>
+                            </li>
+                            <li class="mil-has-children mil-active">
+                                <a href="projects.html" data-no-swup>Projects</a>
+                                <ul>
+                                    <li>
+                                        <a href="applications.html" data-no-swup>Software Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="websites.html" data-no-swup>Websites</a>
+                                    </li>
+                                    <li>
+                                        <a href="funnels.html" data-no-swup>Funnels &amp; Landing Pages</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="index.html#testimonials" data-no-swup>Results</a>
+                            </li>
+                            <li>
+                                <a href="index.html#contact" data-no-swup>Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="mil-top-panel-btns">
+                    <a href="index.html#contact" class="mil-contact-btn" data-no-swup>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- top bar end -->
+
+            <!-- left bar -->
+            <div class="mil-left-panel">
+
+                <div class="mil-page-name mil-upper mil-dark">CASE STUDY · LEADSTRACKR</div>
+
+                <ul class="mil-social-icons">
+                    <li>
+                        <a href="https://github.com/carywood7" target="_blank" class="social-icon">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>Instagram</title>
+                                <path
+                                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon">
+                            <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.959 45.959"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489
+			c0.96-0.935,1.489-2.224,1.488-3.653C10.659,2.589,8.464,0.492,5.392,0.492z M7.847,7.811C7.227,8.414,6.34,8.733,5.284,8.733
+			C3.351,8.733,2,7.451,2,5.614c0-1.867,1.363-3.122,3.392-3.122c1.983,0,3.293,1.235,3.338,3.123
+			C8.729,6.477,8.416,7.256,7.847,7.811z" />
+                                        <path
+                                            d="M0.959,45.467h8.988V12.422H0.959V45.467z M2.959,14.422h4.988v29.044H2.959V14.422z" />
+                                        <path d="M33.648,12.422c-4.168,0-6.72,1.439-8.198,2.792l-0.281-2.792H15v33.044h9.959V28.099c0-0.748,0.303-2.301,0.493-2.711
+			c1.203-2.591,2.826-2.591,5.284-2.591c2.831,0,5.223,2.655,5.223,5.797v16.874h10v-18.67
+			C45.959,16.92,39.577,12.422,33.648,12.422z M43.959,43.467h-6V28.593c0-4.227-3.308-7.797-7.223-7.797
+			c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473
+			c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><i class="far fa-circle"></i></li>
+                </ul>
+
+            </div>
+            <!-- left bar end -->
+
+            <!-- back to top -->
+            <div class="mil-back-to-top">
+                <a href="#top" class="mil-link mil-btt-icon" data-no-swup>
+                    <span>Back to top</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-arrow-right">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <!-- back to top end -->
+
+        </div>
+
+        <!-- content -->
+        <div class="mil-content">
+
+            <div class="mil-scroll-wrapper transition-fade" id="swupMain">
+                <div class="mil-container">
+
+                    <!-- LeadsTrackr hero -->
+                    <section class="mil-lt-hero mil-p-90-60">
+
+                        <p class="mil-upper mil-dark mil-up mil-mb-30">
+                            Flagship Product · Functional Platform · Active Development
+                        </p>
+
+                        <h1 class="mil-up mil-mb-30">
+                            LeadsTrackr
+                        </h1>
+
+                        <p class="mil-lt-hero-lead mil-up mil-mb-30">
+                            A multi-tenant CRM and growth platform designed for agencies and businesses
+                            that need one connected system for leads, pipelines, appointments,
+                            automation, websites and client operations.
+                        </p>
+
+                        <div class="mil-lt-actions mil-up">
+                            <a
+                                href="https://leadstrackr.in"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="mil-btn mil-sm-btn"
+                            >
+                                Visit LeadsTrackr
+                            </a>
+
+                            <a href="applications.html" class="mil-lt-text-link" data-no-swup>
+                                All Software Products
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+
+                    </section>
+                    <!-- LeadsTrackr hero end -->
+
+
+                    <!-- product metadata -->
+                    <div class="mil-lt-meta-grid mil-up mil-mb-90">
+
+                        <div class="mil-lt-meta-item">
+                            <span class="mil-lt-meta-label">My Role</span>
+                            <strong>Product strategy, architecture, UX and Rails development</strong>
+                        </div>
+
+                        <div class="mil-lt-meta-item">
+                            <span class="mil-lt-meta-label">Product Model</span>
+                            <strong>Platform → Agencies → Client sub-accounts</strong>
+                        </div>
+
+                        <div class="mil-lt-meta-item">
+                            <span class="mil-lt-meta-label">Core Stack</span>
+                            <strong>Ruby on Rails, PostgreSQL, Hotwire and Stimulus</strong>
+                        </div>
+
+                        <div class="mil-lt-meta-item">
+                            <span class="mil-lt-meta-label">Current Stage</span>
+                            <strong>Functional platform in active development</strong>
+                        </div>
+
+                    </div>
+                    <!-- product metadata end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>The Product</h3>
+                    </div>
+
+
+                    <!-- overview -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lt-split">
+
+                            <div class="mil-lt-copy">
+
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    The Problem
+                                </p>
+
+                                <h2 class="mil-up mil-mb-30">
+                                    Agencies operate across disconnected tools, accounts and handoffs.
+                                </h2>
+
+                                <p class="mil-up mil-mb-30">
+                                    Lead capture, opportunity management, appointments, client access,
+                                    websites, forms and follow-up often live in separate systems. That
+                                    fragmentation creates duplicated work, unclear ownership and weak
+                                    visibility across the customer journey.
+                                </p>
+
+                                <p class="mil-up">
+                                    LeadsTrackr is being built as an operating system for those connected
+                                    workflows—not simply another contact database. The product gives an
+                                    agency one platform while preserving clean boundaries between its own
+                                    team, each client workspace and LeadsTrackr’s platform administration.
+                                </p>
+
+                            </div>
+
+                            <aside class="mil-lt-summary-card mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Product Objective
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    Connect acquisition, sales and delivery without mixing account data.
+                                </h4>
+
+                                <ul class="mil-lt-summary-list">
+                                    <li>One agency can manage multiple client sub-accounts.</li>
+                                    <li>Each workspace keeps its customers, activities and permissions clear.</li>
+                                    <li>Platform administration remains separate from agency operations.</li>
+                                    <li>Public signup creates a usable agency foundation from day one.</li>
+                                </ul>
+
+                            </aside>
+
+                        </div>
+
+                    </section>
+                    <!-- overview end -->
+
+
+                    <!-- primary product image -->
+                    <figure class="mil-lt-shot mil-up mil-mb-90">
+                        <div class="mil-lt-shot-frame">
+                            <img
+                                src="img/leadstrackr-dashboard.png"
+                                alt="LeadsTrackr agency CRM dashboard showing workspace navigation, metrics, opportunities and activity"
+                                loading="eager"
+                                decoding="async"
+                            >
+                        </div>
+                        <figcaption>
+                            The agency dashboard brings performance, pipeline activity, appointments and
+                            operational changes into one workspace.
+                        </figcaption>
+                    </figure>
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Platform Architecture</h3>
+                    </div>
+
+
+                    <!-- architecture -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lt-split mil-mb-60">
+
+                            <div class="mil-lt-copy">
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    A Foundational Product Decision
+                                </p>
+                                <h2 class="mil-up mil-mb-30">
+                                    Multi-tenancy was designed before feature sprawl.
+                                </h2>
+                                <p class="mil-up">
+                                    The product uses three distinct operating layers. LeadsTrackr platform
+                                    staff administer the SaaS itself. Agencies manage their teams and
+                                    client portfolio. Sub-accounts isolate the day-to-day customer data
+                                    and workflows belonging to each client or business location.
+                                </p>
+                            </div>
+
+                            <div class="mil-lt-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Why This Matters</p>
+                                <h4 class="mil-mb-20">Permissions follow responsibility.</h4>
+                                <p>
+                                    Platform administration is not modelled as a special agency. That keeps
+                                    ownership, support access, billing responsibilities and future
+                                    capability-based permissions from leaking into customer workspaces.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="mil-lt-architecture mil-up">
+                            <div class="mil-lt-architecture-flow">
+
+                                <div class="mil-lt-architecture-layer">
+                                    <span class="mil-lt-architecture-number">01</span>
+                                    <div>
+                                        <h4>LeadsTrackr Platform</h4>
+                                        <p>Platform staff, agency oversight, support context and future commercial administration.</p>
+                                    </div>
+                                    <span>Platform Layer</span>
+                                </div>
+
+                                <div class="mil-lt-architecture-connector"></div>
+
+                                <div class="mil-lt-architecture-layer">
+                                    <span class="mil-lt-architecture-number">02</span>
+                                    <div>
+                                        <h4>Agency Accounts</h4>
+                                        <p>Agency owners, teams, shared operations, snapshots and access to multiple client workspaces.</p>
+                                    </div>
+                                    <span>Agency Layer</span>
+                                </div>
+
+                                <div class="mil-lt-architecture-connector"></div>
+
+                                <div class="mil-lt-architecture-layer">
+                                    <span class="mil-lt-architecture-number">03</span>
+                                    <div>
+                                        <h4>Client Sub-Accounts</h4>
+                                        <p>Isolated leads, pipelines, appointments, automations, forms, websites and customer activity.</p>
+                                    </div>
+                                    <span>Workspace Layer</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- architecture end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>What I Built</h3>
+                    </div>
+
+
+                    <!-- capability system -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lt-feature-grid">
+
+                            <article class="mil-lt-feature-card mil-up">
+                                <p class="mil-lt-feature-number">01 · ACCOUNT SYSTEM</p>
+                                <h4>Agency &amp; Workspace Architecture</h4>
+                                <p>
+                                    Agency accounts, client sub-accounts, owner memberships, scoped access,
+                                    workspace switching and a separate platform-administration context.
+                                </p>
+                                <ul class="mil-lt-feature-list">
+                                    <li>Agency and sub-account boundaries</li>
+                                    <li>Team memberships and access rules</li>
+                                    <li>Self-service agency onboarding</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lt-feature-card mil-up">
+                                <p class="mil-lt-feature-number">02 · CRM</p>
+                                <h4>Leads, Pipelines &amp; Operations</h4>
+                                <p>
+                                    Connected records for leads, opportunities, pipeline stages,
+                                    appointments, tasks, notes, activity and conversation history.
+                                </p>
+                                <ul class="mil-lt-feature-list">
+                                    <li>Lead and opportunity workflows</li>
+                                    <li>Appointments, tasks and notes</li>
+                                    <li>Operational activity timeline</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lt-feature-card mil-up">
+                                <p class="mil-lt-feature-number">03 · AUTOMATION</p>
+                                <h4>Visual Workflow Engine</h4>
+                                <p>
+                                    Trigger, wait, condition and action nodes with branching, execution
+                                    logs and the ability to test a workflow against a selected lead.
+                                </p>
+                                <ul class="mil-lt-feature-list">
+                                    <li>Yes/no conditional branches</li>
+                                    <li>Execution history and status</li>
+                                    <li>Lead-based workflow testing</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lt-feature-card mil-up">
+                                <p class="mil-lt-feature-number">04 · DIGITAL EXPERIENCES</p>
+                                <h4>Forms, Surveys, Funnels &amp; Websites</h4>
+                                <p>
+                                    A structural visual builder with sections, rows, columns and elements,
+                                    responsive controls, multi-page navigation and public publishing.
+                                </p>
+                                <ul class="mil-lt-feature-list">
+                                    <li>Reusable forms and surveys</li>
+                                    <li>Funnel and website builders</li>
+                                    <li>Public submissions and attribution</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lt-feature-card mil-up">
+                                <p class="mil-lt-feature-number">05 · PLATFORM</p>
+                                <h4>Administration &amp; Onboarding</h4>
+                                <p>
+                                    Public registration creates the user, agency, owner membership and
+                                    first sub-account while platform staff retain a separate oversight area.
+                                </p>
+                                <ul class="mil-lt-feature-list">
+                                    <li>Platform dashboard and agency directory</li>
+                                    <li>Agency context switching</li>
+                                    <li>Subscription-ready account foundation</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lt-feature-card mil-up">
+                                <p class="mil-lt-feature-number">06 · PRODUCT EXPERIENCE</p>
+                                <h4>Publishing, Accessibility &amp; Reliability</h4>
+                                <p>
+                                    Clean public URLs, canonical metadata, responsive inheritance,
+                                    publishing validation, accessibility improvements and regression tests.
+                                </p>
+                                <ul class="mil-lt-feature-list">
+                                    <li>Draft preview and published routes</li>
+                                    <li>Responsive design controls</li>
+                                    <li>Minitest regression coverage</li>
+                                </ul>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- capability system end -->
+
+
+                    <!-- builder visual pair -->
+                    <div class="mil-lt-visual-pair mil-mb-90">
+
+                        <figure class="mil-lt-shot mil-up">
+                            <div class="mil-lt-shot-frame">
+                                <img
+                                    src="img/leadstrackr-dashboard.png"
+                                    alt="LeadsTrackr CRM dashboard with agency navigation and operational metrics"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </div>
+                            <figcaption>
+                                The CRM and operations workspace connects account context with day-to-day activity.
+                            </figcaption>
+                        </figure>
+
+                        <figure class="mil-lt-shot mil-up">
+                            <div class="mil-lt-shot-frame">
+                                <img
+                                    src="img/leadstrackr-website-builder.png"
+                                    alt="LeadsTrackr visual website builder with page structure and responsive editing controls"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </div>
+                            <figcaption>
+                                The visual builder adds responsive pages and funnels to the same customer platform.
+                            </figcaption>
+                        </figure>
+
+                    </div>
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Key Product Decisions</h3>
+                    </div>
+
+
+                    <!-- decisions -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lt-decision-grid">
+
+                            <article class="mil-lt-decision-card mil-up">
+                                <span class="mil-lt-decision-label">Decision 01</span>
+                                <h4 class="mil-mb-20">Treat tenancy as product architecture.</h4>
+                                <p>
+                                    Account boundaries, membership and permissions were built into the
+                                    foundation so new modules do not have to retrofit customer isolation later.
+                                </p>
+                            </article>
+
+                            <article class="mil-lt-decision-card mil-up">
+                                <span class="mil-lt-decision-label">Decision 02</span>
+                                <h4 class="mil-mb-20">Build connected vertical slices.</h4>
+                                <p>
+                                    Each sprint moves one capability from data model to authorization,
+                                    interface, browser verification and automated tests before expanding scope.
+                                </p>
+                            </article>
+
+                            <article class="mil-lt-decision-card mil-up">
+                                <span class="mil-lt-decision-label">Decision 03</span>
+                                <h4 class="mil-mb-20">Keep platform oversight separate.</h4>
+                                <p>
+                                    LeadsTrackr’s own staff and permissions belong to the SaaS platform,
+                                    not inside a pretend agency account. This leaves room for support,
+                                    finance, sales and developer capabilities later.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- decisions end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>My Role &amp; Engineering Approach</h3>
+                    </div>
+
+
+                    <!-- role and engineering -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lt-role-grid">
+
+                            <article class="mil-lt-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">End-to-End Ownership</p>
+                                <h3 class="mil-mb-20">I designed the product and built the system.</h3>
+                                <p>
+                                    LeadsTrackr began from operational problems I already understood through
+                                    years of CRM, advertising, funnel and client-delivery work. I translated
+                                    those workflows into the product model, interface and Rails implementation.
+                                </p>
+
+                                <ul class="mil-lt-ownership-list">
+                                    <li><span>01</span> Product positioning, scope and feature priorities</li>
+                                    <li><span>02</span> Domain modelling and multi-tenant architecture</li>
+                                    <li><span>03</span> Rails controllers, services, authorization and views</li>
+                                    <li><span>04</span> Builder UX, responsive behaviour and public publishing</li>
+                                    <li><span>05</span> Automated tests, browser checks and Git checkpoints</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lt-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Technology</p>
+                                <h4 class="mil-mb-20">A conventional Rails foundation.</h4>
+                                <p>
+                                    The stack prioritizes maintainability, relational clarity and focused
+                                    JavaScript rather than unnecessary infrastructure complexity.
+                                </p>
+                                <div class="mil-lt-stack">
+                                    <span>Ruby 3.3.5</span>
+                                    <span>Rails 7.1.6</span>
+                                    <span>PostgreSQL</span>
+                                    <span>Hotwire</span>
+                                    <span>Stimulus</span>
+                                    <span>Active Storage</span>
+                                    <span>Minitest</span>
+                                </div>
+                            </article>
+
+                            <article class="mil-lt-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Development Practice</p>
+                                <h4 class="mil-mb-20">Safe batches over uncontrolled rewrites.</h4>
+                                <p>
+                                    Work is split into testable checkpoints. Each batch includes explicit
+                                    file changes, focused tests, browser validation, regression checks and
+                                    a clean commit before the next product decision.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- role and engineering end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Current Stage</h3>
+                    </div>
+
+
+                    <!-- current stage -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lt-stage">
+
+                            <article class="mil-lt-stage-card mil-lt-stage-card--dark mil-up">
+                                <p class="mil-upper mil-mb-20">Functional Platform · Active Development</p>
+                                <h3 class="mil-mb-20">The foundation is working; the product is still evolving.</h3>
+                                <p>
+                                    LeadsTrackr already contains a connected CRM, automation engine,
+                                    multi-tenant account structure and Sites platform. The current focus is
+                                    expanding platform capabilities without losing the boundaries and
+                                    reliability established in the foundation.
+                                </p>
+
+                                <div class="mil-lt-stage-progress">
+                                    <div><span>Core CRM</span><strong>Functional</strong></div>
+                                    <div><span>Automations</span><strong>Functional MVP</strong></div>
+                                    <div><span>Sites Platform</span><strong>Functional Builder</strong></div>
+                                    <div><span>Platform Administration</span><strong>Foundation Complete</strong></div>
+                                </div>
+                            </article>
+
+                            <article class="mil-lt-stage-card mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Direction</p>
+                                <h4 class="mil-mb-20">A platform ready to grow into commercial SaaS.</h4>
+                                <p>
+                                    Future work can build on the existing hierarchy with subscription plans,
+                                    deeper communications, reporting, integrations and operational tools for
+                                    LeadsTrackr’s own support and commercial teams.
+                                </p>
+                                <div class="mil-lt-card-actions">
+                                    <a
+                                        href="https://leadstrackr.in"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="mil-btn mil-sm-btn"
+                                    >
+                                        Visit LeadsTrackr
+                                    </a>
+                                </div>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- current stage end -->
+
+
+                    <div class="mil-divider mil-up mil-mb-90"></div>
+
+
+                    <!-- LeadsTrackr CTA -->
+                    <section class="mil-lt-cta mil-up">
+
+                        <p class="mil-upper mil-dark mil-mb-20">
+                            Product Strategy · Architecture · Rails Development
+                        </p>
+
+                        <h2 class="mil-mb-30">
+                            LeadsTrackr demonstrates how I turn operational knowledge into a connected software product.
+                        </h2>
+
+                        <p class="mil-mb-30">
+                            Explore the rest of my software and client work, review my development profile
+                            or start a conversation about product engineering and growth systems.
+                        </p>
+
+                        <div class="mil-lt-cta-actions">
+                            <a href="projects.html" class="mil-btn mil-sm-btn" data-no-swup>
+                                Explore All Projects
+                            </a>
+
+                            <a
+                                href="https://github.com/carywood7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="mil-lt-text-link"
+                            >
+                                View GitHub
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a href="index.html#contact" class="mil-lt-text-link" data-no-swup>
+                                Start a Conversation
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+
+                    </section>
+                    <!-- LeadsTrackr CTA end -->
+
+
+                    <footer class="mil-fw">
+                        <p class="mil-light-soft">
+                            © 2026 Cary Wood. Building software, tools and digital systems.
+                        </p>
+                    </footer>
+
+
+                </div>
+
+            </div>
+
+            <div class="mil-right-banner" id="scene">
+                <!-- scrollbar -->
+                <div class="mil-progress-track">
+                    <div class="mil-progress"></div>
+                </div>
+                <!-- scrollbar end -->
+                <div class="mil-banner-wrapper" data-depth="1">
+                    <div id="swupBg" class="mil-banner-frame">
+                        <img src="img/person/bg-1.jpg" alt="background" class="mil-banner-bg mil-blur">
+                    </div>
+                </div>
+                <div class="mil-banner-wrapper" data-depth="0.2">
+                    <div id="swupPerson" class="mil-banner-frame">
+                        <img src="img/person/avtar.png" alt="person" class="mil-banner-person">
+                    </div>
+                </div>
+                <div class="mil-flying-skills" data-depth="0.1">
+                    <div id="swupSkills" class="mil-skills-frame">
+                        <!-- <div class="mil-item" style="top: 30%; left: 10%">
+                            <img src="img/logos/1.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 15%; left: 20%">
+                            <img src="img/logos/2.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 45%; right: 15%">
+                            <img src="img/logos/3.jpg" alt="logo">
+                        </div> -->
+                        <div class="mil-el mil-addition-el-1">+</div>
+                        <div class="mil-el mil-addition-el-2">+</div>
+                        <div class="mil-el mil-addition-el-3"></div>
+                        <div class="mil-el mil-addition-el-4"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- content -->
+    </div>
+    <!-- wrapper end -->
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swup body class plugin js -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- parallax js -->
+    <script src="js/plugins/parallax.js"></script>
+    <!-- courtney js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
