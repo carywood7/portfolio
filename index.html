@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Cary Wood is a software developer and growth systems builder creating Ruby on Rails products, AI tools, websites, funnels and automation systems.">
+    <meta name="description" content="Cary Wood is a software developer and growth systems builder creating Ruby on Rails products including LeadsTrackr, LeadMath and HookScribe, plus websites, funnels and automation systems.">
 
     <!-- bootstrap grid css -->
     <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
@@ -310,6 +310,20 @@
     width: 100%;
 }
 
+#building .mil-product-card--flagship {
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#building .mil-product-card--flagship > p:not(.mil-upper) {
+    max-width: 780px;
+}
+
+#building .mil-product-card--secondary > p:not(.mil-upper) {
+    max-width: 530px;
+}
+
 #building .mil-product-actions {
     margin-top: auto;
 }
@@ -319,6 +333,15 @@
     align-items: center;
     justify-content: center;
     min-width: 310px;
+}
+
+@media screen and (max-width: 991px) {
+    #building .mil-product-card--flagship,
+    #building .mil-product-card--secondary {
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -558,90 +581,150 @@
                   </div>
 
                   <section id="building" class="mil-p-90-30">
-                      <div class="row justify-content-between">
+                        <div class="row justify-content-center">
 
-                          <div class="col-lg-6">
-                              <div class="mil-icon-box mil-product-card mil-center mil-mb-60">
-                                  <div class="mil-service-icon mil-up">
-                                      <img
-                                          src="img/icons/icons8-coding-50.png"
-                                          alt=""
-                                          class="mil-mb-30"
-                                          width="50"
-                                          height="50"
-                                      >
-                                  </div>
+                            <!-- LeadsTrackr -->
+                            <div class="col-lg-12">
+                                <div class="mil-icon-box mil-product-card mil-product-card--flagship mil-center mil-mb-60">
 
-                                  <p class="mil-upper mil-dark mil-up mil-mb-15">
-                                      Live product · Active development
-                                  </p>
+                                    <div class="mil-service-icon mil-up">
+                                        <img
+                                            src="img/icons/icons8-coding-50.png"
+                                            alt=""
+                                            class="mil-mb-30"
+                                            width="50"
+                                            height="50"
+                                        >
+                                    </div>
 
-                                  <h5 class="mil-up mil-mb-30">LeadsTrackr</h5>
+                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
+                                        Flagship product · Active development
+                                    </p>
 
-                                  <p class="mil-up mil-mb-20">
-                                      A Ruby on Rails CRM and growth platform for agencies and businesses,
-                                      connecting leads, pipelines, appointments, automations, websites and
-                                      AI-powered customer conversations in one system.
-                                  </p>
+                                    <h5 class="mil-up mil-mb-30">
+                                        LeadsTrackr
+                                    </h5>
 
-                                  <p class="mil-upper mil-dark mil-up mil-mb-30">
-                                      CRM · Automations · Website Builder · AI Chatbots
-                                  </p>
+                                    <p class="mil-up mil-mb-20">
+                                        A Ruby on Rails CRM and growth platform for agencies and businesses,
+                                        connecting leads, pipelines, appointments, automations, websites and
+                                        AI-powered customer conversations inside one multi-tenant system.
+                                    </p>
 
-                                  <div class="mil-up mil-product-actions">
-                                      <a
-                                          href="leadstrackr.html"
-                                          class="mil-btn mil-sm-btn"
-                                          data-no-swup
-                                      >
-                                          View LeadsTrackr Case Study
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
+                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                        CRM · Automations · Website Builder · AI Chatbots
+                                    </p>
 
-                          <div class="col-lg-6">
-                              <div class="mil-icon-box mil-product-card mil-center mil-mb-60">
-                                  <div class="mil-service-icon mil-up">
-                                      <img
-                                          src="img/icons/icons8-browser-50.png"
-                                          alt=""
-                                          class="mil-mb-30"
-                                          width="50"
-                                          height="50"
-                                      >
-                                  </div>
+                                    <div class="mil-up mil-product-actions">
+                                        <a
+                                            href="leadstrackr.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View LeadsTrackr Case Study
+                                        </a>
+                                    </div>
 
-                                  <p class="mil-upper mil-dark mil-up mil-mb-15">
-                                      Private tool · Launch-ready MVP
-                                  </p>
+                                </div>
+                            </div>
+                            <!-- LeadsTrackr end -->
 
-                                  <h5 class="mil-up mil-mb-30">HookScribe</h5>
 
-                                  <p class="mil-up mil-mb-20">
-                                      A private Ruby on Rails application that transforms uploaded video and
-                                      audio into transcripts, campaign hooks, advertising angles and structured
-                                      copy through a reusable OpenAI and FFmpeg-powered workflow.
-                                  </p>
+                            <!-- LeadMath -->
+                            <div class="col-lg-6">
+                                <div class="mil-icon-box mil-product-card mil-product-card--secondary mil-center mil-mb-60">
 
-                                  <p class="mil-upper mil-dark mil-up mil-mb-30">
-                                      Transcription · Media Processing · AI Ad Copy
-                                  </p>
+                                    <div class="mil-service-icon mil-up">
+                                        <img
+                                            src="img/icons/icons8-chart-50.png"
+                                            alt=""
+                                            class="mil-mb-30"
+                                            width="50"
+                                            height="50"
+                                        >
+                                    </div>
 
-                                  <div class="mil-up mil-product-actions">
-                                      <a
-                                          href="hookscribe.html"
-                                          class="mil-btn mil-sm-btn"
-                                          data-no-swup
-                                      >
-                                          View HookScribe Case Study
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
+                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
+                                        MVP complete · Deployment pending
+                                    </p>
 
-                      </div>
-                  </section>
+                                    <h5 class="mil-up mil-mb-30">
+                                        LeadMath
+                                    </h5>
+
+                                    <p class="mil-up mil-mb-20">
+                                        A free Ruby on Rails forecasting tool that models the path from ad
+                                        spend to leads, appointments, customers, revenue, contribution,
+                                        CAC and ROAS across three practical scenarios.
+                                    </p>
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                        Ad Forecasting · Scenario Planning · Break-Even Economics
+                                    </p>
+
+                                    <div class="mil-up mil-product-actions">
+                                        <a
+                                            href="leadmath.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View LeadMath Case Study
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- LeadMath end -->
+
+
+                            <!-- HookScribe -->
+                            <div class="col-lg-6">
+                                <div class="mil-icon-box mil-product-card mil-product-card--secondary mil-center mil-mb-60">
+
+                                    <div class="mil-service-icon mil-up">
+                                        <img
+                                            src="img/icons/icons8-browser-50.png"
+                                            alt=""
+                                            class="mil-mb-30"
+                                            width="50"
+                                            height="50"
+                                        >
+                                    </div>
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
+                                        Private tool · Launch-ready MVP
+                                    </p>
+
+                                    <h5 class="mil-up mil-mb-30">
+                                        HookScribe
+                                    </h5>
+
+                                    <p class="mil-up mil-mb-20">
+                                        A private Ruby on Rails application that transforms uploaded video
+                                        and audio into transcripts, campaign hooks, advertising angles and
+                                        structured copy through a reusable OpenAI and FFmpeg-powered workflow.
+                                    </p>
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                        Transcription · Media Processing · AI Ad Copy
+                                    </p>
+
+                                    <div class="mil-up mil-product-actions">
+                                        <a
+                                            href="hookscribe.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View HookScribe Case Study
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- HookScribe end -->
+
+                        </div>
+                    </section>
                     <!-- services end -->
 
                     <div id="skills" class="mil-section-title mil-up">
@@ -1087,16 +1170,15 @@
 
                                     <p class="mil-up mil-mb-30">
                                         I’m actively building software products, internal tools and growth
-                                        systems. Connect with me on LinkedIn or explore the code and projects
-                                        I’m sharing on GitHub.
+                                        systems. Use the contact page to start a conversation, or explore
+                                        the code and projects I’m sharing on GitHub.
                                     </p>
 
                                     <div class="mil-up mil-mb-30">
                                         <a
-                                            href="https://www.linkedin.com/in/carywood777/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                            href="contact.html"
                                             class="mil-btn mil-sm-btn"
+                                            data-no-swup
                                         >
                                             Start a Conversation
                                         </a>

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- page name -->
     <title>Tools by Cary Wood | Software Products &amp; Utilities</title>
-<meta name="description" content="Explore tools built by Cary Wood, including LeadsTrackr and HookScribe—software products for CRM, automation, AI chatbots, media processing and campaign workflows.">
+<meta name="description" content="Explore LeadsTrackr, LeadMath and HookScribe—three Ruby on Rails products built by Cary Wood for CRM, automation, paid-advertising forecasting, media processing and campaign workflows.">
 
 
 <style>
@@ -79,8 +79,8 @@
 
     .mil-tools-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 38px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
     }
 
     .mil-tool-card {
@@ -145,6 +145,24 @@
         object-fit: cover;
     }
 
+
+    .mil-tool-media--leadmath {
+        padding: 24px;
+        background:
+            radial-gradient(circle at 85% 12%, rgba(255, 68, 56, 0.16), transparent 34%),
+            #e9edf3;
+    }
+
+    .mil-tool-media--leadmath > img {
+        height: 100%;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+        object-fit: contain;
+        object-position: top center;
+    }
+
     .mil-tool-media-secondary {
         position: absolute;
         right: 24px;
@@ -160,6 +178,7 @@
         top: 20px;
         left: 20px;
         z-index: 2;
+        max-width: calc(100% - 40px);
         padding: 10px 13px;
         background: #ffffff;
         color: #242424 !important;
@@ -438,7 +457,8 @@
             padding: 25px;
         }
 
-        .mil-tool-media--leadstrackr {
+        .mil-tool-media--leadstrackr,
+        .mil-tool-media--leadmath {
             padding: 16px;
         }
 
@@ -474,6 +494,8 @@
             border-radius: 17px;
         }
     }
+
+
 </style>
 
 
@@ -645,9 +667,9 @@
 
                         <p class="mil-tools-hero-lead mil-up">
                             Products designed around real operational work—from CRM and customer
-                            conversations to media processing, campaign production and automation.
-                            Each tool begins with a workflow worth improving, then earns complexity
-                            through practical use.
+                            conversations to paid-advertising forecasting, media processing, campaign
+                            production and automation. Each tool begins with a workflow worth improving,
+                            then earns complexity through practical use.
                         </p>
 
                     </section>
@@ -658,13 +680,13 @@
                     <div class="mil-tools-summary mil-up">
 
                         <div class="mil-tools-summary-item">
-                            <span>Products Available</span>
-                            <strong>Two focused Rails products</strong>
+                            <span>Products Built</span>
+                            <strong>Three focused Rails products</strong>
                         </div>
 
                         <div class="mil-tools-summary-item">
                             <span>Product Areas</span>
-                            <strong>CRM, automation, AI and campaign workflows</strong>
+                            <strong>CRM, forecasting, automation, AI and campaign workflows</strong>
                         </div>
 
                         <div class="mil-tools-summary-item">
@@ -683,7 +705,7 @@
 
                     <div class="mil-section-title mil-up">
                         <div class="mil-divider"></div>
-                        <h3>Available Tools</h3>
+                        <h3>Current Tools</h3>
                     </div>
 
 
@@ -774,6 +796,78 @@
 
                             </article>
                             <!-- LeadsTrackr end -->
+
+
+                            <!-- LeadMath -->
+                            <article class="mil-tool-card mil-up">
+
+                                <div class="mil-tool-media mil-tool-media--leadmath">
+
+                                    <span class="mil-tool-status">
+                                        MVP Complete · Deployment Pending
+                                    </span>
+
+                                    <img
+                                        src="img/leadmath-calculator1.png"
+                                        alt="LeadMath paid-advertising forecast calculator showing campaign assumptions and projected outcomes"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+
+                                </div>
+
+                                <div class="mil-tool-card-body">
+
+                                    <div class="mil-tool-card-eyebrow">
+                                        <span>Free Planning Tool</span>
+                                        <span>Rails · Forecasting · Paid Media</span>
+                                    </div>
+
+                                    <h2>LeadMath</h2>
+
+                                    <p class="mil-tool-card-copy">
+                                        A free paid-advertising calculator that models the path from ad spend
+                                        to leads, appointments, customers, revenue, CAC and ROAS across three
+                                        practical scenarios.
+                                    </p>
+
+                                    <p class="mil-tool-note">
+                                        The MVP is complete and production-ready. Public launch is pending
+                                        final hosting setup; no account or email gate will be required.
+                                    </p>
+
+                                    <div class="mil-tool-tags">
+                                        <span>Forecasting</span>
+                                        <span>Paid Media</span>
+                                        <span>Scenario Planning</span>
+                                        <span>Break-Even CPL</span>
+                                        <span>Shareable Reports</span>
+                                    </div>
+
+                                    <div class="mil-tool-actions">
+
+                                        <span
+                                            class="mil-btn mil-sm-btn mil-tool-disabled"
+                                            aria-disabled="true"
+                                        >
+                                            Launching Soon
+                                        </span>
+
+                                        <a
+                                            href="leadmath.html"
+                                            class="mil-tool-text-link"
+                                            data-no-swup
+                                        >
+                                            View Case Study
+                                            <span aria-hidden="true">→</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <!-- LeadMath end -->
 
 
                             <!-- HookScribe -->
@@ -914,18 +1008,18 @@
                             <div class="mil-tools-future-copy">
 
                                 <p class="mil-upper mil-mb-20">
-                                    More Tools in Development
+                                    Three Products · More in Development
                                 </p>
 
                                 <h2 class="mil-mb-30">
-                                    This directory will grow as new products become useful enough to share.
+                                    This directory will grow only when another product earns its place.
                                 </h2>
 
                                 <p>
-                                    I’m continuing to build focused software around growth operations,
-                                    customer communication, automation and practical AI workflows. New tools
-                                    will appear here when they are stable, purposeful and ready for real use—not
-                                    as empty placeholders.
+                                    LeadsTrackr, LeadMath and HookScribe cover three different product
+                                    scopes: a multi-tenant platform, a public forecasting tool and a private
+                                    production workflow. Future tools will appear here when they solve a
+                                    clear problem and are stable enough to demonstrate real value.
                                 </p>
 
                             </div>
@@ -938,8 +1032,8 @@
                                 </div>
 
                                 <div>
-                                    <span>Product Direction</span>
-                                    <strong>Workflow and automation tools</strong>
+                                    <span>Current Range</span>
+                                    <strong>Platform, public tool and private workflow</strong>
                                 </div>
 
                                 <div>

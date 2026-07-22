@@ -16,8 +16,8 @@
     <!-- courtney css -->
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- page name -->
-    <title>Web Applications | Cary Wood</title>
-<meta name="description" content="Explore web applications built by Cary Wood, including LeadsTrackr CRM and HookScribe, with product, architecture, feature and technology details.">
+    <title>Software Products | Cary Wood</title>
+<meta name="description" content="Explore LeadsTrackr, LeadMath and HookScribe—three Ruby on Rails products built by Cary Wood across CRM, automation, paid-advertising forecasting, media processing and campaign workflows.">
 
 <style>
     /*
@@ -123,6 +123,17 @@
 
 .mil-app-product-link:hover span {
     transform: translate(3px, -3px);
+}
+
+
+.mil-app-product-status {
+    display: inline-flex;
+    align-items: center;
+    color: rgba(36, 36, 36, 0.58) !important;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 575px) {
@@ -314,8 +325,8 @@
 
                             <p class="mil-up">
                                 I design and build software around workflows I understand firsthand:
-                                customer acquisition, CRM operations, campaign production, automation
-                                and agency management.
+                                customer acquisition, CRM operations, paid-advertising forecasting,
+                                campaign production, automation and agency management.
                             </p>
 
                         </div>
@@ -534,6 +545,223 @@
 
                         </article>
                         <!-- LeadsTrackr case study end -->
+
+
+                        <div class="mil-app-divider mil-up"></div>
+
+
+                        <!-- LeadMath case study -->
+                        <article id="leadmath" class="mil-app-case">
+
+                            <header class="mil-app-case-header mil-mb-60">
+
+                                <div class="mil-app-case-heading">
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                        Free Planning Tool · MVP Complete · Deployment Pending
+                                    </p>
+
+                                    <h2 class="mil-up mil-mb-30">
+                                        LeadMath
+                                    </h2>
+
+                                    <p class="mil-app-case-lead mil-up mil-mb-30">
+                                        A free paid-advertising forecast calculator that models the
+                                        path from ad spend to leads, appointments, customers, revenue,
+                                        contribution, CAC and ROAS across three practical scenarios.
+                                    </p>
+
+                                    <div class="mil-up">
+                                        <a
+                                            href="leadmath.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View Full Case Study
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class="mil-app-case-summary mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        The Product
+                                    </p>
+
+                                    <p>
+                                        LeadMath was built to make paid-media planning more useful than
+                                        a simple lead or revenue estimate. It connects advertising cost,
+                                        funnel conversion rates, average sale value and gross margin.
+                                    </p>
+
+                                    <p>
+                                        Users can compare conservative, expected and optimized outcomes,
+                                        then save a shareable public report without creating an account
+                                        or passing through an email gate.
+                                    </p>
+
+                                </div>
+
+                            </header>
+
+
+                            <div class="mil-app-meta-grid mil-mb-60">
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">My Role</span>
+                                    <strong>Product strategy, forecast modelling, UX and Rails development</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Product Stage</span>
+                                    <strong>MVP complete and technically release-ready</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Core Stack</span>
+                                    <strong>Ruby on Rails, PostgreSQL, Hotwire and Stimulus</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Product Focus</span>
+                                    <strong>Forecasting, scenario planning and break-even economics</strong>
+                                </div>
+
+                            </div>
+
+
+                            <!-- LeadMath product visual -->
+                            <div
+                                class="mil-app-visual mil-app-visual--single mil-mb-90"
+                                aria-label="LeadMath product screenshot"
+                            >
+
+                                <figure class="mil-app-shot mil-app-shot--wide mil-up">
+
+                                    <div class="mil-app-shot-frame">
+                                        <img
+                                            src="img/leadmath-calculator1.png"
+                                            alt="LeadMath paid-advertising forecast calculator showing campaign assumptions and projected outcomes"
+                                            loading="lazy"
+                                            decoding="async"
+                                        >
+                                    </div>
+
+                                    <figcaption>
+                                        LeadMath turns campaign assumptions into a practical model covering
+                                        lead volume, appointments, customers, revenue, contribution, CAC,
+                                        ROAS and break-even targets.
+                                    </figcaption>
+
+                                </figure>
+
+                            </div>
+                            <!-- LeadMath product visual end -->
+
+
+                            <div class="mil-app-detail-grid mil-mb-90">
+
+                                <section class="mil-app-panel mil-app-panel--wide mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        What I Built
+                                    </p>
+
+                                    <div class="mil-app-feature-grid">
+
+                                        <div class="mil-app-feature">
+                                            <h5>Versioned Forecast Engine</h5>
+                                            <p>
+                                                A calculation layer that converts campaign assumptions
+                                                into repeatable, testable forecast outputs.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Three Scenario Model</h5>
+                                            <p>
+                                                Conservative, expected and optimized views make the
+                                                downside, working plan and upside easy to compare.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Public Saved Reports</h5>
+                                            <p>
+                                                Immutable forecast snapshots with random, non-sequential
+                                                public URLs for sharing with clients or internal teams.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Commercial Metrics</h5>
+                                            <p>
+                                                Revenue, contribution, CAC, ROAS, break-even CPL,
+                                                safety margin and maximum sustainable acquisition cost.
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <section class="mil-app-panel mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        Product Decision
+                                    </p>
+
+                                    <h4 class="mil-mb-20">
+                                        Make the useful result available before asking for anything.
+                                    </h4>
+
+                                    <p>
+                                        The calculator does not require registration or mandatory email
+                                        capture. The product earns trust by showing the model first and
+                                        keeps saved reports stable through immutable snapshots.
+                                    </p>
+
+                                </section>
+
+                                <section class="mil-app-panel mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        What It Demonstrates
+                                    </p>
+
+                                    <h4 class="mil-mb-20">
+                                        Product modelling, public Rails architecture and release discipline.
+                                    </h4>
+
+                                    <p>
+                                        LeadMath demonstrates domain modelling, numerical business logic,
+                                        versioned calculations, public-token design, responsive UX,
+                                        rate limiting, browser security headers and production verification.
+                                    </p>
+
+                                </section>
+
+                            </div>
+
+                            <div class="mil-app-product-actions mil-up">
+
+                                <a
+                                    href="leadmath.html"
+                                    class="mil-btn mil-sm-btn"
+                                    data-no-swup
+                                >
+                                    View Full Case Study
+                                </a>
+
+                                <span class="mil-app-product-status">
+                                    Launching Soon
+                                </span>
+
+                            </div>
+
+                        </article>
+                        <!-- LeadMath case study end -->
 
 
                         <div class="mil-app-divider mil-up"></div>
@@ -760,8 +988,8 @@
                             </h2>
 
                             <p class="mil-mb-30">
-                                I’m continuing to develop LeadsTrackr, build focused internal tools
-                                and document the product decisions behind each project.
+                                I’m continuing to develop LeadsTrackr, prepare LeadMath for public launch,
+                                refine HookScribe and document the product decisions behind each project.
                             </p>
 
                             <a

@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en" class="is-animating">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Explore LeadMath, a free Ruby on Rails paid-advertising forecast calculator built by Cary Wood to model leads, appointments, customers, revenue, contribution, CAC, ROAS and break-even targets.">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- courtney css -->
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <!-- page name -->
+    <title>LeadMath Case Study | Paid Advertising Forecast Calculator by Cary Wood</title>
+
+    <!-- Place this script tag in the <head> of your website -->
+    <script src="https://app.leadstrackr.com/tracker.js?key=RhO0tmIfk6bvM1UJ1YOO648ZzmKXvlAQ" async></script>
+
+
+<style>
+    /*
+    LeadMath product case study.
+    Page-specific until the shared product-case-study system is consolidated.
+    */
+
+    .mil-lm-hero {
+        max-width: 1060px;
+    }
+
+    .mil-lm-hero h1 {
+        max-width: 980px;
+        font-size: clamp(58px, 8vw, 108px);
+        line-height: 0.92;
+    }
+
+    .mil-lm-hero-lead {
+        max-width: 880px;
+        font-size: 20px;
+        line-height: 1.75;
+    }
+
+    .mil-lm-actions,
+    .mil-lm-cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .mil-lm-disabled {
+        cursor: default;
+        opacity: 0.68;
+        pointer-events: none;
+    }
+
+    .mil-lm-text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #242424 !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .mil-lm-text-link span {
+        display: inline-block;
+        transition: transform 0.25s ease;
+    }
+
+    .mil-lm-text-link:hover span {
+        transform: translateX(4px);
+    }
+
+    .mil-lm-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-lm-meta-item {
+        min-width: 0;
+        padding: 26px 26px 26px 0;
+    }
+
+    .mil-lm-meta-item + .mil-lm-meta-item {
+        padding-left: 26px;
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-lm-meta-label {
+        display: block;
+        margin-bottom: 10px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.7px;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    .mil-lm-meta-item strong {
+        display: block;
+        color: #242424;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .mil-lm-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(310px, 0.85fr);
+        gap: 60px;
+        align-items: start;
+    }
+
+    .mil-lm-copy h2 {
+        max-width: 760px;
+    }
+
+    .mil-lm-copy p {
+        max-width: 740px;
+    }
+
+    .mil-lm-summary-card,
+    .mil-lm-panel,
+    .mil-lm-feature-card,
+    .mil-lm-scenario-card,
+    .mil-lm-decision-card,
+    .mil-lm-stage-card {
+        background: #f4f4f4 !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        color: #242424 !important;
+    }
+
+    .mil-lm-summary-card,
+    .mil-lm-panel,
+    .mil-lm-decision-card,
+    .mil-lm-stage-card,
+    .mil-lm-scenario-card {
+        padding: 34px;
+    }
+
+    .mil-lm-summary-card *,
+    .mil-lm-panel *,
+    .mil-lm-feature-card *,
+    .mil-lm-scenario-card *,
+    .mil-lm-decision-card *,
+    .mil-lm-stage-card * {
+        color: #242424;
+    }
+
+    .mil-lm-summary-card p,
+    .mil-lm-panel p,
+    .mil-lm-feature-card p,
+    .mil-lm-scenario-card p,
+    .mil-lm-decision-card p,
+    .mil-lm-stage-card p {
+        color: rgba(36, 36, 36, 0.68) !important;
+    }
+
+    .mil-lm-summary-list,
+    .mil-lm-ownership-list {
+        margin: 26px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mil-lm-summary-list li {
+        position: relative;
+        padding: 16px 0 16px 24px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(36, 36, 36, 0.72);
+        line-height: 1.65;
+    }
+
+    .mil-lm-summary-list li::before {
+        position: absolute;
+        top: 23px;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        background: #ff4438;
+        border-radius: 50%;
+        content: "";
+    }
+
+    .mil-lm-shot-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-lm-shot {
+        margin: 0;
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.14);
+        border-radius: 22px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.13);
+    }
+
+    .mil-lm-shot-frame {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 520px;
+        padding: 24px;
+        overflow: hidden;
+        background:
+            radial-gradient(
+                circle at 86% 12%,
+                rgba(255, 68, 56, 0.16),
+                transparent 35%
+            ),
+            #edf0f4;
+    }
+
+    .mil-lm-shot img {
+        display: block;
+        width: 100%;
+        max-height: 560px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        box-shadow: 0 24px 55px rgba(0, 0, 0, 0.17);
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .mil-lm-shot figcaption {
+        min-height: 96px;
+        padding: 20px 24px;
+        background: #171717;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .mil-lm-model {
+        padding: 42px;
+        background:
+            radial-gradient(
+                circle at 86% 12%,
+                rgba(255, 68, 56, 0.22),
+                transparent 33%
+            ),
+            #202124;
+        border-radius: 22px;
+    }
+
+    .mil-lm-model-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .mil-lm-model-step {
+        min-height: 205px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-lm-model-step span,
+    .mil-lm-model-step h4,
+    .mil-lm-model-step p {
+        color: #ffffff;
+    }
+
+    .mil-lm-model-step > span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 34px;
+        background: #ff4438;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-lm-model-step h4 {
+        margin-bottom: 10px;
+    }
+
+    .mil-lm-model-step p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .mil-lm-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-lm-feature-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 290px;
+        padding: 34px;
+    }
+
+    .mil-lm-feature-number,
+    .mil-lm-scenario-label,
+    .mil-lm-decision-label {
+        display: block;
+        margin-bottom: 46px;
+        color: #ff4438 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .mil-lm-feature-card h4,
+    .mil-lm-scenario-card h4 {
+        margin-bottom: 16px;
+    }
+
+    .mil-lm-feature-list {
+        margin: auto 0 0;
+        padding: 24px 0 0;
+        list-style: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .mil-lm-feature-list li {
+        padding: 5px 0;
+        color: rgba(36, 36, 36, 0.65) !important;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .mil-lm-scenario-grid,
+    .mil-lm-decision-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-lm-scenario-card,
+    .mil-lm-decision-card {
+        min-height: 300px;
+    }
+
+    .mil-lm-scenario-card--expected {
+        position: relative;
+        border-top: 4px solid #ff4438;
+    }
+
+    .mil-lm-scenario-card--expected::after {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        padding: 7px 9px;
+        background: #ffffff;
+        color: #242424;
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        content: "Primary View";
+    }
+
+    .mil-lm-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-lm-metric {
+        min-height: 230px;
+        padding: 30px;
+        background: #f4f4f4;
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-lm-metric span {
+        display: block;
+        margin-bottom: 34px;
+        color: #ff4438;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .mil-lm-metric h4 {
+        margin-bottom: 12px;
+        color: #242424;
+    }
+
+    .mil-lm-metric p {
+        margin: 0;
+        color: rgba(36, 36, 36, 0.66);
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .mil-lm-architecture {
+        display: grid;
+        gap: 12px;
+        padding: 34px;
+        background: #202124;
+        border-radius: 20px;
+    }
+
+    .mil-lm-architecture-row {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .mil-lm-architecture-row > span:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background: #ff4438;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-lm-architecture-row h4 {
+        margin-bottom: 4px;
+        color: #ffffff;
+    }
+
+    .mil-lm-architecture-row p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .mil-lm-architecture-row > span:last-child {
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-lm-role-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-lm-role-grid .mil-lm-panel:first-child {
+        grid-row: span 2;
+    }
+
+    .mil-lm-ownership-list li {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(36, 36, 36, 0.68) !important;
+        line-height: 1.6;
+    }
+
+    .mil-lm-ownership-list span {
+        flex: 0 0 28px;
+        color: #ff4438 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-lm-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+    }
+
+    .mil-lm-stack span {
+        padding: 10px 13px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #242424 !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+    }
+
+    .mil-lm-readiness {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        background: #202124;
+        border-radius: 20px;
+    }
+
+    .mil-lm-readiness-item {
+        min-width: 0;
+        padding: 34px;
+    }
+
+    .mil-lm-readiness-item + .mil-lm-readiness-item {
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .mil-lm-readiness-item span {
+        display: block;
+        margin-bottom: 16px;
+        color: rgba(255, 255, 255, 0.48);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+    }
+
+    .mil-lm-readiness-item strong {
+        display: block;
+        color: #ffffff;
+        font-size: 21px;
+        line-height: 1.35;
+    }
+
+    .mil-lm-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        gap: 30px;
+    }
+
+    .mil-lm-stage-card--dark {
+        background: #202124 !important;
+        border-color: #202124;
+    }
+
+    .mil-lm-stage-card--dark h3,
+    .mil-lm-stage-card--dark p,
+    .mil-lm-stage-card--dark strong,
+    .mil-lm-stage-card--dark span {
+        color: #ffffff !important;
+    }
+
+    .mil-lm-stage-card--dark p {
+        color: rgba(255, 255, 255, 0.66) !important;
+    }
+
+    .mil-lm-stage-progress {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .mil-lm-stage-progress div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-lm-stage-progress span {
+        color: rgba(255, 255, 255, 0.58) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-lm-stage-progress strong {
+        font-size: 13px;
+    }
+
+    .mil-lm-cta {
+        max-width: 900px;
+        margin: 10px auto 60px;
+        text-align: center;
+    }
+
+    .mil-lm-cta p {
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .mil-lm-cta-actions {
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .mil-lm-meta-grid,
+        .mil-lm-readiness {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-lm-meta-item:nth-child(3) {
+            padding-left: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-lm-meta-item:nth-child(4) {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .mil-lm-readiness-item:nth-child(3) {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 0;
+        }
+
+        .mil-lm-readiness-item:nth-child(4) {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .mil-lm-split,
+        .mil-lm-stage {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lm-model-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-lm-scenario-grid,
+        .mil-lm-decision-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lm-scenario-card,
+        .mil-lm-decision-card {
+            min-height: 0;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .mil-lm-shot-grid,
+        .mil-lm-feature-grid,
+        .mil-lm-role-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lm-role-grid .mil-lm-panel:first-child {
+            grid-row: auto;
+        }
+
+        .mil-lm-shot-frame {
+            min-height: 0;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .mil-lm-model {
+            padding: 26px;
+        }
+
+        .mil-lm-model-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lm-metrics {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-lm-architecture-row {
+            grid-template-columns: 48px minmax(0, 1fr);
+        }
+
+        .mil-lm-architecture-row > span:last-child {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-lm-hero h1 {
+            font-size: 52px;
+        }
+
+        .mil-lm-hero-lead {
+            font-size: 16px;
+        }
+
+        .mil-lm-meta-grid,
+        .mil-lm-metrics,
+        .mil-lm-readiness {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-lm-meta-item,
+        .mil-lm-meta-item + .mil-lm-meta-item,
+        .mil-lm-meta-item:nth-child(3),
+        .mil-lm-meta-item:nth-child(4) {
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-lm-meta-item:first-child {
+            border-top: 0;
+        }
+
+        .mil-lm-summary-card,
+        .mil-lm-panel,
+        .mil-lm-feature-card,
+        .mil-lm-scenario-card,
+        .mil-lm-decision-card,
+        .mil-lm-stage-card {
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .mil-lm-feature-card {
+            min-height: 0;
+        }
+
+        .mil-lm-feature-number,
+        .mil-lm-scenario-label,
+        .mil-lm-decision-label {
+            margin-bottom: 30px;
+        }
+
+        .mil-lm-shot,
+        .mil-lm-model,
+        .mil-lm-architecture,
+        .mil-lm-readiness {
+            border-radius: 16px;
+        }
+
+        .mil-lm-shot-frame {
+            padding: 14px;
+        }
+
+        .mil-lm-shot figcaption {
+            min-height: 0;
+        }
+
+        .mil-lm-model,
+        .mil-lm-architecture {
+            padding: 18px;
+        }
+
+        .mil-lm-metric {
+            min-height: 0;
+            padding: 24px;
+        }
+
+        .mil-lm-readiness-item,
+        .mil-lm-readiness-item + .mil-lm-readiness-item,
+        .mil-lm-readiness-item:nth-child(3),
+        .mil-lm-readiness-item:nth-child(4) {
+            padding: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 0;
+        }
+
+        .mil-lm-readiness-item:first-child {
+            border-top: 0;
+        }
+
+        .mil-lm-actions,
+        .mil-lm-cta-actions {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .mil-lm-actions .mil-btn,
+        .mil-lm-cta-actions .mil-btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+
+</head>
+
+<body>
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- preloader -->
+        <div class="mil-preloader-frame">
+            <div class="mil-preloader-content" style="transform: scale(.6) translateY(200px); opacity: 0;">
+                <div class="mil-preloader">
+                    <div class="mil-circ-1"></div>
+                    <div class="mil-circ-2"></div>
+                    <div class="mil-circ-3"></div>
+                    <div class="mil-circ-4"></div>
+                </div>
+                <div class="mil-upper">Loading</div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+        <div class="mil-frame">
+
+            <!-- top bar -->
+            <div class="mil-top-panel">
+
+                <!-- You need to remove the "mil-dot" class if you don't need a dot -->
+                <a href="index.html" class="mil-logo" data-no-swup><span class="mil-dot">C</span></a>
+
+                <div class="mil-navigation">
+                    <nav id="swupMenu" class="mil-menu-transition">
+                        <ul>
+                            <li>
+                                <a href="index.html" data-no-swup>Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html" data-no-swup>About</a>
+                            </li>
+                            <li>
+                                <a href="tools.html" data-no-swup>Tools</a>
+                            </li>
+                            <li class="mil-has-children mil-active">
+                                <a href="projects.html" data-no-swup>Projects</a>
+
+                                <ul>
+                                    <li>
+                                        <a href="applications.html" data-no-swup>
+                                            Software Products
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="websites.html" data-no-swup>
+                                            Websites
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html" data-no-swup>Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="mil-top-panel-btns">
+                    <a href="contact.html" class="mil-contact-btn" data-no-swup>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- top bar end -->
+
+            <!-- left bar -->
+            <div class="mil-left-panel">
+
+                <div class="mil-page-name mil-upper mil-dark">CASE STUDY · LEADMATH</div>
+
+                <ul class="mil-social-icons">
+                    <li>
+                        <a href="https://github.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>Instagram</title>
+                                <path
+                                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.959 45.959"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489
+			c0.96-0.935,1.489-2.224,1.488-3.653C10.659,2.589,8.464,0.492,5.392,0.492z M7.847,7.811C7.227,8.414,6.34,8.733,5.284,8.733
+			C3.351,8.733,2,7.451,2,5.614c0-1.867,1.363-3.122,3.392-3.122c1.983,0,3.293,1.235,3.338,3.123
+			C8.729,6.477,8.416,7.256,7.847,7.811z" />
+                                        <path
+                                            d="M0.959,45.467h8.988V12.422H0.959V45.467z M2.959,14.422h4.988v29.044H2.959V14.422z" />
+                                        <path d="M33.648,12.422c-4.168,0-6.72,1.439-8.198,2.792l-0.281-2.792H15v33.044h9.959V28.099c0-0.748,0.303-2.301,0.493-2.711
+			c1.203-2.591,2.826-2.591,5.284-2.591c2.831,0,5.223,2.655,5.223,5.797v16.874h10v-18.67
+			C45.959,16.92,39.577,12.422,33.648,12.422z M43.959,43.467h-6V28.593c0-4.227-3.308-7.797-7.223-7.797
+			c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473
+			c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><i class="far fa-circle"></i></li>
+                </ul>
+
+            </div>
+            <!-- left bar end -->
+
+            <!-- back to top -->
+            <div class="mil-back-to-top">
+                <a href="#top" class="mil-link mil-btt-icon" data-no-swup>
+                    <span>Back to top</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-arrow-right">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <!-- back to top end -->
+
+        </div>
+
+        <!-- content -->
+        <div class="mil-content">
+
+            <div class="mil-scroll-wrapper transition-fade" id="swupMain">
+                <div class="mil-container">
+                    <!-- LeadMath hero -->
+                    <section class="mil-lm-hero mil-p-90-60">
+
+                        <p class="mil-upper mil-dark mil-up mil-mb-30">
+                            Free Tool · MVP Complete · Deployment Pending
+                        </p>
+
+                        <h1 class="mil-up mil-mb-30">
+                            LeadMath
+                        </h1>
+
+                        <p class="mil-lm-hero-lead mil-up mil-mb-30">
+                            A free paid-advertising forecast calculator that models the complete path
+                            from ad spend to leads, appointments, customers, revenue, contribution,
+                            customer acquisition cost and return on advertising spend.
+                        </p>
+
+                        <div class="mil-lm-actions mil-up">
+                            <a href="applications.html" class="mil-btn mil-sm-btn" data-no-swup>
+                                View Software Products
+                            </a>
+
+                            <span
+                                class="mil-lm-text-link mil-lm-disabled"
+                                aria-disabled="true"
+                            >
+                                Launching Soon
+                            </span>
+                        </div>
+
+                    </section>
+                    <!-- LeadMath hero end -->
+
+
+                    <!-- product metadata -->
+                    <div class="mil-lm-meta-grid mil-up mil-mb-90">
+
+                        <div class="mil-lm-meta-item">
+                            <span class="mil-lm-meta-label">My Role</span>
+                            <strong>Product strategy, forecasting model, UX and Rails development</strong>
+                        </div>
+
+                        <div class="mil-lm-meta-item">
+                            <span class="mil-lm-meta-label">Product Model</span>
+                            <strong>Free public calculator with shareable saved reports</strong>
+                        </div>
+
+                        <div class="mil-lm-meta-item">
+                            <span class="mil-lm-meta-label">Core Stack</span>
+                            <strong>Rails 7.1, Ruby 3.3, PostgreSQL, Hotwire and Stimulus</strong>
+                        </div>
+
+                        <div class="mil-lm-meta-item">
+                            <span class="mil-lm-meta-label">Current Stage</span>
+                            <strong>MVP complete, hardened and technically release-ready</strong>
+                        </div>
+
+                    </div>
+                    <!-- product metadata end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>The Product</h3>
+                    </div>
+
+
+                    <!-- overview -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-split">
+
+                            <div class="mil-lm-copy">
+
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    The Problem
+                                </p>
+
+                                <h2 class="mil-up mil-mb-30">
+                                    Most advertising calculators stop before the business economics begin.
+                                </h2>
+
+                                <p class="mil-up mil-mb-30">
+                                    Cost-per-lead and ROAS alone do not explain whether a campaign can
+                                    become sustainable. Booking rates, appointment attendance, close rates,
+                                    average sale value and gross margin all change what a business can
+                                    afford to spend.
+                                </p>
+
+                                <p class="mil-up">
+                                    LeadMath connects those assumptions into one transparent forecast so
+                                    agencies, marketers and businesses can examine the full commercial
+                                    journey before increasing their advertising budget.
+                                </p>
+
+                            </div>
+
+                            <aside class="mil-lm-summary-card mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Product Objective
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    Make campaign economics visible before more money is committed.
+                                </h4>
+
+                                <ul class="mil-lm-summary-list">
+                                    <li>Model the journey from budget to customer and contribution.</li>
+                                    <li>Compare conservative, expected and optimized scenarios.</li>
+                                    <li>Surface break-even CPL, CAC and safety margins.</li>
+                                    <li>Create a durable public report without an account or email gate.</li>
+                                </ul>
+
+                            </aside>
+
+                        </div>
+
+                    </section>
+                    <!-- overview end -->
+
+
+                    <!-- product screenshots -->
+                    <div class="mil-lm-shot-grid mil-mb-90">
+
+                        <figure class="mil-lm-shot mil-up">
+                            <div class="mil-lm-shot-frame">
+                                <img
+                                    src="img/leadmath-calculator.png"
+                                    alt="LeadMath paid-advertising forecast calculator showing campaign assumptions and forecast outputs"
+                                    loading="eager"
+                                    decoding="async"
+                                >
+                            </div>
+                            <figcaption>
+                                The public calculator turns budget, CPL, conversion rates, sale value and
+                                margin assumptions into an immediate expected campaign forecast.
+                            </figcaption>
+                        </figure>
+
+                        <figure class="mil-lm-shot mil-up">
+                            <div class="mil-lm-shot-frame">
+                                <img
+                                    src="img/leadmath-report.png"
+                                    alt="LeadMath shareable campaign forecast report showing scenario results and advertising economics"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </div>
+                            <figcaption>
+                                Saved forecasts become shareable reports containing scenario comparisons,
+                                campaign assumptions and profitability metrics.
+                            </figcaption>
+                        </figure>
+
+                    </div>
+                    <!-- product screenshots end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Forecast Model</h3>
+                    </div>
+
+
+                    <!-- forecast model -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-copy mil-mb-60">
+                            <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                From Budget to Contribution
+                            </p>
+
+                            <h2 class="mil-up mil-mb-30">
+                                One calculation follows the full customer-acquisition journey.
+                            </h2>
+
+                            <p class="mil-up">
+                                The model deliberately includes the operational conversion points between
+                                a lead and a paying customer. That makes weak assumptions visible and shows
+                                where campaign economics improve or break down.
+                            </p>
+                        </div>
+
+                        <div class="mil-lm-model mil-up">
+                            <div class="mil-lm-model-grid">
+
+                                <article class="mil-lm-model-step">
+                                    <span>01</span>
+                                    <h4>Advertising Budget</h4>
+                                    <p>Begin with the monthly amount the business plans to invest.</p>
+                                </article>
+
+                                <article class="mil-lm-model-step">
+                                    <span>02</span>
+                                    <h4>Leads</h4>
+                                    <p>Convert budget and expected CPL into projected lead volume.</p>
+                                </article>
+
+                                <article class="mil-lm-model-step">
+                                    <span>03</span>
+                                    <h4>Appointments</h4>
+                                    <p>Apply booking and attendance rates instead of assuming every lead converts.</p>
+                                </article>
+
+                                <article class="mil-lm-model-step">
+                                    <span>04</span>
+                                    <h4>Customers</h4>
+                                    <p>Use the attended-appointment close rate to estimate acquired customers.</p>
+                                </article>
+
+                                <article class="mil-lm-model-step">
+                                    <span>05</span>
+                                    <h4>Revenue &amp; Gross Profit</h4>
+                                    <p>Connect customer volume to average sale value and gross margin.</p>
+                                </article>
+
+                                <article class="mil-lm-model-step">
+                                    <span>06</span>
+                                    <h4>Contribution &amp; Efficiency</h4>
+                                    <p>Calculate contribution after ads, CAC, ROAS and break-even limits.</p>
+                                </article>
+
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- forecast model end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Scenario Planning</h3>
+                    </div>
+
+
+                    <!-- scenarios -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-scenario-grid">
+
+                            <article class="mil-lm-scenario-card mil-up">
+                                <span class="mil-lm-scenario-label">Conservative Scenario</span>
+                                <h4>Plan for weaker performance.</h4>
+                                <p>
+                                    Tests the campaign against cautious conversion assumptions so the
+                                    downside is visible before spend grows.
+                                </p>
+                            </article>
+
+                            <article class="mil-lm-scenario-card mil-lm-scenario-card--expected mil-up">
+                                <span class="mil-lm-scenario-label">Expected Scenario</span>
+                                <h4>Model the working forecast.</h4>
+                                <p>
+                                    Uses the user’s entered assumptions as the primary planning view and
+                                    the central reference point for the saved report.
+                                </p>
+                            </article>
+
+                            <article class="mil-lm-scenario-card mil-up">
+                                <span class="mil-lm-scenario-label">Optimized Scenario</span>
+                                <h4>Understand the upside.</h4>
+                                <p>
+                                    Shows how stronger booking, attendance and closing performance can
+                                    change revenue, contribution and acquisition efficiency.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- scenarios end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>What LeadMath Calculates</h3>
+                    </div>
+
+
+                    <!-- feature system -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-feature-grid">
+
+                            <article class="mil-lm-feature-card mil-up">
+                                <p class="mil-lm-feature-number">01 · CUSTOMER JOURNEY</p>
+                                <h4>Lead-to-Customer Forecast</h4>
+                                <p>
+                                    Projects each stage from lead generation through booked appointments,
+                                    attended appointments and acquired customers.
+                                </p>
+                                <ul class="mil-lm-feature-list">
+                                    <li>Projected leads</li>
+                                    <li>Booked and attended appointments</li>
+                                    <li>Expected customers acquired</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lm-feature-card mil-up">
+                                <p class="mil-lm-feature-number">02 · COMMERCIAL OUTCOME</p>
+                                <h4>Revenue &amp; Contribution</h4>
+                                <p>
+                                    Applies average sale value and gross margin to distinguish top-line
+                                    revenue from the value remaining after advertising costs.
+                                </p>
+                                <ul class="mil-lm-feature-list">
+                                    <li>Projected revenue</li>
+                                    <li>Gross profit before advertising</li>
+                                    <li>Contribution after advertising</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lm-feature-card mil-up">
+                                <p class="mil-lm-feature-number">03 · ACQUISITION EFFICIENCY</p>
+                                <h4>CAC &amp; ROAS</h4>
+                                <p>
+                                    Calculates customer acquisition cost and return on ad spend while
+                                    keeping both metrics in the context of actual margin.
+                                </p>
+                                <ul class="mil-lm-feature-list">
+                                    <li>Customer acquisition cost</li>
+                                    <li>Return on advertising spend</li>
+                                    <li>Maximum sustainable CAC</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lm-feature-card mil-up">
+                                <p class="mil-lm-feature-number">04 · BREAK-EVEN CONTROL</p>
+                                <h4>CPL Limits &amp; Safety Margin</h4>
+                                <p>
+                                    Surfaces how much the campaign can afford to pay for a lead and how
+                                    far the expected CPL sits from that break-even boundary.
+                                </p>
+                                <ul class="mil-lm-feature-list">
+                                    <li>Break-even cost per lead</li>
+                                    <li>CPL safety margin</li>
+                                    <li>Clear profitability boundary</li>
+                                </ul>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- feature system end -->
+
+
+                    <!-- economics grid -->
+                    <div class="mil-lm-metrics mil-mb-90">
+
+                        <article class="mil-lm-metric mil-up">
+                            <span>Revenue</span>
+                            <h4>Projected campaign revenue</h4>
+                            <p>Customer volume multiplied by average sale value.</p>
+                        </article>
+
+                        <article class="mil-lm-metric mil-up">
+                            <span>Contribution</span>
+                            <h4>Contribution after advertising</h4>
+                            <p>Gross profit remaining after campaign spend is deducted.</p>
+                        </article>
+
+                        <article class="mil-lm-metric mil-up">
+                            <span>CAC</span>
+                            <h4>Customer acquisition cost</h4>
+                            <p>Advertising spend required for each projected customer.</p>
+                        </article>
+
+                        <article class="mil-lm-metric mil-up">
+                            <span>ROAS</span>
+                            <h4>Return on advertising spend</h4>
+                            <p>Projected campaign revenue compared with the ad budget.</p>
+                        </article>
+
+                        <article class="mil-lm-metric mil-up">
+                            <span>Break-Even CPL</span>
+                            <h4>Maximum break-even lead cost</h4>
+                            <p>The lead-cost ceiling supported by the forecast economics.</p>
+                        </article>
+
+                        <article class="mil-lm-metric mil-up">
+                            <span>Safety Margin</span>
+                            <h4>Cost-per-lead headroom</h4>
+                            <p>The distance between expected CPL and the break-even limit.</p>
+                        </article>
+
+                    </div>
+                    <!-- economics grid end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Product Architecture</h3>
+                    </div>
+
+
+                    <!-- architecture -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-split mil-mb-60">
+
+                            <div class="mil-lm-copy">
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    A Real Rails Product
+                                </p>
+
+                                <h2 class="mil-up mil-mb-30">
+                                    Forecast logic, saved data and public reporting have clear responsibilities.
+                                </h2>
+
+                                <p class="mil-up">
+                                    LeadMath is not a static form with client-side arithmetic. The application
+                                    versions its calculation engine, stores immutable snapshots and renders
+                                    durable public reports without coupling the core product to a particular
+                                    email or hosting provider.
+                                </p>
+                            </div>
+
+                            <aside class="mil-lm-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Engineering Boundary</p>
+                                <h4 class="mil-mb-20">Preserve the meaning of every saved forecast.</h4>
+                                <p>
+                                    Each report retains its calculation version, inputs and scenario outputs.
+                                    Later model improvements can move forward without silently changing a
+                                    forecast that has already been shared.
+                                </p>
+                            </aside>
+
+                        </div>
+
+                        <div class="mil-lm-architecture mil-up">
+
+                            <div class="mil-lm-architecture-row">
+                                <span>01</span>
+                                <div>
+                                    <h4>Versioned Forecast Engine</h4>
+                                    <p>Centralized calculation logic with explicit model-version tracking.</p>
+                                </div>
+                                <span>Domain</span>
+                            </div>
+
+                            <div class="mil-lm-architecture-row">
+                                <span>02</span>
+                                <div>
+                                    <h4>Immutable Forecast Snapshot</h4>
+                                    <p>Saved inputs, scenarios and outputs remain stable after creation.</p>
+                                </div>
+                                <span>Data</span>
+                            </div>
+
+                            <div class="mil-lm-architecture-row">
+                                <span>03</span>
+                                <div>
+                                    <h4>Random Public Tokens</h4>
+                                    <p>Non-sequential shareable report URLs avoid predictable record discovery.</p>
+                                </div>
+                                <span>Public Access</span>
+                            </div>
+
+                            <div class="mil-lm-architecture-row">
+                                <span>04</span>
+                                <div>
+                                    <h4>Optional Report Delivery</h4>
+                                    <p>Mailer and background-job foundations remain behind a feature flag.</p>
+                                </div>
+                                <span>Delivery</span>
+                            </div>
+
+                            <div class="mil-lm-architecture-row">
+                                <span>05</span>
+                                <div>
+                                    <h4>Public-Surface Hardening</h4>
+                                    <p>Rate limiting, CSP, browser headers and privacy-focused filtering.</p>
+                                </div>
+                                <span>Security</span>
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <!-- architecture end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Key Product Decisions</h3>
+                    </div>
+
+
+                    <!-- decisions -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-decision-grid">
+
+                            <article class="mil-lm-decision-card mil-up">
+                                <span class="mil-lm-decision-label">Decision 01</span>
+                                <h4 class="mil-mb-20">Keep the calculator open.</h4>
+                                <p>
+                                    No account, email gate or forced registration stands between the user
+                                    and the forecast. The product earns trust by being useful first.
+                                </p>
+                            </article>
+
+                            <article class="mil-lm-decision-card mil-up">
+                                <span class="mil-lm-decision-label">Decision 02</span>
+                                <h4 class="mil-mb-20">Save a durable snapshot.</h4>
+                                <p>
+                                    A shared report preserves its exact assumptions and results rather than
+                                    recalculating silently against future code changes.
+                                </p>
+                            </article>
+
+                            <article class="mil-lm-decision-card mil-up">
+                                <span class="mil-lm-decision-label">Decision 03</span>
+                                <h4 class="mil-mb-20">Present estimates responsibly.</h4>
+                                <p>
+                                    LeadMath explains assumptions and scenarios as planning guidance—not a
+                                    guarantee of future campaign performance.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- decisions end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>My Role &amp; Engineering Approach</h3>
+                    </div>
+
+
+                    <!-- role and engineering -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-role-grid">
+
+                            <article class="mil-lm-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">End-to-End Ownership</p>
+                                <h3 class="mil-mb-20">
+                                    I turned paid-media planning experience into a focused software product.
+                                </h3>
+                                <p>
+                                    LeadMath connects my software-development work with more than thirteen
+                                    years across sales, marketing, advertising and growth. I defined the
+                                    economic model, product scope, interface, Rails architecture, test
+                                    strategy and production-hardening work.
+                                </p>
+
+                                <ul class="mil-lm-ownership-list">
+                                    <li><span>01</span> Product problem, audience and MVP boundary</li>
+                                    <li><span>02</span> Campaign model and scenario logic</li>
+                                    <li><span>03</span> Rails models, services, controllers and views</li>
+                                    <li><span>04</span> Public reports, privacy and security controls</li>
+                                    <li><span>05</span> Automated testing, documentation and release audit</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-lm-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Technology</p>
+                                <h4 class="mil-mb-20">A conventional Rails stack built for clarity.</h4>
+                                <p>
+                                    The stack keeps the calculation model and public-report workflow
+                                    understandable, testable and independent from provider-specific delivery.
+                                </p>
+
+                                <div class="mil-lm-stack">
+                                    <span>Ruby 3.3.5</span>
+                                    <span>Rails 7.1.6</span>
+                                    <span>PostgreSQL</span>
+                                    <span>Hotwire</span>
+                                    <span>Stimulus</span>
+                                    <span>Import Maps</span>
+                                    <span>Puma</span>
+                                    <span>Minitest</span>
+                                    <span>Rack::Attack</span>
+                                </div>
+                            </article>
+
+                            <article class="mil-lm-panel mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Development Practice</p>
+                                <h4 class="mil-mb-20">
+                                    Make the complete useful path reliable before expanding.
+                                </h4>
+                                <p>
+                                    The MVP prioritised calculation integrity, saved reports, responsive
+                                    presentation, public security and production verification before adding
+                                    accounts, subscriptions or unnecessary platform complexity.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- role and engineering end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Production Readiness</h3>
+                    </div>
+
+
+                    <!-- readiness -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-readiness mil-up">
+
+                            <div class="mil-lm-readiness-item">
+                                <span>Automated Tests</span>
+                                <strong>100 tests</strong>
+                            </div>
+
+                            <div class="mil-lm-readiness-item">
+                                <span>Assertions</span>
+                                <strong>797 assertions</strong>
+                            </div>
+
+                            <div class="mil-lm-readiness-item">
+                                <span>Final Result</span>
+                                <strong>0 failures</strong>
+                            </div>
+
+                            <div class="mil-lm-readiness-item">
+                                <span>Production Audit</span>
+                                <strong>Boot &amp; assets verified</strong>
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <!-- readiness end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Current Stage</h3>
+                    </div>
+
+
+                    <!-- current stage -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-lm-stage">
+
+                            <article class="mil-lm-stage-card mil-lm-stage-card--dark mil-up">
+                                <p class="mil-upper mil-mb-20">MVP Complete · Deployment Pending</p>
+                                <h3 class="mil-mb-20">
+                                    The product is complete and technically release-ready.
+                                </h3>
+                                <p>
+                                    The forecast engine, calculator, saved reports, responsive interface,
+                                    security work, metadata, error pages and production verification are
+                                    complete. Public hosting is the remaining release step.
+                                </p>
+
+                                <div class="mil-lm-stage-progress">
+                                    <div><span>Calculator</span><strong>Complete</strong></div>
+                                    <div><span>Shareable Reports</span><strong>Complete</strong></div>
+                                    <div><span>Security Hardening</span><strong>Complete</strong></div>
+                                    <div><span>Public Deployment</span><strong>Pending</strong></div>
+                                </div>
+                            </article>
+
+                            <article class="mil-lm-stage-card mil-up">
+                                <p class="mil-upper mil-dark mil-mb-20">Launch Plan</p>
+                                <h4 class="mil-mb-20">Release the completed MVP as a free public tool.</h4>
+                                <p>
+                                    LeadMath will remain available without an account or email gate. Its
+                                    planned production home is leadmath.carywood.co once hosting is confirmed.
+                                </p>
+
+                                <div class="mil-lm-actions">
+                                    <span
+                                        class="mil-btn mil-sm-btn mil-lm-disabled"
+                                        aria-disabled="true"
+                                    >
+                                        Launching Soon
+                                    </span>
+                                </div>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- current stage end -->
+
+
+                    <div class="mil-divider mil-up mil-mb-90"></div>
+
+
+                    <!-- LeadMath CTA -->
+                    <section class="mil-lm-cta mil-up">
+
+                        <p class="mil-upper mil-dark mil-mb-20">
+                            Rails Development · Product Thinking · Paid Media
+                        </p>
+
+                        <h2 class="mil-mb-30">
+                            LeadMath connects practical campaign experience with focused product engineering.
+                        </h2>
+
+                        <p class="mil-mb-30">
+                            Explore the rest of my software and client work, review the tools directory or
+                            start a conversation about useful products and growth systems.
+                        </p>
+
+                        <div class="mil-lm-cta-actions">
+
+                            <a href="applications.html" class="mil-btn mil-sm-btn" data-no-swup>
+                                Explore Software Products
+                            </a>
+
+                            <a href="tools.html" class="mil-lm-text-link" data-no-swup>
+                                View Tools
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                            <a href="contact.html" class="mil-lm-text-link" data-no-swup>
+                                Start a Conversation
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
+                    </section>
+                    <!-- LeadMath CTA end -->
+
+
+                    <footer class="mil-fw">
+                        <p class="mil-light-soft">
+                            © 2026 Cary Wood. Building software, tools and digital systems.
+                        </p>
+                    </footer>
+</div>
+
+            </div>
+
+            <div class="mil-right-banner" id="scene">
+                <!-- scrollbar -->
+                <div class="mil-progress-track">
+                    <div class="mil-progress"></div>
+                </div>
+                <!-- scrollbar end -->
+                <div class="mil-banner-wrapper" data-depth="1">
+                    <div id="swupBg" class="mil-banner-frame">
+                        <img src="img/person/bg-1.jpg" alt="background" class="mil-banner-bg mil-blur">
+                    </div>
+                </div>
+                <div class="mil-banner-wrapper" data-depth="0.2">
+                    <div id="swupPerson" class="mil-banner-frame">
+                        <img src="img/person/avtar.png" alt="person" class="mil-banner-person">
+                    </div>
+                </div>
+                <div class="mil-flying-skills" data-depth="0.1">
+                    <div id="swupSkills" class="mil-skills-frame">
+                        <!-- <div class="mil-item" style="top: 30%; left: 10%">
+                            <img src="img/logos/1.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 15%; left: 20%">
+                            <img src="img/logos/2.jpg" alt="logo">
+                        </div>
+                        <div class="mil-item" style="bottom: 45%; right: 15%">
+                            <img src="img/logos/3.jpg" alt="logo">
+                        </div> -->
+                        <div class="mil-el mil-addition-el-1">+</div>
+                        <div class="mil-el mil-addition-el-2">+</div>
+                        <div class="mil-el mil-addition-el-3"></div>
+                        <div class="mil-el mil-addition-el-4"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- content -->
+    </div>
+    <!-- wrapper end -->
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swup body class plugin js -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- parallax js -->
+    <script src="js/plugins/parallax.js"></script>
+    <!-- courtney js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
