@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- page name -->
     <title>Projects | Cary Wood — Software, Websites &amp; Growth Systems</title>
-<meta name="description" content="Explore software applications, websites, lead-generation funnels and digital systems built by Cary Wood.">
+<meta name="description" content="Explore LeadsTrackr, LeadMath and HookScribe alongside websites, lead-generation funnels and digital systems built by Cary Wood.">
 
 <style>
     /*
@@ -27,13 +27,15 @@
 
     .mil-featured-projects {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 36px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
     }
 
     .mil-featured-project {
+        display: flex;
         min-width: 0;
         overflow: hidden;
+        flex-direction: column;
         background: #f4f4f4;
         border: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 22px;
@@ -70,6 +72,9 @@
     }
 
     .mil-featured-project-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
         padding: 34px;
     }
 
@@ -109,6 +114,15 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 22px;
+        margin-top: auto;
+    }
+
+    .mil-featured-project-status {
+        color: rgba(36, 36, 36, 0.54);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
     }
 
     .mil-featured-project-link {
@@ -130,9 +144,160 @@
         transform: translate(3px, -3px);
     }
 
-    @media screen and (max-width: 991px) {
+
+    /* -------------------------------------------
+
+    Featured client work
+
+    ------------------------------------------- */
+
+    .mil-featured-client-work {
+        width: 100%;
+        max-width: 980px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-bottom: 60px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mil-featured-project--client {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mil-featured-project--client .mil-featured-project-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .mil-featured-project--client .mil-featured-project-actions {
+        margin-top: auto;
+    }
+
+    .mil-featured-project-image--system {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 42px;
+        background:
+            radial-gradient(
+                circle at 82% 16%,
+                rgba(255, 68, 56, 0.22),
+                transparent 38%
+            ),
+            #202124;
+    }
+
+    .mil-project-system-flow {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .mil-project-system-step {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 16px 20px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .mil-project-system-step > span {
+        display: flex;
+        flex: 0 0 36px;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: #ff4438;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-project-system-step div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .mil-project-system-step small {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    .mil-project-system-step strong {
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .mil-project-system-line {
+        width: 1px;
+        height: 13px;
+        margin-left: 38px;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+
+    /* -------------------------------------------
+
+    Final projects CTA
+
+    ------------------------------------------- */
+
+    .mil-projects-final-cta {
+        max-width: 900px;
+        margin: 20px auto 60px;
+    }
+
+    .mil-projects-final-cta h2 {
+        max-width: 850px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .mil-projects-final-cta > p {
+        max-width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .mil-projects-final-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+    }
+
+
+    /* -------------------------------------------
+
+    Responsive
+
+    ------------------------------------------- */
+
+    @media screen and (max-width: 1199px) {
         .mil-featured-projects {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .mil-featured-projects,
+        .mil-featured-client-work {
             grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-featured-client-work {
+            max-width: 620px;
         }
     }
 
@@ -153,146 +318,19 @@
             align-items: flex-start;
             flex-direction: column;
         }
+
+        .mil-featured-project-image--system {
+            padding: 28px 22px;
+        }
+
+        .mil-project-system-step {
+            padding: 14px 16px;
+        }
+
+        .mil-projects-final-actions {
+            flex-direction: column;
+        }
     }
-
-/* -------------------------------------------
-
-Featured client work
-
-------------------------------------------- */
-
-.mil-featured-client-work {
-    padding-bottom: 60px;
-}
-
-.mil-featured-project--client {
-    display: flex;
-    flex-direction: column;
-}
-
-.mil-featured-project--client .mil-featured-project-content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
-
-.mil-featured-project--client .mil-featured-project-actions {
-    margin-top: auto;
-}
-
-.mil-featured-project-image--system {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 42px;
-    background:
-        radial-gradient(
-            circle at 82% 16%,
-            rgba(255, 68, 56, 0.22),
-            transparent 38%
-        ),
-        #202124;
-}
-
-.mil-project-system-flow {
-    width: 100%;
-    max-width: 420px;
-}
-
-.mil-project-system-step {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 16px 20px;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.13);
-}
-
-.mil-project-system-step > span {
-    display: flex;
-    flex: 0 0 36px;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: #ff4438;
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.mil-project-system-step div {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.mil-project-system-step small {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1.4px;
-    line-height: 1.4;
-    text-transform: uppercase;
-}
-
-.mil-project-system-step strong {
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.mil-project-system-line {
-    width: 1px;
-    height: 13px;
-    margin-left: 38px;
-    background: rgba(255, 255, 255, 0.3);
-}
-
-
-/* Final projects CTA */
-
-.mil-projects-final-cta {
-    max-width: 900px;
-    margin: 20px auto 60px;
-}
-
-.mil-projects-final-cta h2 {
-    max-width: 850px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.mil-projects-final-cta > p {
-    max-width: 700px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.mil-projects-final-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-}
-
-@media screen and (max-width: 575px) {
-    .mil-featured-project-image--system {
-        padding: 28px 22px;
-    }
-
-    .mil-project-system-step {
-        padding: 14px 16px;
-    }
-
-    .mil-projects-final-actions {
-        flex-direction: column;
-    }
-}
-
-
 </style>
 
 </head>
@@ -680,6 +718,63 @@ Featured client work
                                 </div>
 
                             </article>
+
+                            <!-- LeadMath -->
+                            <article class="mil-featured-project mil-up">
+
+                                <a
+                                    href="leadmath.html"
+                                    class="mil-featured-project-image"
+                                    data-no-swup
+                                    aria-label="View the LeadMath product case study"
+                                >
+                                    <img
+                                        src="img/leadmath-calculator1.png"
+                                        alt="LeadMath paid-advertising forecast calculator showing campaign assumptions and projected outcomes"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </a>
+
+                                <div class="mil-featured-project-content">
+
+                                    <div class="mil-featured-project-meta">
+                                        <span>Free Planning Tool</span>
+                                        <span>Rails · Forecasting</span>
+                                    </div>
+
+                                    <h3>
+                                        <a href="leadmath.html" data-no-swup>
+                                            LeadMath
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        A free paid-advertising forecasting tool for modelling leads,
+                                        appointments, customers, revenue, CAC and ROAS across three
+                                        practical scenarios.
+                                    </p>
+
+                                    <div class="mil-featured-project-actions">
+
+                                        <a
+                                            href="leadmath.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View Case Study
+                                        </a>
+
+                                        <span class="mil-featured-project-status">
+                                            Launching Soon
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <!-- LeadMath end -->
 
 
                             <!-- HookScribe -->
