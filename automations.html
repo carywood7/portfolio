@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en" class="is-animating">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+
+    <!-- courtney css -->
+    <link rel="stylesheet" href="css/dark-mode.css">
+
+    <title>Workflow Automations | Cary Wood</title>
+
+    <meta
+        name="description"
+        content="Explore workflow automation projects built by Cary Wood across operations, reporting, routing, onboarding, CRM, integrations and AI-assisted business systems."
+    >
+
+    <style>
+
+        /*
+        Automations portfolio page styles.
+        These remain page-specific so shared CaryWood.co styles are untouched.
+        */
+
+        .mil-auto-card,
+        .mil-auto-feature,
+        .mil-auto-process-step,
+        .mil-auto-tool {
+            background: #f4f4f4 !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            color: #242424 !important;
+        }
+
+        .mil-auto-card *,
+        .mil-auto-feature *,
+        .mil-auto-process-step *,
+        .mil-auto-tool * {
+            color: #242424 !important;
+        }
+
+        .mil-auto-card p,
+        .mil-auto-feature p,
+        .mil-auto-process-step p,
+        .mil-auto-tool p {
+            color: rgba(36, 36, 36, 0.7) !important;
+        }
+
+        .mil-auto-section-heading {
+            max-width: 850px;
+            margin-bottom: 55px;
+        }
+
+        .mil-auto-section-heading p:last-child {
+            max-width: 760px;
+        }
+
+
+        /* Featured project */
+
+        .mil-auto-featured {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+            align-items: stretch;
+            gap: 28px;
+            margin-bottom: 90px;
+        }
+
+        .mil-auto-card {
+            padding: 44px 40px;
+            border-radius: 20px;
+        }
+
+        .mil-auto-card--main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .mil-auto-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            min-height: 31px;
+            margin-bottom: 26px;
+            padding: 7px 12px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 30px;
+            color: rgba(36, 36, 36, 0.56) !important;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .mil-auto-card h2 {
+            margin-bottom: 22px;
+        }
+
+        .mil-auto-card-lead {
+            max-width: 720px;
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 1.65;
+        }
+
+        .mil-auto-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 24px;
+            margin-top: 38px;
+        }
+
+        .mil-auto-text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #242424 !important;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .mil-auto-text-link span {
+            transition: transform 0.25s ease;
+        }
+
+        .mil-auto-text-link:hover span {
+            transform: translate(3px, -3px);
+        }
+
+        .mil-auto-proof {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mil-auto-proof-list {
+            display: grid;
+            gap: 22px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .mil-auto-proof-list li {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mil-auto-proof-list li:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .mil-auto-proof-label {
+            display: block;
+            margin-bottom: 7px;
+            color: rgba(36, 36, 36, 0.48) !important;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .mil-auto-proof-list strong {
+            display: block;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+
+        /* Automation focus areas */
+
+        .mil-auto-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 90px;
+        }
+
+        .mil-auto-feature {
+            min-height: 230px;
+            padding: 32px 28px;
+        }
+
+        .mil-auto-feature-number {
+            display: block;
+            margin-bottom: 28px;
+            color: rgba(36, 36, 36, 0.34) !important;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .mil-auto-feature h4 {
+            margin-bottom: 14px;
+            font-size: 19px;
+        }
+
+        .mil-auto-feature p {
+            margin-bottom: 0;
+        }
+
+
+        /* Process */
+
+        .mil-auto-process {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 90px;
+        }
+
+        .mil-auto-process-step {
+            min-height: 245px;
+            padding: 32px 28px;
+        }
+
+        .mil-auto-process-step span {
+            display: block;
+            margin-bottom: 34px;
+            color: rgba(36, 36, 36, 0.34) !important;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .mil-auto-process-step h4 {
+            margin-bottom: 15px;
+            font-size: 19px;
+        }
+
+        .mil-auto-process-step p {
+            margin-bottom: 0;
+        }
+
+
+        /* Tools */
+
+        .mil-auto-tool-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 90px;
+        }
+
+        .mil-auto-tool {
+            min-height: 170px;
+            padding: 30px 27px;
+        }
+
+        .mil-auto-tool h4 {
+            margin-bottom: 14px;
+            font-size: 18px;
+        }
+
+        .mil-auto-tool p {
+            margin-bottom: 0;
+        }
+
+
+        /* Portfolio note */
+
+        .mil-auto-note {
+            margin-bottom: 90px;
+            padding: 27px 30px;
+            border-left: 3px solid #242424;
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .mil-auto-note p {
+            margin-bottom: 0;
+            color: rgba(36, 36, 36, 0.68);
+        }
+
+
+        /* Responsive */
+
+        @media screen and (max-width: 1100px) {
+
+            .mil-auto-featured {
+                grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
+            }
+
+            .mil-auto-feature-grid,
+            .mil-auto-tool-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .mil-auto-process {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .mil-auto-featured,
+            .mil-auto-feature-grid,
+            .mil-auto-process,
+            .mil-auto-tool-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mil-auto-card,
+            .mil-auto-feature,
+            .mil-auto-process-step,
+            .mil-auto-tool {
+                min-height: auto;
+            }
+
+        }
+
+        @media screen and (max-width: 575px) {
+
+            .mil-auto-card {
+                padding: 32px 24px;
+                border-radius: 14px;
+            }
+
+            .mil-auto-actions {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .mil-auto-feature,
+            .mil-auto-process-step,
+            .mil-auto-tool {
+                padding: 28px 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body class="mil-fw-page mil-100-page">
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- preloader -->
+        <div class="mil-preloader-frame">
+
+            <div
+                class="mil-preloader-content"
+                style="transform: scale(.6) translateY(200px); opacity: 0;"
+            >
+
+                <div class="mil-preloader">
+                    <div class="mil-circ-1"></div>
+                    <div class="mil-circ-2"></div>
+                    <div class="mil-circ-3"></div>
+                    <div class="mil-circ-4"></div>
+                </div>
+
+                <div class="mil-upper">
+                    Loading
+                </div>
+
+            </div>
+
+        </div>
+        <!-- preloader end -->
+
+
+        <div class="mil-frame">
+
+            <!-- top bar -->
+            <div class="mil-top-panel">
+
+                <a href="index.html#top" class="mil-logo" data-no-swup>
+                    <span class="mil-dot">C</span>
+                </a>
+
+                <div class="mil-navigation">
+
+                    <nav id="swupMenu" class="mil-menu-transition">
+
+                        <ul>
+
+                            <li class="mil-has-children">
+                                <a href="index.html" data-no-swup>
+                                    Home
+                                </a>
+                            </li>
+
+                            <li class="mil-has-children">
+                                <a href="about.html" data-no-swup>
+                                    About
+                                </a>
+                            </li>
+
+                            <li class="mil-has-children">
+                                <a href="tools.html" data-no-swup>
+                                    Tools
+                                </a>
+                            </li>
+
+                            <li class="mil-has-children mil-active">
+
+                                <a href="projects.html" data-no-swup>
+                                    Projects
+                                </a>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="applications.html" data-no-swup>
+                                            Software Products
+                                        </a>
+                                    </li>
+
+                                    <li class="mil-active">
+                                        <a
+                                            href="automations.html"
+                                            data-no-swup
+                                            aria-current="page"
+                                        >
+                                            Automations
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="websites.html" data-no-swup>
+                                            Websites
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                            <li>
+                                <a href="contact.html" data-no-swup>
+                                    Contact
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+                <div class="mil-top-panel-btns">
+
+                    <a href="contact.html" class="mil-contact-btn" data-no-swup>
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-mail"
+                        >
+
+                            <path
+                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                            ></path>
+
+                            <polyline points="22,6 12,13 2,6"></polyline>
+
+                        </svg>
+
+                    </a>
+
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- top bar end -->
+
+
+            <!-- left bar -->
+            <div class="mil-left-panel">
+
+                <div class="mil-page-name mil-upper mil-dark">
+                    PROJECTS · AUTOMATIONS
+                </div>
+
+                <ul class="mil-social-icons">
+
+                    <li>
+                        <a
+                            href="https://github.com/carywood7"
+                            target="_blank"
+                            class="social-icon"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.instagram.com/carywood7"
+                            target="_blank"
+                            class="social-icon"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/carywood777"
+                            target="_blank"
+                            class="social-icon"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="far fa-circle"></i>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- left bar end -->
+
+
+            <!-- back to top -->
+            <div class="mil-back-to-top">
+
+                <a href="#top" class="mil-link mil-btt-icon">
+
+                    <span>
+                        Back to top
+                    </span>
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-arrow-right"
+                    >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+
+                </a>
+
+            </div>
+            <!-- back to top end -->
+
+        </div>
+
+
+        <!-- content -->
+        <div class="mil-content">
+
+            <div
+                class="mil-scroll-wrapper transition-fade"
+                id="swupMain"
+            >
+
+                <div class="mil-container-100">
+
+                    <section class="mil-p-90-30">
+
+                        <!-- introduction -->
+                        <div class="mil-apps-intro mil-mb-90">
+
+                            <p class="mil-upper mil-dark mil-up mil-mb-30">
+                                Workflow Automations
+                            </p>
+
+                            <h1 class="mil-up mil-mb-30">
+                                Automation built around the work—not the tool.
+                            </h1>
+
+                            <p class="mil-up">
+                                I design workflow automation for reporting, routing,
+                                onboarding, CRM operations, internal handoffs and
+                                AI-assisted business processes. The goal is to make
+                                work more consistent, visible and easier to manage
+                                without adding unnecessary complexity.
+                            </p>
+
+                        </div>
+                        <!-- introduction end -->
+
+
+                        <!-- featured project -->
+                        <div class="mil-auto-featured">
+
+                            <article class="mil-auto-card mil-auto-card--main mil-up">
+
+                                <div>
+
+                                    <span class="mil-auto-eyebrow">
+                                        Featured Initiative · MSP Operations
+                                    </span>
+
+                                    <h2>
+                                        Hammer Flow
+                                    </h2>
+
+                                    <p class="mil-auto-card-lead">
+                                        A service-led automation initiative for managed
+                                        service providers. Hammer Flow audits, designs,
+                                        implements and manages workflows around the PSA,
+                                        RMM, Microsoft and vendor systems an MSP already uses.
+                                    </p>
+
+                                </div>
+
+                                <div class="mil-auto-actions">
+
+                                    <a
+                                        href="hammer-flow.html"
+                                        class="mil-btn mil-sm-btn"
+                                        data-no-swup
+                                    >
+                                        View Full Case Study
+                                    </a>
+
+                                    <a
+                                        href="https://hammerflow.carywood.co"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="mil-auto-text-link"
+                                    >
+                                        Visit Hammer Flow
+                                        <span aria-hidden="true">↗</span>
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <aside class="mil-auto-card mil-auto-proof mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-25">
+                                    Current Proof
+                                </p>
+
+                                <ul class="mil-auto-proof-list">
+
+                                    <li>
+                                        <span class="mil-auto-proof-label">
+                                            Portfolio
+                                        </span>
+                                        <strong>
+                                            Five separate validated workflow prototypes
+                                        </strong>
+                                    </li>
+
+                                    <li>
+                                        <span class="mil-auto-proof-label">
+                                            Current Platform
+                                        </span>
+                                        <strong>
+                                            n8n with synthetic operational data
+                                        </strong>
+                                    </li>
+
+                                    <li>
+                                        <span class="mil-auto-proof-label">
+                                            Delivery Model
+                                        </span>
+                                        <strong>
+                                            Audit, implement, integrate, maintain and manage
+                                        </strong>
+                                    </li>
+
+                                    <li>
+                                        <span class="mil-auto-proof-label">
+                                            Safety
+                                        </span>
+                                        <strong>
+                                            Read-only first, minimum permissions and human approval
+                                        </strong>
+                                    </li>
+
+                                </ul>
+
+                            </aside>
+
+                        </div>
+                        <!-- featured project end -->
+
+
+                        <div class="mil-app-divider mil-up"></div>
+
+
+                        <!-- focus areas -->
+                        <div id="automation-focus">
+
+                            <div class="mil-auto-section-heading mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Automation Focus Areas
+                                </p>
+
+                                <h2 class="mil-mb-30">
+                                    Repetitive work, operational decisions and handoffs.
+                                </h2>
+
+                                <p>
+                                    The best automation opportunities are rarely isolated
+                                    button clicks. They sit inside recurring workflows where
+                                    people collect information, apply rules, review exceptions,
+                                    notify others and keep systems synchronized.
+                                </p>
+
+                            </div>
+
+
+                            <div class="mil-auto-feature-grid">
+
+                                <article class="mil-auto-feature mil-up">
+
+                                    <span class="mil-auto-feature-number">
+                                        01 · Reporting
+                                    </span>
+
+                                    <h4>
+                                        Operational reporting
+                                    </h4>
+
+                                    <p>
+                                        Turn activity from multiple systems into scheduled,
+                                        decision-ready summaries instead of manual spreadsheet work.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-feature mil-up">
+
+                                    <span class="mil-auto-feature-number">
+                                        02 · Alerts
+                                    </span>
+
+                                    <h4>
+                                        Risk and exception alerts
+                                    </h4>
+
+                                    <p>
+                                        Surface deadlines, missing information, unusual activity
+                                        and items that require attention before they become failures.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-feature mil-up">
+
+                                    <span class="mil-auto-feature-number">
+                                        03 · Routing
+                                    </span>
+
+                                    <h4>
+                                        Intake and routing
+                                    </h4>
+
+                                    <p>
+                                        Evaluate incoming requests and recommend the correct
+                                        priority, owner, queue or next step using clear rules.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-feature mil-up">
+
+                                    <span class="mil-auto-feature-number">
+                                        04 · Detection
+                                    </span>
+
+                                    <h4>
+                                        Pattern and issue detection
+                                    </h4>
+
+                                    <p>
+                                        Group recurring events, identify repeated problems and
+                                        bring hidden operational patterns into view.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-feature mil-up">
+
+                                    <span class="mil-auto-feature-number">
+                                        05 · Onboarding
+                                    </span>
+
+                                    <h4>
+                                        Onboarding readiness
+                                    </h4>
+
+                                    <p>
+                                        Check requests for missing details, policy conflicts,
+                                        duplication and approval readiness before provisioning begins.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-feature mil-up">
+
+                                    <span class="mil-auto-feature-number">
+                                        06 · AI Assistance
+                                    </span>
+
+                                    <h4>
+                                        Controlled AI workflows
+                                    </h4>
+
+                                    <p>
+                                        Use AI for classification, summarization and drafting while
+                                        keeping deterministic rules and human approval where they matter.
+                                    </p>
+
+                                </article>
+
+                            </div>
+
+                        </div>
+                        <!-- focus areas end -->
+
+
+                        <div class="mil-app-divider mil-up"></div>
+
+
+                        <!-- process -->
+                        <div id="automation-process">
+
+                            <div class="mil-auto-section-heading mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    How I Approach Automation
+                                </p>
+
+                                <h2 class="mil-mb-30">
+                                    Understand first. Automate second.
+                                </h2>
+
+                                <p>
+                                    A useful automation begins with the operating process,
+                                    the people responsible for it, the decisions being made
+                                    and the consequences of getting those decisions wrong.
+                                </p>
+
+                            </div>
+
+
+                            <div class="mil-auto-process">
+
+                                <article class="mil-auto-process-step mil-up">
+
+                                    <span>
+                                        01 · Discover
+                                    </span>
+
+                                    <h4>
+                                        Map the real workflow.
+                                    </h4>
+
+                                    <p>
+                                        Identify systems, owners, handoffs, repeated work,
+                                        exceptions and current failure points.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-process-step mil-up">
+
+                                    <span>
+                                        02 · Model
+                                    </span>
+
+                                    <h4>
+                                        Define rules and controls.
+                                    </h4>
+
+                                    <p>
+                                        Separate deterministic logic from judgment and
+                                        decide where approval or escalation is required.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-process-step mil-up">
+
+                                    <span>
+                                        03 · Build
+                                    </span>
+
+                                    <h4>
+                                        Connect the existing stack.
+                                    </h4>
+
+                                    <p>
+                                        Use the appropriate platform, APIs, webhooks,
+                                        code and integrations for the environment.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-process-step mil-up">
+
+                                    <span>
+                                        04 · Validate
+                                    </span>
+
+                                    <h4>
+                                        Test the outcome, not just the run.
+                                    </h4>
+
+                                    <p>
+                                        Confirm calculations, ordering, outputs, failure
+                                        handling and the human decision path.
+                                    </p>
+
+                                </article>
+
+                            </div>
+
+                        </div>
+                        <!-- process end -->
+
+
+                        <div class="mil-app-divider mil-up"></div>
+
+
+                        <!-- tools -->
+                        <div id="automation-tools">
+
+                            <div class="mil-auto-section-heading mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Platforms &amp; Integration
+                                </p>
+
+                                <h2 class="mil-mb-30">
+                                    The implementation follows the environment.
+                                </h2>
+
+                                <p>
+                                    I am not positioning automation as one specific tool.
+                                    The right platform depends on the client stack, security,
+                                    deployment model, integration options and the team that
+                                    will own the workflow.
+                                </p>
+
+                            </div>
+
+
+                            <div class="mil-auto-tool-grid">
+
+                                <article class="mil-auto-tool mil-up">
+
+                                    <h4>
+                                        Workflow Platforms
+                                    </h4>
+
+                                    <p>
+                                        n8n, Rewst, Power Automate and Make for orchestration,
+                                        integration and approval workflows.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-tool mil-up">
+
+                                    <h4>
+                                        APIs &amp; Webhooks
+                                    </h4>
+
+                                    <p>
+                                        Direct system-to-system integration when native
+                                        connectors are limited or insufficient.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-tool mil-up">
+
+                                    <h4>
+                                        CRM &amp; Service Systems
+                                    </h4>
+
+                                    <p>
+                                        PSA, RMM, CRM, lead-management and operational
+                                        platforms that hold the work being automated.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-tool mil-up">
+
+                                    <h4>
+                                        Microsoft 365
+                                    </h4>
+
+                                    <p>
+                                        Outlook, Teams, SharePoint and related services
+                                        for communication, approvals and internal operations.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-tool mil-up">
+
+                                    <h4>
+                                        Custom Code
+                                    </h4>
+
+                                    <p>
+                                        Purpose-built logic when low-code components do
+                                        not provide enough control or reliability.
+                                    </p>
+
+                                </article>
+
+                                <article class="mil-auto-tool mil-up">
+
+                                    <h4>
+                                        AI Services
+                                    </h4>
+
+                                    <p>
+                                        Carefully scoped classification, summarization,
+                                        drafting and decision support where AI adds value.
+                                    </p>
+
+                                </article>
+
+                            </div>
+
+                        </div>
+                        <!-- tools end -->
+
+
+                        <div class="mil-auto-note mil-up">
+
+                            <p>
+                                <strong>Portfolio status:</strong>
+                                Hammer Flow is the first dedicated automation initiative
+                                documented here. Additional automation projects will be
+                                added as they are built, validated and ready to present.
+                            </p>
+
+                        </div>
+
+
+                        <!-- call to action -->
+                        <div class="mil-app-cta mil-center mil-up">
+
+                            <p class="mil-upper mil-dark mil-mb-20">
+                                Workflows · Systems · Operations
+                            </p>
+
+                            <h2 class="mil-mb-30">
+                                Good automation makes the operating process clearer.
+                            </h2>
+
+                            <p class="mil-mb-30">
+                                I build automation around real business work, with
+                                visible rules, controlled permissions, meaningful
+                                outputs and room for human judgment.
+                            </p>
+
+                            <div class="mil-auto-actions">
+
+                                <a
+                                    href="hammer-flow.html"
+                                    class="mil-btn mil-sm-btn"
+                                    data-no-swup
+                                >
+                                    Explore Hammer Flow
+                                </a>
+
+                                <a
+                                    href="contact.html"
+                                    class="mil-auto-text-link"
+                                    data-no-swup
+                                >
+                                    Start a Conversation
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                        <!-- call to action end -->
+
+                    </section>
+
+                </div>
+
+            </div>
+
+
+            <!-- right banner -->
+            <div class="mil-right-banner" id="scene">
+
+                <div class="mil-progress-track">
+                    <div class="mil-progress"></div>
+                </div>
+
+                <div class="mil-banner-wrapper" data-depth="1">
+                    <div id="swupBg" class="mil-banner-frame"></div>
+                </div>
+
+                <div class="mil-banner-wrapper" data-depth="0.2">
+                    <div id="swupPerson" class="mil-banner-frame"></div>
+                </div>
+
+                <div class="mil-flying-skills" data-depth="0.1">
+
+                    <div id="swupSkills" class="mil-skills-frame">
+
+                        <div class="mil-item" style="top: 30%; left: 10%">
+                            <img src="img/logos/1.jpg" alt="Technology logo">
+                        </div>
+
+                        <div class="mil-item" style="bottom: 15%; left: 20%">
+                            <img src="img/logos/2.jpg" alt="Technology logo">
+                        </div>
+
+                        <div class="mil-item" style="bottom: 45%; right: 15%">
+                            <img src="img/logos/3.jpg" alt="Technology logo">
+                        </div>
+
+                        <div class="mil-el mil-addition-el-1">+</div>
+                        <div class="mil-el mil-addition-el-2">+</div>
+                        <div class="mil-el mil-addition-el-3"></div>
+                        <div class="mil-el mil-addition-el-4"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- right banner end -->
+
+        </div>
+        <!-- content end -->
+
+    </div>
+    <!-- wrapper end -->
+
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+
+    <!-- swup body class plugin js -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+
+    <!-- parallax js -->
+    <script src="js/plugins/parallax.js"></script>
+
+    <!-- courtney js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

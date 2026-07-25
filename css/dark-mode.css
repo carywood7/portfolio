@@ -897,6 +897,8 @@ frame
 }
 
 .mil-left-panel .mil-social-icons {
+  position: relative;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -904,6 +906,7 @@ frame
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  pointer-events: auto;
 }
 
 .mil-left-panel .mil-social-icons li {
@@ -916,14 +919,36 @@ frame
 }
 
 .mil-left-panel .mil-social-icons li a {
-  font-size: 16åpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.9);
+  pointer-events: auto;
+  cursor: pointer;
   -webkit-transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
 }
 
+.mil-left-panel .mil-social-icons li a svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor !important;
+  pointer-events: none;
+}
+
+.mil-left-panel .mil-social-icons li a i {
+  pointer-events: none;
+}
+
 .mil-left-panel .mil-social-icons li a:hover {
   color: rgb(244, 67, 54);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .mil-back-to-top {

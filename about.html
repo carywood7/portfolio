@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta
         name="description"
-        content="Learn about Cary Wood, a software developer and product builder combining Ruby on Rails development with 13+ years of sales, marketing, CRM, automation and growth experience."
+        content="Learn about Cary Wood, a software developer and product builder combining Ruby on Rails, workflow automation and 13+ years of sales, marketing, CRM and growth experience."
     >
 
     <!-- bootstrap grid css -->
@@ -384,6 +384,16 @@
         .mil-credential-stat:first-child {
             border-top: 0;
         }
+
+
+    }
+    .mil-about-proof-card--wide {
+        grid-column: 1 / -1;
+    }
+
+    .mil-about-proof-card .mil-about-text-link {
+        margin-top: auto;
+        align-self: flex-start;
     }
 </style>
 
@@ -420,11 +430,12 @@
                 <div class="mil-navigation">
                     <nav id="swupMenu" class="mil-menu-transition">
                         <ul>
-                            <li class="mil-has-children mil-active">
+                            <li class="mil-has-children">
                                 <a href="index.html" data-no-swup>Home</a>
                             </li>
-                            <li class="mil-has-children">
-                                <a href="about.html" data-no-swup>About</a>
+
+                            <li class="mil-has-children mil-active">
+                                <a href="about.html" data-no-swup aria-current="page">About</a>
                             </li>
                             <li class="mil-has-children">
                                 <a href="tools.html" data-no-swup>Tools</a>
@@ -440,6 +451,12 @@
                                     </li>
 
                                     <li>
+                                        <a href="automations.html" data-no-swup>
+                                            Automations
+                                        </a>
+                                    </li>
+
+                                    <li>
                                         <a href="websites.html" data-no-swup>
                                             Websites
                                         </a>
@@ -451,7 +468,6 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
                             </li>
                             <li><a href="contact.html" data-no-swup>Contact</a></li>
                         </ul>
@@ -567,7 +583,7 @@
                     <section class="mil-about-hero mil-p-90-60">
 
                         <p class="mil-upper mil-dark mil-up mil-mb-30">
-                            Software Developer · Product Builder · Growth Systems
+                            Software Developer · Product Builder · Automation Systems
                         </p>
 
                         <h1 class="mil-up mil-mb-30">
@@ -577,7 +593,7 @@
                         <p class="mil-about-hero-lead mil-up mil-mb-30">
                             I’m Cary Wood, a software developer and product builder with more than
                             13 years of experience across sales, marketing, client delivery, paid
-                            acquisition, CRM operations and automation.
+                            acquisition, CRM operations and workflow automation.
                         </p>
 
                         <p class="mil-about-hero-lead mil-up mil-mb-40">
@@ -613,7 +629,7 @@
 
                             <div class="mil-about-meta-item mil-up">
                                 <span>Current Role</span>
-                                <strong>Software developer and product builder</strong>
+                                <strong>Software developer, product builder and automation systems designer</strong>
                             </div>
 
                             <div class="mil-about-meta-item mil-up">
@@ -756,13 +772,13 @@
                                 <p class="mil-about-path-number">04</p>
 
                                 <h4 class="mil-mb-20">
-                                    Building Products
+                                    Building Products &amp; Automation Systems
                                 </h4>
 
                                 <p>
-                                    Created LeadsTrackr and HookScribe to solve operational problems I
-                                    understand firsthand rather than building disconnected portfolio
-                                    exercises.
+                                    Created LeadsTrackr, LeadMath, HookScribe and Hammer Flow around
+                                    operational problems I understand firsthand rather than building
+                                    disconnected portfolio exercises.
                                 </p>
 
                             </article>
@@ -916,6 +932,35 @@
 
                             </article>
 
+                            <article class="mil-about-proof-card mil-about-proof-card--wide mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Service-Led Automation Initiative · Five Validated Prototypes
+                                </p>
+
+                                <h3 class="mil-mb-20">
+                                    Hammer Flow
+                                </h3>
+
+                                <p class="mil-mb-30">
+                                    An MSP automation initiative focused on workflow audits,
+                                    implementation, integration, maintenance and managed automation.
+                                    Five independent n8n prototypes currently cover service-desk
+                                    reporting, SLA risk, ticket triage, recurring incidents and
+                                    employee onboarding readiness.
+                                </p>
+
+                                <a
+                                    href="hammer-flow.html"
+                                    class="mil-about-text-link"
+                                    data-no-swup
+                                >
+                                    View Automation Case Study
+                                    <span aria-hidden="true">→</span>
+                                </a>
+
+                            </article>
+
                         </div>
 
                     </section>
@@ -997,12 +1042,11 @@
                                 </h2>
 
                                 <p class="mil-up">
-                                    I’m continuing to develop LeadsTrackr, build focused tools and deepen
-                                    my understanding of maintainable Rails architecture, product design
-                                    and reliable software delivery. Current work includes multi-tenant CRM
-                                    architecture, visual automation, website builders and AI chatbot systems
-                                    that connect public conversations with leads, activity history and client
-                                    workspaces.
+                                    I’m continuing to develop LeadsTrackr, prepare LeadMath for deployment,
+                                    refine focused tools such as HookScribe and build Hammer Flow as a
+                                    service-led MSP automation initiative. Current work combines maintainable
+                                    Rails architecture, multi-tenant CRM systems, API integration, workflow
+                                    automation, deterministic business rules and controlled AI assistance.
                                 </p>
 
                             </div>
@@ -1026,7 +1070,7 @@
 
                                 <div class="mil-about-focus-item mil-up">
                                     <strong>APIs &amp; Integrations</strong>
-                                    <span>OpenAI, AI chatbots, media processing, storage and external services</span>
+                                    <span>n8n, PSA and RMM systems, OpenAI, media processing and external services</span>
                                 </div>
 
                                 <div class="mil-about-focus-item mil-up">
@@ -1035,8 +1079,8 @@
                                 </div>
 
                                 <div class="mil-about-focus-item mil-up">
-                                    <strong>Growth Systems</strong>
-                                    <span>CRM, automation, websites, funnels, tracking and acquisition</span>
+                                    <strong>Workflow &amp; Growth Systems</strong>
+                                    <span>CRM, operational automation, websites, funnels, tracking and acquisition</span>
                                 </div>
 
                             </div>
