@@ -16,8 +16,31 @@
     <!-- courtney css -->
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- page name -->
-    <title>Projects | Cary Wood — Software, Automation, Websites &amp; Growth Systems</title>
-<meta name="description" content="Explore software products, workflow automation, websites, funnels and digital systems built by Cary Wood, including LeadsTrackr, LeadMath, HookScribe and Hammer Flow.">
+    <title>Projects | Cary Wood — Software, Automation &amp; Growth Systems</title>
+<meta
+    name="description"
+    content="Explore software products, workflow automation, websites, funnels and digital systems built by Cary Wood, including LeadsTrackr, LeadMath, HookScribe, MSP Margin Audit and Hammer Flow."
+>
+
+<link rel="canonical" href="https://carywood.co/projects.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cary Wood">
+<meta property="og:title" content="Projects | Cary Wood — Software, Automation &amp; Growth Systems">
+<meta
+    property="og:description"
+    content="Selected software products, MSP automation systems, websites, funnels and operational tools built by Cary Wood."
+>
+<meta property="og:url" content="https://carywood.co/projects.html">
+<meta property="og:image" content="https://carywood.co/img/leadstrackr-dashboard.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects | Cary Wood — Software, Automation &amp; Growth Systems">
+<meta
+    name="twitter:description"
+    content="Selected software products, MSP automation systems, websites, funnels and operational tools built by Cary Wood."
+>
+<meta name="twitter:image" content="https://carywood.co/img/leadstrackr-dashboard.png">
 
 <style>
     /*
@@ -27,7 +50,7 @@
 
     .mil-featured-projects {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 30px;
     }
 
@@ -411,6 +434,139 @@
             flex-direction: column;
         }
     }
+
+
+    /* MSP Margin Audit featured card */
+
+    .mil-featured-project-image--margin {
+        display: grid;
+        padding: 24px;
+        background:
+            radial-gradient(circle at 86% 14%, rgba(0, 127, 114, 0.18), transparent 35%),
+            #e8eeec;
+        place-items: center;
+    }
+
+    .mil-project-margin-preview {
+        width: 100%;
+        max-width: 520px;
+        padding: 23px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 11px;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16);
+    }
+
+    .mil-project-margin-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    }
+
+    .mil-project-margin-head span {
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+    }
+
+    .mil-project-margin-head strong {
+        color: #007f72;
+        font-size: 10px;
+        line-height: 1.4;
+        text-align: right;
+    }
+
+    .mil-project-margin-total {
+        margin-bottom: 17px;
+    }
+
+    .mil-project-margin-total small {
+        display: block;
+        margin-bottom: 5px;
+        color: rgba(36, 36, 36, 0.48);
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.9px;
+        text-transform: uppercase;
+    }
+
+    .mil-project-margin-total strong {
+        display: block;
+        color: #242424;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1;
+    }
+
+    .mil-project-margin-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .mil-project-margin-metric {
+        min-width: 0;
+        padding: 11px;
+        background: #f3f6f5;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .mil-project-margin-metric span {
+        display: block;
+        margin-bottom: 5px;
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 7px;
+        font-weight: 600;
+        letter-spacing: 0.65px;
+        line-height: 1.35;
+        text-transform: uppercase;
+    }
+
+    .mil-project-margin-metric strong {
+        color: #242424;
+        font-size: 11px;
+        line-height: 1.3;
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-featured-project-image--margin {
+            padding: 16px;
+        }
+
+        .mil-project-margin-preview {
+            padding: 18px;
+        }
+
+        .mil-project-margin-metrics {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-project-margin-metric {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .mil-project-margin-metric span {
+            margin-bottom: 0;
+        }
+    }
+
+    .mil-featured-project-image--margin img {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16);
+        object-fit: cover;
+        object-position: top center;
+    }
+
 </style>
 
 </head>
@@ -601,7 +757,8 @@
                                     <p class="mil-up">
                                         Explore products, workflow automation, websites and
                                         lead-generation experiences that bring together software
-                                        development, operational systems, CRM and digital growth.
+                                        development, operational systems, CRM, MSP operations and
+                                        digital growth.
                                     </p>
 
                                 </div>
@@ -638,8 +795,8 @@
 
                                     <p class="mil-up mil-mb-30">
                                         Product and technical case studies covering the problems,
-                                        architecture, features and decisions behind the applications
-                                        I’m building.
+                                        architecture, features and decisions behind four focused
+                                        Rails products and utilities.
                                     </p>
 
                                     <div class="mil-up">
@@ -687,9 +844,9 @@
                                     <h5 class="mil-up mil-mb-30">Automations</h5>
 
                                     <p class="mil-up mil-mb-30">
-                                        Workflow automation for reporting, routing, onboarding,
-                                        operational alerts and controlled AI-assisted processes,
-                                        including Hammer Flow.
+                                        Fifteen validated Hammer Flow workflows spanning service
+                                        operations, identity, security, governance, profitability and
+                                        endpoint protection.
                                     </p>
 
                                     <div class="mil-up">
@@ -966,6 +1123,66 @@
 
                             </article>
 
+
+                            <!-- MSP Margin Audit -->
+                            <article class="mil-featured-project mil-up">
+
+                                <a
+                                    href="msp-margin-audit.html"
+                                    class="mil-featured-project-image mil-featured-project-image--margin"
+                                    data-no-swup
+                                    aria-label="View the MSP Margin Audit product case study"
+                                >
+
+                                    <img
+                                        src="img/msp-margin-audit.jpeg"
+                                        alt="MSP Margin Audit calculator for identifying operational leakage and estimating automation opportunity"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+
+                                </a>
+
+                                <div class="mil-featured-project-content">
+
+                                    <div class="mil-featured-project-meta">
+                                        <span>MSP Diagnostic Tool</span>
+                                        <span>Rails · Operations · ROI</span>
+                                    </div>
+
+                                    <h3>
+                                        <a href="msp-margin-audit.html" data-no-swup>
+                                            MSP Margin Audit
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        A focused diagnostic for estimating license leakage,
+                                        technician administration and manual dispatch cost—then
+                                        modelling potential reclaimed hours, value, ROI and payback.
+                                    </p>
+
+                                    <div class="mil-featured-project-actions">
+
+                                        <a
+                                            href="msp-margin-audit.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View Case Study
+                                        </a>
+
+                                        <span class="mil-featured-project-status">
+                                            Deployment Pending
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <!-- MSP Margin Audit end -->
+
                         </div>
                         <!-- featured builds end -->
 
@@ -1007,10 +1224,10 @@
                                     </h3>
 
                                     <p>
-                                        A service-led automation initiative for managed service
-                                        providers, built around workflow audits, implementation,
-                                        integration, maintenance and managed automation inside
-                                        the systems clients already use.
+                                        A service-led MSP automation initiative with 15 validated
+                                        local reference workflows across five operating areas—built
+                                        around audits, implementation, controlled rollout and managed
+                                        automation inside the systems clients already use.
                                     </p>
 
                                     <div class="mil-featured-project-actions">
@@ -1020,7 +1237,7 @@
                                             class="mil-btn mil-sm-btn"
                                             data-no-swup
                                         >
-                                            View Case Study
+                                            View 15 Workflows
                                         </a>
 
                                         <a
@@ -1029,7 +1246,7 @@
                                             rel="noopener noreferrer"
                                             class="mil-featured-project-link"
                                         >
-                                            Visit Hammer Flow
+                                            Visit Microsite
                                             <span aria-hidden="true">↗</span>
                                         </a>
 
@@ -1234,6 +1451,15 @@
                                     data-no-swup
                                 >
                                     Start a Conversation
+                                </a>
+
+                                <a
+                                    href="tools.html"
+                                    class="mil-featured-project-link"
+                                    data-no-swup
+                                >
+                                    View Tools
+                                    <span aria-hidden="true">→</span>
                                 </a>
 
                                 <a

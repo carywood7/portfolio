@@ -16,8 +16,31 @@
     <!-- courtney css -->
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- page name -->
-    <title>Tools by Cary Wood | Software Products &amp; Utilities</title>
-<meta name="description" content="Explore LeadsTrackr, LeadMath and HookScribe—three Ruby on Rails products built by Cary Wood for CRM, automation, paid-advertising forecasting, media processing and campaign workflows.">
+    <title>Tools by Cary Wood | Rails Products &amp; MSP Utilities</title>
+<meta
+    name="description"
+    content="Explore LeadsTrackr, LeadMath, HookScribe and MSP Margin Audit—four Ruby on Rails products and focused utilities built by Cary Wood across CRM, forecasting, media processing, automation and MSP operations."
+>
+
+<link rel="canonical" href="https://carywood.co/tools.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cary Wood">
+<meta property="og:title" content="Tools by Cary Wood | Rails Products &amp; MSP Utilities">
+<meta
+    property="og:description"
+    content="Explore four focused Rails products and utilities across CRM, paid-media forecasting, AI-assisted media workflows and MSP operations."
+>
+<meta property="og:url" content="https://carywood.co/tools.html">
+<meta property="og:image" content="https://carywood.co/img/leadstrackr-dashboard.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tools by Cary Wood | Rails Products &amp; MSP Utilities">
+<meta
+    name="twitter:description"
+    content="Four focused Rails products and utilities across CRM, forecasting, media workflows and MSP operations."
+>
+<meta name="twitter:image" content="https://carywood.co/img/leadstrackr-dashboard.png">
 
 
 <style>
@@ -79,7 +102,7 @@
 
     .mil-tools-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 30px;
     }
 
@@ -496,6 +519,142 @@
     }
 
 
+
+
+    /* MSP Margin Audit preview */
+
+    .mil-tool-media--margin-audit {
+        display: grid;
+        padding: 24px;
+        background:
+            radial-gradient(circle at 86% 14%, rgba(0, 127, 114, 0.17), transparent 35%),
+            #e8eeec;
+        place-items: center;
+    }
+
+    .mil-margin-preview {
+        width: 100%;
+        max-width: 560px;
+        padding: 24px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .mil-margin-preview-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 20px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    }
+
+    .mil-margin-preview-header span {
+        color: rgba(36, 36, 36, 0.5) !important;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-margin-preview-header strong {
+        color: #007f72 !important;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .mil-margin-preview-total {
+        margin-bottom: 18px;
+    }
+
+    .mil-margin-preview-total small {
+        display: block;
+        margin-bottom: 5px;
+        color: rgba(36, 36, 36, 0.5) !important;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .mil-margin-preview-total strong {
+        color: #242424 !important;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1;
+    }
+
+    .mil-margin-preview-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .mil-margin-preview-metric {
+        min-width: 0;
+        padding: 12px;
+        background: #f3f6f5;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .mil-margin-preview-metric span {
+        display: block;
+        margin-bottom: 6px;
+        color: rgba(36, 36, 36, 0.5) !important;
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+        line-height: 1.35;
+        text-transform: uppercase;
+    }
+
+    .mil-margin-preview-metric strong {
+        color: #242424 !important;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .mil-tool-note--teal {
+        border-left-color: #007f72;
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-tool-media--margin-audit {
+            padding: 16px;
+        }
+
+        .mil-margin-preview {
+            padding: 18px;
+        }
+
+        .mil-margin-preview-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .mil-margin-preview-metric {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .mil-margin-preview-metric span {
+            margin-bottom: 0;
+        }
+    }
+
+    .mil-tool-media--margin-audit > img {
+        height: 100%;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+        object-fit: cover;
+        object-position: top center;
+    }
+
 </style>
 
 
@@ -538,7 +697,7 @@
                                 <a href="about.html" data-no-swup>About</a>
                             </li>
                             <li class="mil-active">
-                                <a href="tools.html" data-no-swup>Tools</a>
+                                <a href="tools.html" data-no-swup aria-current="page">Tools</a>
                             </li>
                             <li class="mil-has-children">
                                 <a href="projects.html" data-no-swup>Projects</a>
@@ -674,9 +833,9 @@
 
                         <p class="mil-tools-hero-lead mil-up">
                             Products designed around real operational work—from CRM and customer
-                            conversations to paid-advertising forecasting, media processing, campaign
-                            production and automation. Each tool begins with a workflow worth improving,
-                            then earns complexity through practical use.
+                            conversations to paid-advertising forecasting, media processing and MSP
+                            operations. Each tool begins with a workflow worth improving, then earns
+                            complexity through practical use.
                         </p>
 
                     </section>
@@ -688,12 +847,12 @@
 
                         <div class="mil-tools-summary-item">
                             <span>Products Built</span>
-                            <strong>Three focused Rails products</strong>
+                            <strong>Four focused Rails products and utilities</strong>
                         </div>
 
                         <div class="mil-tools-summary-item">
                             <span>Product Areas</span>
-                            <strong>CRM, forecasting, automation, AI and campaign workflows</strong>
+                            <strong>CRM, forecasting, AI media workflows and MSP operations</strong>
                         </div>
 
                         <div class="mil-tools-summary-item">
@@ -703,7 +862,7 @@
 
                         <div class="mil-tools-summary-item">
                             <span>Directory Direction</span>
-                            <strong>More useful tools added over time</strong>
+                            <strong>Focused additions only when the problem is worth solving</strong>
                         </div>
 
                     </div>
@@ -951,6 +1110,115 @@
                             <!-- HookScribe end -->
 
 
+                            <!-- MSP Margin Audit -->
+                            <article class="mil-tool-card mil-up">
+
+                                <div class="mil-tool-media mil-tool-media--margin-audit">
+
+                                    <span class="mil-tool-status">
+                                        Functional MVP · Deployment Pending
+                                    </span>
+
+                                    <img
+                                        src="img/msp-margin-audit.jpeg"
+                                        alt="MSP Margin Audit calculator showing operating inputs for technician cost, cloud billing, dispatch effort and automation investment"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+
+                                    <div
+                                        class="mil-margin-preview"
+                                        role="img"
+                                        aria-label="MSP Margin Audit scorecard preview showing estimated monthly loss and operational leakage categories"
+                                    >
+                                        <div class="mil-margin-preview-header">
+                                            <span>MSP Margin Audit</span>
+                                            <strong>Planning Scorecard</strong>
+                                        </div>
+
+                                        <div class="mil-margin-preview-total">
+                                            <small>Estimated monthly operational loss</small>
+                                            <strong>$8,100</strong>
+                                        </div>
+
+                                        <div class="mil-margin-preview-grid">
+
+                                            <div class="mil-margin-preview-metric">
+                                                <span>License leakage</span>
+                                                <strong>$700</strong>
+                                            </div>
+
+                                            <div class="mil-margin-preview-metric">
+                                                <span>Technician admin</span>
+                                                <strong>100 hrs</strong>
+                                            </div>
+
+                                            <div class="mil-margin-preview-metric">
+                                                <span>Manual dispatch</span>
+                                                <strong>40 hrs</strong>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="mil-tool-card-body">
+
+                                    <div class="mil-tool-card-eyebrow">
+                                        <span>MSP Diagnostic Tool</span>
+                                        <span>Rails · Operations · ROI</span>
+                                    </div>
+
+                                    <h2>MSP Margin Audit</h2>
+
+                                    <p class="mil-tool-card-copy">
+                                        A focused calculator for estimating operational leakage from
+                                        unbilled cloud seats, technician administration and manual
+                                        dispatch—and modelling what automation could potentially reclaim.
+                                    </p>
+
+                                    <p class="mil-tool-note mil-tool-note--teal">
+                                        The functional MVP shows immediate planning results and supports
+                                        saved report links, email delivery and downloadable PDF scorecards.
+                                        Results are estimates based on the inputs and assumptions supplied.
+                                    </p>
+
+                                    <div class="mil-tool-tags">
+                                        <span>License Leakage</span>
+                                        <span>Labor Cost</span>
+                                        <span>Dispatch</span>
+                                        <span>ROI</span>
+                                        <span>PDF Reports</span>
+                                    </div>
+
+                                    <div class="mil-tool-actions">
+
+                                        <span
+                                            class="mil-btn mil-sm-btn mil-tool-disabled"
+                                            aria-disabled="true"
+                                        >
+                                            Deployment Pending
+                                        </span>
+
+                                        <a
+                                            href="msp-margin-audit.html"
+                                            class="mil-tool-text-link"
+                                            data-no-swup
+                                        >
+                                            View Case Study
+                                            <span aria-hidden="true">→</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+                            <!-- MSP Margin Audit end -->
+
+
                         </div>
 
                     </section>
@@ -1015,7 +1283,7 @@
                             <div class="mil-tools-future-copy">
 
                                 <p class="mil-upper mil-mb-20">
-                                    Three Products · More in Development
+                                    Four Products · More in Development
                                 </p>
 
                                 <h2 class="mil-mb-30">
@@ -1023,10 +1291,11 @@
                                 </h2>
 
                                 <p>
-                                    LeadsTrackr, LeadMath and HookScribe cover three different product
-                                    scopes: a multi-tenant platform, a public forecasting tool and a private
-                                    production workflow. Future tools will appear here when they solve a
-                                    clear problem and are stable enough to demonstrate real value.
+                                    LeadsTrackr, LeadMath, HookScribe and MSP Margin Audit now cover
+                                    four different product scopes: a multi-tenant platform, a public
+                                    forecasting tool, a private production workflow and a focused MSP
+                                    diagnostic. Future tools will appear here only when they solve a clear
+                                    problem and are stable enough to demonstrate real value.
                                 </p>
 
                             </div>
@@ -1040,7 +1309,7 @@
 
                                 <div>
                                     <span>Current Range</span>
-                                    <strong>Platform, public tool and private workflow</strong>
+                                    <strong>Platform, public tool, private workflow and MSP diagnostic</strong>
                                 </div>
 
                                 <div>
