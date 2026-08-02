@@ -16,8 +16,31 @@
     <!-- courtney css -->
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- page name -->
-    <title>Software Products | Cary Wood</title>
-<meta name="description" content="Explore LeadsTrackr, LeadMath and HookScribe—three Ruby on Rails products built by Cary Wood across CRM, automation, paid-advertising forecasting, media processing and campaign workflows.">
+    <title>Software Products &amp; Rails Tools | Cary Wood</title>
+<meta
+    name="description"
+    content="Explore LeadsTrackr, LeadMath, HookScribe and MSP Margin Audit—four Ruby on Rails products and focused utilities built by Cary Wood across CRM, forecasting, media processing, automation and MSP operations."
+>
+
+<link rel="canonical" href="https://carywood.co/applications.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cary Wood">
+<meta property="og:title" content="Software Products &amp; Rails Tools | Cary Wood">
+<meta
+    property="og:description"
+    content="Four focused Rails products spanning CRM, paid-media forecasting, AI-assisted media workflows and MSP operations."
+>
+<meta property="og:url" content="https://carywood.co/applications.html">
+<meta property="og:image" content="https://carywood.co/img/leadstrackr-dashboard.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Software Products &amp; Rails Tools | Cary Wood">
+<meta
+    name="twitter:description"
+    content="Four focused Rails products spanning CRM, forecasting, AI-assisted media workflows and MSP operations."
+>
+<meta name="twitter:image" content="https://carywood.co/img/leadstrackr-dashboard.png">
 
 <style>
     /*
@@ -144,6 +167,181 @@
 }
 
 
+
+
+    /* MSP Margin Audit visual */
+
+    .mil-app-margin-preview {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+        gap: 24px;
+        padding: 30px;
+        background:
+            radial-gradient(circle at 88% 12%, rgba(0, 127, 114, 0.2), transparent 35%),
+            #e8eeec;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 22px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.13);
+    }
+
+    .mil-app-margin-inputs,
+    .mil-app-margin-report {
+        padding: 26px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 14px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+    }
+
+    .mil-app-margin-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 22px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    }
+
+    .mil-app-margin-head span {
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+    }
+
+    .mil-app-margin-head strong {
+        color: #007f72;
+        font-size: 11px;
+        line-height: 1.4;
+        text-align: right;
+    }
+
+    .mil-app-margin-field {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 13px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .mil-app-margin-field:first-of-type {
+        border-top: 0;
+    }
+
+    .mil-app-margin-field span {
+        color: rgba(36, 36, 36, 0.58);
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .mil-app-margin-field strong {
+        color: #242424;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .mil-app-margin-total {
+        margin-bottom: 22px;
+    }
+
+    .mil-app-margin-total small {
+        display: block;
+        margin-bottom: 7px;
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+    }
+
+    .mil-app-margin-total strong {
+        display: block;
+        color: #242424;
+        font-size: clamp(34px, 5vw, 56px);
+        line-height: 1;
+    }
+
+    .mil-app-margin-total em {
+        display: block;
+        margin-top: 8px;
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 11px;
+        font-style: normal;
+    }
+
+    .mil-app-margin-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .mil-app-margin-metric {
+        min-width: 0;
+        padding: 14px;
+        background: #f3f6f5;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .mil-app-margin-metric span {
+        display: block;
+        margin-bottom: 7px;
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        line-height: 1.35;
+        text-transform: uppercase;
+    }
+
+    .mil-app-margin-metric strong {
+        color: #242424;
+        font-size: 13px;
+        line-height: 1.35;
+    }
+
+    .mil-app-margin-note {
+        margin: 18px 0 0;
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    @media screen and (max-width: 991px) {
+        .mil-app-margin-preview {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-app-margin-preview {
+            padding: 16px;
+            border-radius: 16px;
+        }
+
+        .mil-app-margin-inputs,
+        .mil-app-margin-report {
+            padding: 20px;
+        }
+
+        .mil-app-margin-metrics {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-app-margin-metric {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .mil-app-margin-metric span {
+            margin-bottom: 0;
+        }
+    }
+
 </style>
 
 </head>
@@ -178,7 +376,7 @@
                 <div class="mil-navigation">
                     <nav id="swupMenu" class="mil-menu-transition">
                         <ul>
-                            <li class="mil-has-children mil-active">
+                            <li>
                                 <a href="index.html" data-no-swup>Home</a>
                             </li>
                             <li class="mil-has-children">
@@ -187,8 +385,8 @@
                             <li class="mil-has-children">
                                 <a href="tools.html" data-no-swup>Tools</a>
                             </li>
-                            <li class="mil-has-children">
-                                <a href="projects.html" data-no-swup>Projects</a>
+                            <li class="mil-has-children mil-active">
+                                <a href="projects.html" data-no-swup aria-current="page">Projects</a>
 
                                 <ul>
                                     <li>
@@ -215,7 +413,6 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
                             </li>
                             <li><a href="contact.html" data-no-swup>Contact</a></li>
                         </ul>
@@ -332,7 +529,7 @@
                             <p class="mil-up">
                                 I design and build software around workflows I understand firsthand:
                                 customer acquisition, CRM operations, paid-advertising forecasting,
-                                campaign production, automation and agency management.
+                                campaign production, automation, agency management and MSP operations.
                             </p>
 
                         </div>
@@ -982,6 +1179,233 @@
                         <!-- HookScribe case study end -->
 
 
+                        <div class="mil-app-divider mil-up"></div>
+
+
+                        <!-- MSP Margin Audit case study -->
+                        <article id="msp-margin-audit" class="mil-app-case">
+
+                            <header class="mil-app-case-header mil-mb-60">
+
+                                <div class="mil-app-case-heading">
+
+                                    <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                        MSP Diagnostic Tool · Functional MVP · Deployment Pending
+                                    </p>
+
+                                    <h2 class="mil-up mil-mb-30">
+                                        MSP Margin Audit
+                                    </h2>
+
+                                    <p class="mil-app-case-lead mil-up mil-mb-30">
+                                        A focused Rails diagnostic that estimates operational leakage
+                                        from unbilled cloud seats, technician administration and manual
+                                        dispatch—then models the hours and value automation could
+                                        potentially reclaim.
+                                    </p>
+
+                                    <div class="mil-up">
+                                        <a
+                                            href="msp-margin-audit.html"
+                                            class="mil-btn mil-sm-btn"
+                                            data-no-swup
+                                        >
+                                            View Full Case Study
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class="mil-app-case-summary mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        The Product
+                                    </p>
+
+                                    <p>
+                                        MSP Margin Audit gives MSP owners and service leaders a clearer
+                                        starting point for discussing repeated operational waste and
+                                        automation priorities.
+                                    </p>
+
+                                    <p>
+                                        The calculator uses visible, deterministic assumptions and
+                                        presents the result as planning guidance—not as a guaranteed
+                                        saving or a complete financial audit.
+                                    </p>
+
+                                </div>
+
+                            </header>
+
+
+                            <div class="mil-app-meta-grid mil-mb-60">
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">My Role</span>
+                                    <strong>Product strategy, diagnostic model, UX and Rails development</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Product Stage</span>
+                                    <strong>Functional MVP complete; public deployment pending</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Core Stack</span>
+                                    <strong>Ruby on Rails, PostgreSQL, PDF and email delivery</strong>
+                                </div>
+
+                                <div class="mil-app-meta-item mil-up">
+                                    <span class="mil-app-meta-label">Product Focus</span>
+                                    <strong>Operational leakage, reclaimed value, ROI and payback</strong>
+                                </div>
+
+                            </div>
+
+
+                            <!-- MSP Margin Audit product visual -->
+                            <div
+                                class="mil-app-visual mil-app-visual--single mil-mb-90"
+                                aria-label="MSP Margin Audit product screenshot"
+                            >
+
+                                <figure class="mil-app-shot mil-app-shot--wide mil-up">
+
+                                    <div class="mil-app-shot-frame">
+                                        <img
+                                            src="img/msp-margin-audit.jpeg"
+                                            alt="MSP Margin Audit calculator showing technician, ticket, cloud billing, dispatch and automation investment inputs"
+                                            loading="lazy"
+                                            decoding="async"
+                                        >
+                                    </div>
+
+                                    <figcaption>
+                                        MSP Margin Audit turns operating assumptions into an immediate
+                                        planning estimate covering operational loss, wasted service-desk
+                                        hours, potential reclaimed value, ROI and payback.
+                                    </figcaption>
+
+                                </figure>
+
+                            </div>
+                            <!-- MSP Margin Audit product visual end -->
+
+
+                            <div class="mil-app-detail-grid mil-mb-90">
+
+                                <section class="mil-app-panel mil-app-panel--wide mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        What I Built
+                                    </p>
+
+                                    <div class="mil-app-feature-grid">
+
+                                        <div class="mil-app-feature">
+                                            <h5>Focused Leakage Model</h5>
+                                            <p>
+                                                Deterministic calculations for unbilled cloud seats,
+                                                technician administration and manual dispatch.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Recovery &amp; Investment View</h5>
+                                            <p>
+                                                Estimated reclaimed hours, reclaimed value, ROI and
+                                                payback based on the assumptions supplied.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>Saved Scorecards</h5>
+                                            <p>
+                                                Tokenized report links preserve the submitted inputs
+                                                and resulting planning estimate for later review.
+                                            </p>
+                                        </div>
+
+                                        <div class="mil-app-feature">
+                                            <h5>PDF &amp; Email Delivery</h5>
+                                            <p>
+                                                Portable scorecards keep the assumptions, estimates and
+                                                planning caveats together for follow-up.
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <section class="mil-app-panel mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        Product Decision
+                                    </p>
+
+                                    <h4 class="mil-mb-20">
+                                        Keep the scope narrow and explainable.
+                                    </h4>
+
+                                    <p>
+                                        The MVP evaluates three operating areas rather than claiming
+                                        to calculate complete agreement profitability or every source
+                                        of MSP margin leakage.
+                                    </p>
+
+                                </section>
+
+                                <section class="mil-app-panel mil-up">
+
+                                    <p class="mil-upper mil-dark mil-mb-20">
+                                        What It Demonstrates
+                                    </p>
+
+                                    <h4 class="mil-mb-20">
+                                        Business modelling tied to a practical sales workflow.
+                                    </h4>
+
+                                    <p>
+                                        MSP Margin Audit demonstrates deterministic financial logic,
+                                        validated form inputs, tokenized reports, PDF generation,
+                                        email delivery and responsible product boundaries.
+                                    </p>
+
+                                </section>
+
+                            </div>
+
+                            <div class="mil-app-product-actions mil-up">
+
+                                <a
+                                    href="msp-margin-audit.html"
+                                    class="mil-btn mil-sm-btn"
+                                    data-no-swup
+                                >
+                                    View Full Case Study
+                                </a>
+
+                                <a
+                                    href="hammer-flow.html"
+                                    class="mil-app-product-link"
+                                    data-no-swup
+                                >
+                                    Explore Hammer Flow
+                                    <span aria-hidden="true">→</span>
+                                </a>
+
+                                <span class="mil-app-product-status">
+                                    Deployment Pending
+                                </span>
+
+                            </div>
+
+                        </article>
+                        <!-- MSP Margin Audit case study end -->
+
+
                         <!-- applications call to action -->
                         <div class="mil-app-cta mil-center mil-up">
 
@@ -994,8 +1418,9 @@
                             </h2>
 
                             <p class="mil-mb-30">
-                                I’m continuing to develop LeadsTrackr, prepare LeadMath for public launch,
-                                refine HookScribe and document the product decisions behind each project.
+                                I’m continuing to develop LeadsTrackr, prepare LeadMath and MSP Margin
+                                Audit for public deployment, refine HookScribe and document the product
+                                decisions behind each project.
                             </p>
 
                             <a

@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="en" class="is-animating">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta
+        name="description"
+        content="Explore MSP Margin Audit, a Ruby on Rails diagnostic tool built by Cary Wood to estimate license leakage, technician administration, manual dispatch costs, potential reclaimed value, ROI and payback."
+    >
+
+    <link rel="canonical" href="https://carywood.co/msp-margin-audit.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cary Wood">
+    <meta property="og:title" content="MSP Margin Audit Case Study | Cary Wood">
+    <meta
+        property="og:description"
+        content="A focused Rails diagnostic for estimating MSP operational leakage, reclaimed hours, potential value, ROI and payback."
+    >
+    <meta property="og:url" content="https://carywood.co/msp-margin-audit.html">
+    <meta property="og:image" content="https://carywood.co/img/leadstrackr-dashboard.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MSP Margin Audit Case Study | Cary Wood">
+    <meta
+        name="twitter:description"
+        content="A focused Rails diagnostic for estimating MSP operational leakage and the value automation could potentially reclaim."
+    >
+    <meta name="twitter:image" content="https://carywood.co/img/leadstrackr-dashboard.png">
+    <meta
+        property="og:image"
+        content="https://carywood.co/img/msp-margin-audit.jpeg"
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://carywood.co/img/msp-margin-audit.jpeg"
+    >
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- courtney css -->
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <!-- page name -->
+    <title>MSP Margin Audit Case Study | Rails Diagnostic Tool by Cary Wood</title>
+
+    <!-- Place this script tag in the <head> of your website -->
+    <script src="https://app.leadstrackr.com/tracker.js?key=RhO0tmIfk6bvM1UJ1YOO648ZzmKXvlAQ" async></script>
+
+
+
+<style>
+    /*
+    MSP Margin Audit product case study.
+    Page-specific so shared CaryWood.co styles remain untouched.
+    */
+
+    :root {
+        --ma-accent: #007f72;
+        --ma-accent-soft: rgba(0, 127, 114, 0.11);
+        --ma-ink: #242424;
+        --ma-muted: rgba(36, 36, 36, 0.68);
+        --ma-panel: #f4f4f4;
+        --ma-dark: #202124;
+    }
+
+    .mil-ma-hero {
+        max-width: 1080px;
+    }
+
+    .mil-ma-hero h1 {
+        max-width: 1020px;
+        font-size: clamp(58px, 8vw, 108px);
+        line-height: 0.92;
+    }
+
+    .mil-ma-hero-lead {
+        max-width: 900px;
+        font-size: 20px;
+        line-height: 1.75;
+    }
+
+    .mil-ma-actions,
+    .mil-ma-cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .mil-ma-disabled {
+        cursor: default;
+        opacity: 0.68;
+        pointer-events: none;
+    }
+
+    .mil-ma-text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--ma-ink) !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-text-link span {
+        display: inline-block;
+        transition: transform 0.25s ease;
+    }
+
+    .mil-ma-text-link:hover span {
+        transform: translateX(4px);
+    }
+
+    .mil-ma-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-ma-meta-item {
+        min-width: 0;
+        padding: 26px 26px 26px 0;
+    }
+
+    .mil-ma-meta-item + .mil-ma-meta-item {
+        padding-left: 26px;
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-ma-meta-label {
+        display: block;
+        margin-bottom: 10px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.7px;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-meta-item strong {
+        display: block;
+        color: var(--ma-ink);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .mil-ma-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.12fr) minmax(310px, 0.88fr);
+        gap: 60px;
+        align-items: start;
+    }
+
+    .mil-ma-copy h2 {
+        max-width: 780px;
+    }
+
+    .mil-ma-copy p {
+        max-width: 750px;
+    }
+
+    .mil-ma-summary-card,
+    .mil-ma-panel,
+    .mil-ma-feature-card,
+    .mil-ma-decision-card,
+    .mil-ma-stage-card,
+    .mil-ma-output-card {
+        background: var(--ma-panel) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        color: var(--ma-ink) !important;
+    }
+
+    .mil-ma-summary-card,
+    .mil-ma-panel,
+    .mil-ma-decision-card,
+    .mil-ma-stage-card {
+        padding: 34px;
+    }
+
+    .mil-ma-summary-card *,
+    .mil-ma-panel *,
+    .mil-ma-feature-card *,
+    .mil-ma-decision-card *,
+    .mil-ma-stage-card *,
+    .mil-ma-output-card * {
+        color: var(--ma-ink);
+    }
+
+    .mil-ma-summary-card p,
+    .mil-ma-panel p,
+    .mil-ma-feature-card p,
+    .mil-ma-decision-card p,
+    .mil-ma-stage-card p,
+    .mil-ma-output-card p {
+        color: var(--ma-muted) !important;
+    }
+
+    .mil-ma-summary-list,
+    .mil-ma-ownership-list,
+    .mil-ma-boundary-list {
+        margin: 26px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mil-ma-summary-list li,
+    .mil-ma-boundary-list li {
+        position: relative;
+        padding: 16px 0 16px 24px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(36, 36, 36, 0.72);
+        line-height: 1.65;
+    }
+
+    .mil-ma-summary-list li::before,
+    .mil-ma-boundary-list li::before {
+        position: absolute;
+        top: 23px;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        background: var(--ma-accent);
+        border-radius: 50%;
+        content: "";
+    }
+
+    /* Product preview */
+
+    .mil-ma-preview {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+        gap: 24px;
+        padding: 30px;
+        background:
+            radial-gradient(circle at 88% 12%, rgba(0, 127, 114, 0.22), transparent 34%),
+            #e8eeec;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-ma-preview-form,
+    .mil-ma-preview-report {
+        padding: 26px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 14px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.11);
+    }
+
+    .mil-ma-preview-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    }
+
+    .mil-ma-preview-head span {
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-preview-head strong {
+        color: var(--ma-accent);
+        font-size: 11px;
+        line-height: 1.4;
+        text-align: right;
+    }
+
+    .mil-ma-preview-field {
+        margin-bottom: 16px;
+    }
+
+    .mil-ma-preview-field:last-child {
+        margin-bottom: 0;
+    }
+
+    .mil-ma-preview-field label {
+        display: block;
+        margin-bottom: 7px;
+        color: rgba(36, 36, 36, 0.55);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-preview-input {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 44px;
+        padding: 0 13px;
+        background: #f5f6f6;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        color: var(--ma-ink);
+        font-size: 13px;
+    }
+
+    .mil-ma-preview-input span {
+        color: rgba(36, 36, 36, 0.42);
+        font-size: 11px;
+    }
+
+    .mil-ma-preview-total {
+        margin-bottom: 22px;
+    }
+
+    .mil-ma-preview-total small {
+        display: block;
+        margin-bottom: 7px;
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-preview-total strong {
+        display: block;
+        color: var(--ma-ink);
+        font-size: clamp(36px, 5vw, 58px);
+        line-height: 1;
+    }
+
+    .mil-ma-preview-total em {
+        display: block;
+        margin-top: 8px;
+        color: rgba(36, 36, 36, 0.52);
+        font-size: 11px;
+        font-style: normal;
+    }
+
+    .mil-ma-preview-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .mil-ma-preview-metric {
+        min-width: 0;
+        padding: 15px;
+        background: #f3f6f5;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .mil-ma-preview-metric span {
+        display: block;
+        margin-bottom: 7px;
+        color: rgba(36, 36, 36, 0.5);
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        line-height: 1.35;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-preview-metric strong {
+        color: var(--ma-ink);
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    .mil-ma-preview-note {
+        margin: 18px 0 0;
+        color: rgba(36, 36, 36, 0.48);
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    /* Calculation model */
+
+    .mil-ma-model {
+        padding: 42px;
+        background:
+            radial-gradient(circle at 86% 12%, rgba(0, 127, 114, 0.25), transparent 33%),
+            var(--ma-dark);
+        border-radius: 22px;
+    }
+
+    .mil-ma-model-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .mil-ma-model-step {
+        min-height: 210px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-ma-model-step span,
+    .mil-ma-model-step h4,
+    .mil-ma-model-step p {
+        color: #ffffff;
+    }
+
+    .mil-ma-model-step > span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 34px;
+        background: var(--ma-accent);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-ma-model-step h4 {
+        margin-bottom: 10px;
+    }
+
+    .mil-ma-model-step p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    /* Feature and output systems */
+
+    .mil-ma-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-ma-feature-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 295px;
+        padding: 34px;
+    }
+
+    .mil-ma-feature-number,
+    .mil-ma-decision-label {
+        display: block;
+        margin-bottom: 46px;
+        color: var(--ma-accent) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-feature-card h4 {
+        margin-bottom: 16px;
+    }
+
+    .mil-ma-feature-list {
+        margin: auto 0 0;
+        padding: 24px 0 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        list-style: none;
+    }
+
+    .mil-ma-feature-list li {
+        padding: 5px 0;
+        color: rgba(36, 36, 36, 0.65) !important;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .mil-ma-output-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .mil-ma-output-card {
+        min-height: 230px;
+        padding: 30px;
+        border: 0;
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 0;
+    }
+
+    .mil-ma-output-card span {
+        display: block;
+        margin-bottom: 34px;
+        color: var(--ma-accent);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-output-card h4 {
+        margin-bottom: 12px;
+    }
+
+    .mil-ma-output-card p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    /* Report workflow */
+
+    .mil-ma-report-flow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .mil-ma-report-step {
+        min-height: 235px;
+        padding: 30px 26px;
+        background: var(--ma-panel);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .mil-ma-report-step > span {
+        display: block;
+        margin-bottom: 38px;
+        color: var(--ma-accent);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-report-step h4 {
+        margin-bottom: 13px;
+        color: var(--ma-ink);
+    }
+
+    .mil-ma-report-step p {
+        margin: 0;
+        color: var(--ma-muted);
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    /* Architecture */
+
+    .mil-ma-architecture {
+        display: grid;
+        gap: 12px;
+        padding: 34px;
+        background: var(--ma-dark);
+        border-radius: 20px;
+    }
+
+    .mil-ma-architecture-row {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .mil-ma-architecture-row > span:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background: var(--ma-accent);
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-ma-architecture-row h4 {
+        margin-bottom: 4px;
+        color: #ffffff;
+    }
+
+    .mil-ma-architecture-row p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .mil-ma-architecture-row > span:last-child {
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    /* Decisions, role and stage */
+
+    .mil-ma-decision-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-ma-decision-card {
+        min-height: 300px;
+    }
+
+    .mil-ma-role-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .mil-ma-role-grid .mil-ma-panel:first-child {
+        grid-row: span 2;
+    }
+
+    .mil-ma-ownership-list li {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(36, 36, 36, 0.68) !important;
+        line-height: 1.6;
+    }
+
+    .mil-ma-ownership-list span {
+        flex: 0 0 28px;
+        color: var(--ma-accent) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mil-ma-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+    }
+
+    .mil-ma-stack span {
+        padding: 10px 13px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--ma-ink) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-readiness {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        background: var(--ma-dark);
+        border-radius: 20px;
+    }
+
+    .mil-ma-readiness-item {
+        min-width: 0;
+        padding: 34px;
+    }
+
+    .mil-ma-readiness-item + .mil-ma-readiness-item {
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .mil-ma-readiness-item span {
+        display: block;
+        margin-bottom: 16px;
+        color: rgba(255, 255, 255, 0.48);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-readiness-item strong {
+        display: block;
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .mil-ma-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        gap: 30px;
+    }
+
+    .mil-ma-stage-card--dark {
+        background: var(--ma-dark) !important;
+        border-color: var(--ma-dark);
+    }
+
+    .mil-ma-stage-card--dark h3,
+    .mil-ma-stage-card--dark p,
+    .mil-ma-stage-card--dark strong,
+    .mil-ma-stage-card--dark span {
+        color: #ffffff !important;
+    }
+
+    .mil-ma-stage-card--dark p {
+        color: rgba(255, 255, 255, 0.66) !important;
+    }
+
+    .mil-ma-stage-progress {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .mil-ma-stage-progress div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mil-ma-stage-progress span {
+        color: rgba(255, 255, 255, 0.58) !important;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .mil-ma-stage-progress strong {
+        font-size: 13px;
+    }
+
+    .mil-ma-boundary {
+        padding: 34px;
+        background: rgba(0, 127, 114, 0.07);
+        border: 1px solid rgba(0, 127, 114, 0.2);
+        border-radius: 20px;
+    }
+
+    .mil-ma-boundary h4 {
+        color: var(--ma-ink);
+    }
+
+    .mil-ma-boundary p {
+        color: var(--ma-muted);
+    }
+
+    .mil-ma-cta {
+        max-width: 930px;
+        margin: 10px auto 60px;
+        text-align: center;
+    }
+
+    .mil-ma-cta p {
+        max-width: 750px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .mil-ma-cta-actions {
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .mil-ma-meta-grid,
+        .mil-ma-readiness {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-ma-meta-item:nth-child(3) {
+            padding-left: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-ma-meta-item:nth-child(4) {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .mil-ma-readiness-item:nth-child(3) {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 0;
+        }
+
+        .mil-ma-readiness-item:nth-child(4) {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .mil-ma-split,
+        .mil-ma-stage,
+        .mil-ma-preview {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-ma-model-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .mil-ma-report-flow,
+        .mil-ma-decision-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .mil-ma-feature-grid,
+        .mil-ma-role-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-ma-role-grid .mil-ma-panel:first-child {
+            grid-row: auto;
+        }
+
+        .mil-ma-output-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .mil-ma-model {
+            padding: 26px;
+        }
+
+        .mil-ma-model-grid,
+        .mil-ma-report-flow,
+        .mil-ma-decision-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-ma-architecture-row {
+            grid-template-columns: 48px minmax(0, 1fr);
+        }
+
+        .mil-ma-architecture-row > span:last-child {
+            display: none;
+        }
+
+        .mil-ma-preview-metrics {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .mil-ma-hero h1 {
+            font-size: 50px;
+        }
+
+        .mil-ma-hero-lead {
+            font-size: 16px;
+        }
+
+        .mil-ma-meta-grid,
+        .mil-ma-output-grid,
+        .mil-ma-readiness {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mil-ma-meta-item,
+        .mil-ma-meta-item + .mil-ma-meta-item,
+        .mil-ma-meta-item:nth-child(3),
+        .mil-ma-meta-item:nth-child(4) {
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 0;
+        }
+
+        .mil-ma-meta-item:first-child {
+            border-top: 0;
+        }
+
+        .mil-ma-summary-card,
+        .mil-ma-panel,
+        .mil-ma-feature-card,
+        .mil-ma-decision-card,
+        .mil-ma-stage-card,
+        .mil-ma-boundary {
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .mil-ma-preview {
+            padding: 16px;
+            border-radius: 17px;
+        }
+
+        .mil-ma-preview-form,
+        .mil-ma-preview-report {
+            padding: 20px;
+        }
+
+        .mil-ma-feature-card,
+        .mil-ma-decision-card,
+        .mil-ma-report-step {
+            min-height: 0;
+        }
+
+        .mil-ma-feature-number,
+        .mil-ma-decision-label {
+            margin-bottom: 30px;
+        }
+
+        .mil-ma-model,
+        .mil-ma-architecture,
+        .mil-ma-readiness {
+            border-radius: 16px;
+        }
+
+        .mil-ma-model,
+        .mil-ma-architecture {
+            padding: 18px;
+        }
+
+        .mil-ma-output-card {
+            min-height: 0;
+            padding: 24px;
+        }
+
+        .mil-ma-readiness-item,
+        .mil-ma-readiness-item + .mil-ma-readiness-item,
+        .mil-ma-readiness-item:nth-child(3),
+        .mil-ma-readiness-item:nth-child(4) {
+            padding: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 0;
+        }
+
+        .mil-ma-readiness-item:first-child {
+            border-top: 0;
+        }
+
+        .mil-ma-actions,
+        .mil-ma-cta-actions {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .mil-ma-actions .mil-btn,
+        .mil-ma-cta-actions .mil-btn {
+            width: 100%;
+        }
+    }
+
+    .mil-ma-product-shot {
+    margin: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 22px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.13);
+}
+
+.mil-ma-product-shot-frame {
+    padding: 24px;
+    background:
+        radial-gradient(
+            circle at 86% 12%,
+            rgba(0, 127, 114, 0.18),
+            transparent 35%
+        ),
+        #e8eeec;
+}
+
+.mil-ma-product-shot img {
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.16);
+}
+
+.mil-ma-product-shot figcaption {
+    padding: 20px 24px;
+    background: #171717;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+@media screen and (max-width: 575px) {
+    .mil-ma-product-shot {
+        border-radius: 16px;
+    }
+
+    .mil-ma-product-shot-frame {
+        padding: 12px;
+    }
+
+    .mil-ma-product-shot figcaption {
+        padding: 18px;
+    }
+}
+</style>
+
+
+
+
+</head>
+
+<body class="mil-fw-page mil-100-page">
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- preloader -->
+        <div class="mil-preloader-frame">
+            <div class="mil-preloader-content" style="transform: scale(.6) translateY(200px); opacity: 0;">
+                <div class="mil-preloader">
+                    <div class="mil-circ-1"></div>
+                    <div class="mil-circ-2"></div>
+                    <div class="mil-circ-3"></div>
+                    <div class="mil-circ-4"></div>
+                </div>
+                <div class="mil-upper">Loading</div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+        <div class="mil-frame">
+
+            <!-- top bar -->
+            <div class="mil-top-panel">
+
+                <!-- You need to remove the "mil-dot" class if you don't need a dot -->
+                <a href="index.html" class="mil-logo" data-no-swup><span class="mil-dot">C</span></a>
+
+                <div class="mil-navigation">
+                    <nav id="swupMenu" class="mil-menu-transition">
+                        <ul>
+                            <li>
+                                <a href="index.html" data-no-swup>Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html" data-no-swup>About</a>
+                            </li>
+                            <li class="mil-active">
+                                <a href="tools.html" data-no-swup aria-current="page">Tools</a>
+                            </li>
+                            <li class="mil-has-children">
+                                <a href="projects.html" data-no-swup>Projects</a>
+
+                                <ul>
+                                    <li>
+                                        <a href="applications.html" data-no-swup>
+                                            Software Products
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="automations.html" data-no-swup>
+                                            Automations
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="websites.html" data-no-swup>
+                                            Websites
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="funnels.html" data-no-swup>
+                                            Funnels &amp; Landing Pages
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html" data-no-swup>Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="mil-top-panel-btns">
+                    <a href="contact.html" class="mil-contact-btn" data-no-swup>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- top bar end -->
+
+            <!-- left bar -->
+            <div class="mil-left-panel">
+
+                <div class="mil-page-name mil-upper mil-dark">CASE STUDY · MSP MARGIN AUDIT</div>
+
+                <ul class="mil-social-icons">
+                    <li>
+                        <a href="https://github.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/carywood7" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <title>Instagram</title>
+                                <path
+                                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/carywood777" target="_blank" class="social-icon" rel="noopener noreferrer">
+                            <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.959 45.959"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489
+			c0.96-0.935,1.489-2.224,1.488-3.653C10.659,2.589,8.464,0.492,5.392,0.492z M7.847,7.811C7.227,8.414,6.34,8.733,5.284,8.733
+			C3.351,8.733,2,7.451,2,5.614c0-1.867,1.363-3.122,3.392-3.122c1.983,0,3.293,1.235,3.338,3.123
+			C8.729,6.477,8.416,7.256,7.847,7.811z" />
+                                        <path
+                                            d="M0.959,45.467h8.988V12.422H0.959V45.467z M2.959,14.422h4.988v29.044H2.959V14.422z" />
+                                        <path d="M33.648,12.422c-4.168,0-6.72,1.439-8.198,2.792l-0.281-2.792H15v33.044h9.959V28.099c0-0.748,0.303-2.301,0.493-2.711
+			c1.203-2.591,2.826-2.591,5.284-2.591c2.831,0,5.223,2.655,5.223,5.797v16.874h10v-18.67
+			C45.959,16.92,39.577,12.422,33.648,12.422z M43.959,43.467h-6V28.593c0-4.227-3.308-7.797-7.223-7.797
+			c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473
+			c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><i class="far fa-circle"></i></li>
+                </ul>
+
+            </div>
+            <!-- left bar end -->
+
+            <!-- back to top -->
+            <div class="mil-back-to-top">
+                <a href="#top" class="mil-link mil-btt-icon" data-no-swup>
+                    <span>Back to top</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-arrow-right">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <!-- back to top end -->
+
+        </div>
+
+        <!-- content -->
+        <div class="mil-content">
+
+            <div class="mil-scroll-wrapper transition-fade" id="swupMain">
+                <div class="mil-container-100">
+                    <!-- MSP Margin Audit hero -->
+                    <section class="mil-ma-hero mil-p-90-60">
+
+                        <p class="mil-upper mil-dark mil-up mil-mb-30">
+                            MSP Diagnostic Tool · Functional MVP · Deployment Pending
+                        </p>
+
+                        <h1 class="mil-up mil-mb-30">
+                            MSP Margin Audit
+                        </h1>
+
+                        <p class="mil-ma-hero-lead mil-up mil-mb-30">
+                            A focused Rails diagnostic that estimates operational leakage
+                            from unbilled cloud seats, technician administration and manual
+                            dispatch—then models the hours and value automation could
+                            potentially reclaim.
+                        </p>
+
+                        <div class="mil-ma-actions mil-up">
+
+                            <a href="tools.html" class="mil-btn mil-sm-btn" data-no-swup>
+                                View Tools
+                            </a>
+
+                            <a href="hammer-flow.html" class="mil-ma-text-link" data-no-swup>
+                                Explore Hammer Flow
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
+                    </section>
+                    <!-- MSP Margin Audit hero end -->
+
+
+                    <!-- product metadata -->
+                    <div class="mil-ma-meta-grid mil-up mil-mb-90">
+
+                        <div class="mil-ma-meta-item">
+                            <span class="mil-ma-meta-label">My Role</span>
+                            <strong>Product strategy, diagnostic model, UX and Rails development</strong>
+                        </div>
+
+                        <div class="mil-ma-meta-item">
+                            <span class="mil-ma-meta-label">Product Model</span>
+                            <strong>Focused MSP planning tool with saved reports and scorecards</strong>
+                        </div>
+
+                        <div class="mil-ma-meta-item">
+                            <span class="mil-ma-meta-label">Core Stack</span>
+                            <strong>Ruby on Rails, PostgreSQL, server-rendered reporting, PDF and email delivery</strong>
+                        </div>
+
+                        <div class="mil-ma-meta-item">
+                            <span class="mil-ma-meta-label">Current Stage</span>
+                            <strong>Functional MVP complete; public deployment pending</strong>
+                        </div>
+
+                    </div>
+                    <!-- product metadata end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>The Product</h3>
+                    </div>
+
+
+                    <!-- overview -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-split">
+
+                            <div class="mil-ma-copy">
+
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    The Problem
+                                </p>
+
+                                <h2 class="mil-up mil-mb-30">
+                                    Operational leakage is easy to feel and difficult to quantify.
+                                </h2>
+
+                                <p class="mil-up mil-mb-30">
+                                    MSP leaders often know that technicians spend too much time on
+                                    administration, dispatch requires repeated manual effort and cloud
+                                    seats occasionally escape billing. The harder question is what those
+                                    leaks may be costing each month.
+                                </p>
+
+                                <p class="mil-up">
+                                    MSP Margin Audit turns a small set of operating assumptions into
+                                    a transparent planning estimate. The purpose is not to replace an
+                                    accounting review. It is to create a useful starting point for
+                                    prioritising workflow improvements.
+                                </p>
+
+                            </div>
+
+                            <aside class="mil-ma-summary-card mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Product Objective
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    Make the cost of repeated operational work easier to discuss.
+                                </h4>
+
+                                <ul class="mil-ma-summary-list">
+                                    <li>Estimate monthly and annual operational loss.</li>
+                                    <li>Separate licensing leakage from labor-based inefficiency.</li>
+                                    <li>Model potential hours and value reclaimed.</li>
+                                    <li>Produce a saved, shareable scorecard for follow-up.</li>
+                                </ul>
+
+                            </aside>
+
+                        </div>
+
+                    </section>
+                    <!-- overview end -->
+
+
+                    <!-- product screenshot -->
+                    <figure class="mil-ma-product-shot mil-up mil-mb-90">
+
+                        <div class="mil-ma-product-shot-frame">
+
+                            <img
+                                src="img/msp-margin-audit.jpeg"
+                                alt="MSP Margin Audit calculator showing MSP operating inputs and automation investment assumptions"
+                                loading="eager"
+                                decoding="async"
+                            >
+
+                        </div>
+
+                        <figcaption>
+                            The calculator collects a focused set of operating assumptions and
+                            shows the core planning results immediately. No signup is required
+                            before the estimate is displayed.
+                        </figcaption>
+
+                    </figure>
+                    <!-- product screenshot end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Diagnostic Model</h3>
+                    </div>
+
+
+                    <!-- diagnostic model -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-copy mil-mb-60">
+
+                            <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                From Assumptions to Planning Estimate
+                            </p>
+
+                            <h2 class="mil-up mil-mb-30">
+                                The model keeps each source of leakage visible.
+                            </h2>
+
+                            <p class="mil-up">
+                                The calculator uses deterministic arithmetic rather than AI.
+                                Each result follows directly from the values entered, making
+                                the estimate easy to explain, review and challenge.
+                            </p>
+
+                        </div>
+
+                        <div class="mil-ma-model mil-up">
+
+                            <div class="mil-ma-model-grid">
+
+                                <article class="mil-ma-model-step">
+                                    <span>01</span>
+                                    <h4>License Leakage</h4>
+                                    <p>Estimate recurring loss from cloud seats that are active but not billed.</p>
+                                </article>
+
+                                <article class="mil-ma-model-step">
+                                    <span>02</span>
+                                    <h4>Technician Administration</h4>
+                                    <p>Convert repeated non-billable administration time into a monthly labor estimate.</p>
+                                </article>
+
+                                <article class="mil-ma-model-step">
+                                    <span>03</span>
+                                    <h4>Manual Dispatch</h4>
+                                    <p>Quantify recurring effort spent reviewing, assigning and routing service work.</p>
+                                </article>
+
+                                <article class="mil-ma-model-step">
+                                    <span>04</span>
+                                    <h4>Monthly &amp; Annual Loss</h4>
+                                    <p>Combine the three operating areas into a clear planning total.</p>
+                                </article>
+
+                                <article class="mil-ma-model-step">
+                                    <span>05</span>
+                                    <h4>Potential Recovery</h4>
+                                    <p>Apply the user’s recovery assumption to estimate hours and value that may be reclaimed.</p>
+                                </article>
+
+                                <article class="mil-ma-model-step">
+                                    <span>06</span>
+                                    <h4>ROI &amp; Payback</h4>
+                                    <p>Compare potential reclaimed value with implementation and ongoing automation assumptions.</p>
+                                </article>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <!-- diagnostic model end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>What the Tool Evaluates</h3>
+                    </div>
+
+
+                    <!-- feature system -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-feature-grid">
+
+                            <article class="mil-ma-feature-card mil-up">
+                                <p class="mil-ma-feature-number">01 · LICENSE CONTROL</p>
+                                <h4>Unbilled Cloud Seats</h4>
+                                <p>
+                                    Estimates recurring revenue leakage when active cloud
+                                    subscriptions are not reflected in client billing.
+                                </p>
+                                <ul class="mil-ma-feature-list">
+                                    <li>Unbilled seat count</li>
+                                    <li>Monthly value per seat</li>
+                                    <li>Monthly and annual licensing leakage</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-ma-feature-card mil-up">
+                                <p class="mil-ma-feature-number">02 · TECHNICIAN TIME</p>
+                                <h4>Administrative Overhead</h4>
+                                <p>
+                                    Converts recurring technician administration into a
+                                    labor-cost estimate using the operating assumptions entered.
+                                </p>
+                                <ul class="mil-ma-feature-list">
+                                    <li>Administrative hours</li>
+                                    <li>Loaded hourly cost</li>
+                                    <li>Potential time recovered</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-ma-feature-card mil-up">
+                                <p class="mil-ma-feature-number">03 · SERVICE COORDINATION</p>
+                                <h4>Manual Dispatch Effort</h4>
+                                <p>
+                                    Quantifies the time spent manually reviewing, prioritising,
+                                    assigning and routing incoming service work.
+                                </p>
+                                <ul class="mil-ma-feature-list">
+                                    <li>Dispatch hours</li>
+                                    <li>Labor value consumed</li>
+                                    <li>Potential automation opportunity</li>
+                                </ul>
+                            </article>
+
+                            <article class="mil-ma-feature-card mil-up">
+                                <p class="mil-ma-feature-number">04 · INVESTMENT VIEW</p>
+                                <h4>Recovery, ROI &amp; Payback</h4>
+                                <p>
+                                    Models how much value may be reclaimed and compares it
+                                    with the assumed cost of implementation and maintenance.
+                                </p>
+                                <ul class="mil-ma-feature-list">
+                                    <li>Potential monthly value reclaimed</li>
+                                    <li>Estimated ROI</li>
+                                    <li>Estimated payback period</li>
+                                </ul>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- feature system end -->
+
+
+                    <!-- outputs -->
+                    <div class="mil-ma-output-grid mil-mb-90">
+
+                        <article class="mil-ma-output-card mil-up">
+                            <span>Monthly Loss</span>
+                            <h4>Estimated operational leakage</h4>
+                            <p>The combined monthly impact of the three diagnostic areas.</p>
+                        </article>
+
+                        <article class="mil-ma-output-card mil-up">
+                            <span>Annual Loss</span>
+                            <h4>Twelve-month planning exposure</h4>
+                            <p>A simple annualised view for budgeting and prioritisation.</p>
+                        </article>
+
+                        <article class="mil-ma-output-card mil-up">
+                            <span>Wasted Hours</span>
+                            <h4>Recurring labor consumed</h4>
+                            <p>Administrative and dispatch effort expressed as time.</p>
+                        </article>
+
+                        <article class="mil-ma-output-card mil-up">
+                            <span>Hours Reclaimed</span>
+                            <h4>Potential capacity returned</h4>
+                            <p>Estimated recoverable time based on the selected assumption.</p>
+                        </article>
+
+                        <article class="mil-ma-output-card mil-up">
+                            <span>Value Reclaimed</span>
+                            <h4>Potential monthly benefit</h4>
+                            <p>The labor and licensing value the model suggests may be recoverable.</p>
+                        </article>
+
+                        <article class="mil-ma-output-card mil-up">
+                            <span>ROI &amp; Payback</span>
+                            <h4>Implementation planning view</h4>
+                            <p>Estimated return and time to recover the assumed automation investment.</p>
+                        </article>
+
+                    </div>
+                    <!-- outputs end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Report Workflow</h3>
+                    </div>
+
+
+                    <!-- report workflow -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-report-flow">
+
+                            <article class="mil-ma-report-step mil-up">
+                                <span>01 · Calculate</span>
+                                <h4>See results immediately.</h4>
+                                <p>The diagnostic returns a planning estimate as soon as the operating assumptions are submitted.</p>
+                            </article>
+
+                            <article class="mil-ma-report-step mil-up">
+                                <span>02 · Save</span>
+                                <h4>Create a durable report.</h4>
+                                <p>A saved scorecard receives an opaque token rather than exposing a predictable record identifier.</p>
+                            </article>
+
+                            <article class="mil-ma-report-step mil-up">
+                                <span>03 · Share</span>
+                                <h4>Deliver the scorecard.</h4>
+                                <p>The report can be delivered by email for internal follow-up or a prospect conversation.</p>
+                            </article>
+
+                            <article class="mil-ma-report-step mil-up">
+                                <span>04 · Export</span>
+                                <h4>Download a PDF.</h4>
+                                <p>A portable scorecard keeps the assumptions, results and planning caveats together.</p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- report workflow end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Product Architecture</h3>
+                    </div>
+
+
+                    <!-- architecture -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-split mil-mb-60">
+
+                            <div class="mil-ma-copy">
+
+                                <p class="mil-upper mil-dark mil-up mil-mb-20">
+                                    A Focused Rails Product
+                                </p>
+
+                                <h2 class="mil-up mil-mb-30">
+                                    Calculation, reporting and privacy have separate responsibilities.
+                                </h2>
+
+                                <p class="mil-up">
+                                    The application keeps business rules inside deterministic
+                                    calculation logic, validates the submitted assumptions and
+                                    preserves saved reports for later review. Report delivery is
+                                    part of the product, not an afterthought.
+                                </p>
+
+                            </div>
+
+                            <aside class="mil-ma-panel mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Engineering Boundary
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    A diagnostic estimate should remain explainable.
+                                </h4>
+
+                                <p>
+                                    Results are produced from visible inputs and fixed formulas.
+                                    No AI is used to invent assumptions or reinterpret the financial
+                                    meaning of a saved scorecard.
+                                </p>
+
+                            </aside>
+
+                        </div>
+
+                        <div class="mil-ma-architecture mil-up">
+
+                            <div class="mil-ma-architecture-row">
+                                <span>01</span>
+                                <div>
+                                    <h4>Validated Input Model</h4>
+                                    <p>Form-level validation keeps incomplete or unrealistic submissions from producing misleading output.</p>
+                                </div>
+                                <span>Input</span>
+                            </div>
+
+                            <div class="mil-ma-architecture-row">
+                                <span>02</span>
+                                <div>
+                                    <h4>Deterministic Calculation Service</h4>
+                                    <p>Centralized formulas calculate leakage, recovered capacity, value, ROI and payback.</p>
+                                </div>
+                                <span>Domain</span>
+                            </div>
+
+                            <div class="mil-ma-architecture-row">
+                                <span>03</span>
+                                <div>
+                                    <h4>Saved Report Snapshot</h4>
+                                    <p>The report preserves the submitted assumptions and resulting scorecard for later review.</p>
+                                </div>
+                                <span>Data</span>
+                            </div>
+
+                            <div class="mil-ma-architecture-row">
+                                <span>04</span>
+                                <div>
+                                    <h4>Opaque Report Tokens</h4>
+                                    <p>Non-sequential public identifiers reduce predictable report discovery.</p>
+                                </div>
+                                <span>Privacy</span>
+                            </div>
+
+                            <div class="mil-ma-architecture-row">
+                                <span>05</span>
+                                <div>
+                                    <h4>Email &amp; PDF Delivery</h4>
+                                    <p>Saved scorecards can be delivered and exported without changing the underlying calculation.</p>
+                                </div>
+                                <span>Output</span>
+                            </div>
+
+                            <div class="mil-ma-architecture-row">
+                                <span>06</span>
+                                <div>
+                                    <h4>Edge-Case QA</h4>
+                                    <p>Validation covers zero values, unusual inputs and private-report behavior.</p>
+                                </div>
+                                <span>Quality</span>
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <!-- architecture end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Product Boundaries</h3>
+                    </div>
+
+
+                    <!-- boundaries -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-split">
+
+                            <div class="mil-ma-boundary mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Focused MVP Scope
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    The tool deliberately evaluates three operating areas.
+                                </h4>
+
+                                <p>
+                                    MSP Margin Audit currently focuses on unbilled cloud seats,
+                                    technician administration and manual dispatch. Keeping the
+                                    scope narrow makes the model understandable and keeps every
+                                    output tied to a visible input.
+                                </p>
+
+                            </div>
+
+                            <aside class="mil-ma-summary-card mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    What It Does Not Claim
+                                </p>
+
+                                <ul class="mil-ma-boundary-list">
+                                    <li>It is not a full accounting or financial audit.</li>
+                                    <li>It does not calculate complete agreement profitability.</li>
+                                    <li>It does not identify every source of MSP margin leakage.</li>
+                                    <li>It does not guarantee that estimated savings will be realised.</li>
+                                </ul>
+
+                            </aside>
+
+                        </div>
+
+                    </section>
+                    <!-- boundaries end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Key Product Decisions</h3>
+                    </div>
+
+
+                    <!-- decisions -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-decision-grid">
+
+                            <article class="mil-ma-decision-card mil-up">
+                                <span class="mil-ma-decision-label">Decision 01</span>
+                                <h4 class="mil-mb-20">Keep the model deterministic.</h4>
+                                <p>
+                                    The diagnostic uses visible arithmetic rather than AI,
+                                    making each estimate easier to explain and challenge.
+                                </p>
+                            </article>
+
+                            <article class="mil-ma-decision-card mil-up">
+                                <span class="mil-ma-decision-label">Decision 02</span>
+                                <h4 class="mil-mb-20">Present value before collecting a lead.</h4>
+                                <p>
+                                    The calculator is designed to show the result first.
+                                    Saving, emailing or discussing the scorecard follows the useful output.
+                                </p>
+                            </article>
+
+                            <article class="mil-ma-decision-card mil-up">
+                                <span class="mil-ma-decision-label">Decision 03</span>
+                                <h4 class="mil-mb-20">Use planning language responsibly.</h4>
+                                <p>
+                                    Results are framed as estimates based on supplied assumptions,
+                                    not as guaranteed savings or verified financial findings.
+                                </p>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- decisions end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>My Role &amp; Engineering Approach</h3>
+                    </div>
+
+
+                    <!-- role and engineering -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-role-grid">
+
+                            <article class="mil-ma-panel mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    End-to-End Ownership
+                                </p>
+
+                                <h3 class="mil-mb-20">
+                                    I turned an MSP sales conversation into a working diagnostic product.
+                                </h3>
+
+                                <p>
+                                    The tool connects the Hammer Flow service model with a practical
+                                    way to discuss operational waste. I defined the scope, calculation
+                                    model, report experience, Rails implementation, privacy boundary
+                                    and edge-case QA.
+                                </p>
+
+                                <ul class="mil-ma-ownership-list">
+                                    <li><span>01</span> Product problem, audience and MVP boundary</li>
+                                    <li><span>02</span> Leakage, recovery, ROI and payback formulas</li>
+                                    <li><span>03</span> Rails form, calculation and report workflow</li>
+                                    <li><span>04</span> Saved reports, PDF output and email delivery</li>
+                                    <li><span>05</span> Edge-case QA and private-report protection</li>
+                                </ul>
+
+                            </article>
+
+                            <article class="mil-ma-panel mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Technology
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    A conventional Rails stack built for clarity.
+                                </h4>
+
+                                <p>
+                                    The product keeps the model understandable, testable
+                                    and easy to deploy alongside the broader Hammer Flow work.
+                                </p>
+
+                                <div class="mil-ma-stack">
+                                    <span>Ruby on Rails</span>
+                                    <span>PostgreSQL</span>
+                                    <span>Server-Rendered HTML</span>
+                                    <span>Form Objects</span>
+                                    <span>PDF Reports</span>
+                                    <span>Email Delivery</span>
+                                    <span>Tokenized Reports</span>
+                                    <span>Automated Tests</span>
+                                </div>
+
+                            </article>
+
+                            <article class="mil-ma-panel mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Hammer Flow Relationship
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    A diagnostic tool—not an HF-numbered automation.
+                                </h4>
+
+                                <p>
+                                    MSP Margin Audit helps identify and quantify a potential
+                                    improvement area. The 15 Hammer Flow workflows remain separate
+                                    reference implementations for specific MSP operating processes.
+                                </p>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- role and engineering end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>MVP Readiness</h3>
+                    </div>
+
+
+                    <!-- readiness -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-readiness mil-up">
+
+                            <div class="mil-ma-readiness-item">
+                                <span>Calculator</span>
+                                <strong>Functional</strong>
+                            </div>
+
+                            <div class="mil-ma-readiness-item">
+                                <span>Saved Reports</span>
+                                <strong>Implemented</strong>
+                            </div>
+
+                            <div class="mil-ma-readiness-item">
+                                <span>Scorecard Delivery</span>
+                                <strong>PDF &amp; email</strong>
+                            </div>
+
+                            <div class="mil-ma-readiness-item">
+                                <span>Quality Work</span>
+                                <strong>Edge-case QA complete</strong>
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <!-- readiness end -->
+
+
+                    <div class="mil-section-title mil-up">
+                        <div class="mil-divider"></div>
+                        <h3>Current Stage</h3>
+                    </div>
+
+
+                    <!-- current stage -->
+                    <section class="mil-p-90-60">
+
+                        <div class="mil-ma-stage">
+
+                            <article class="mil-ma-stage-card mil-ma-stage-card--dark mil-up">
+
+                                <p class="mil-upper mil-mb-20">
+                                    Functional MVP · Deployment Pending
+                                </p>
+
+                                <h3 class="mil-mb-20">
+                                    The useful product path is complete.
+                                </h3>
+
+                                <p>
+                                    The calculation workflow, immediate result, saved scorecard,
+                                    PDF output, email delivery, private-report protections and
+                                    edge-case QA are implemented. Public hosting remains the
+                                    next release step.
+                                </p>
+
+                                <div class="mil-ma-stage-progress">
+                                    <div><span>Diagnostic Model</span><strong>Complete</strong></div>
+                                    <div><span>Saved Scorecards</span><strong>Complete</strong></div>
+                                    <div><span>PDF &amp; Email</span><strong>Complete</strong></div>
+                                    <div><span>Public Deployment</span><strong>Pending</strong></div>
+                                </div>
+
+                            </article>
+
+                            <article class="mil-ma-stage-card mil-up">
+
+                                <p class="mil-upper mil-dark mil-mb-20">
+                                    Intended Use
+                                </p>
+
+                                <h4 class="mil-mb-20">
+                                    Start an evidence-based automation conversation.
+                                </h4>
+
+                                <p>
+                                    The scorecard gives an MSP owner or service leader a clearer
+                                    starting point for deciding which operating leak deserves
+                                    deeper investigation and workflow design.
+                                </p>
+
+                                <div class="mil-ma-actions">
+
+                                    <span
+                                        class="mil-btn mil-sm-btn mil-ma-disabled"
+                                        aria-disabled="true"
+                                    >
+                                        Deployment Pending
+                                    </span>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <!-- current stage end -->
+
+
+                    <div class="mil-divider mil-up mil-mb-90"></div>
+
+
+                    <!-- MSP Margin Audit CTA -->
+                    <section class="mil-ma-cta mil-up">
+
+                        <p class="mil-upper mil-dark mil-mb-20">
+                            Rails Development · MSP Operations · Diagnostic Products
+                        </p>
+
+                        <h2 class="mil-mb-30">
+                            MSP Margin Audit turns an operational problem into a focused, explainable product.
+                        </h2>
+
+                        <p class="mil-mb-30">
+                            Review the complete Hammer Flow automation portfolio, explore
+                            the rest of my tools or start a conversation about practical
+                            MSP workflow improvement.
+                        </p>
+
+                        <div class="mil-ma-cta-actions">
+
+                            <a href="hammer-flow.html" class="mil-btn mil-sm-btn" data-no-swup>
+                                Explore Hammer Flow
+                            </a>
+
+                            <a href="tools.html" class="mil-ma-text-link" data-no-swup>
+                                View Tools
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                            <a href="contact.html" class="mil-ma-text-link" data-no-swup>
+                                Start a Conversation
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
+                    </section>
+                    <!-- MSP Margin Audit CTA end -->
+
+
+                    <footer class="mil-fw">
+                        <p class="mil-light-soft">
+                            © 2026 Cary Wood. Building software, tools and digital systems.
+                        </p>
+                    </footer>
+
+</div>
+
+            </div>
+
+            <div class="mil-right-banner" id="scene">
+                <!-- scrollbar -->
+                <div class="mil-progress-track">
+                    <div class="mil-progress"></div>
+                </div>
+                <!-- scrollbar end -->
+                <div class="mil-banner-wrapper" data-depth="1">
+                    <div id="swupBg" class="mil-banner-frame"></div>
+                </div>
+                <div class="mil-banner-wrapper" data-depth="0.2">
+                    <div id="swupPerson" class="mil-banner-frame"></div>
+                </div>
+                <div class="mil-flying-skills" data-depth="0.1">
+                    <div id="swupSkills" class="mil-skills-frame">
+                        <div class="mil-el mil-addition-el-1">+</div>
+                        <div class="mil-el mil-addition-el-2">+</div>
+                        <div class="mil-el mil-addition-el-3"></div>
+                        <div class="mil-el mil-addition-el-4"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- content -->
+    </div>
+    <!-- wrapper end -->
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swup body class plugin js -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- parallax js -->
+    <script src="js/plugins/parallax.js"></script>
+    <!-- courtney js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
