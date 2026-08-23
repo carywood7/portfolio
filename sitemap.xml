@@ -1,45 +1,59 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carywood.co/</loc>
-  </url>
-  <url>
     <loc>https://carywood.co/about.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/applications.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/automations.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/contact.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/funnels.html</loc>
-  </url>
-  <url>
-    <loc>https://carywood.co/hammer-flow.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/hookscribe.html</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://carywood.co/</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/leadmath.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/leadstrackr.html</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://carywood.co/msp-automations.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/msp-margin-audit.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/projects.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/tools.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>https://carywood.co/websites.html</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
 </urlset>
