@@ -316,7 +316,7 @@ $(function () {
 
     function initContactForm() {
         const form = document.querySelector("#contact-form form");
-        if (!form) return;
+        if (!form || form.hasAttribute("data-portfolio-inquiry")) return;
 
         form.addEventListener("submit", function (e) {
             e.preventDefault();
