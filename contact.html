@@ -889,25 +889,10 @@
 
                                 <form
                                     class="mil-contact-form"
-                                    action="https://formsubmit.co/cary.wood.777@gmail.com"
+                                    action="https://script.google.com/macros/s/AKfycbzzcA_6W0cis3-PL4mGXOatkjkO93NIKdUURlTFu4li5pNoCM3OQ7KpVWEAnZN4YnPvcQ/exec" data-portfolio-inquiry
                                     method="POST"
                                 >
 
-                                    <input
-                                        type="hidden"
-                                        name="_subject"
-                                        value="New message from carywood.co"
-                                    >
-                                    <input
-                                        type="hidden"
-                                        name="_template"
-                                        value="table"
-                                    >
-                                    <input
-                                        type="hidden"
-                                        name="_next"
-                                        value="https://carywood.co/contact.html?sent=1"
-                                    >
                                     <input
                                         type="text"
                                         name="_honey"
@@ -1248,6 +1233,69 @@
     <!-- courtney js -->
     <script src="js/main.js"></script>
 
+<script>
+    document.addEventListener('submit', async (event) => {
+        const form = event.target;
+        if (!(form instanceof HTMLFormElement) ||
+            !form.matches('form[data-portfolio-inquiry]')) return;
+
+        event.preventDefault();
+        if (form.getAttribute('aria-busy') === 'true') return;
+
+        const button = form.querySelector('button[type="submit"], input[type="submit"]');
+        let status = form.querySelector('[data-inquiry-status]');
+        if (!status) {
+            status = document.createElement('p');
+            status.setAttribute('data-inquiry-status', '');
+            status.setAttribute('role', 'status');
+            form.append(status);
+        }
+
+        form.setAttribute('aria-busy', 'true');
+        if (button) button.disabled = true;
+        status.textContent = 'Sending your inquiry…';
+
+        const controller = new AbortController();
+        const timeout = window.setTimeout(() => controller.abort(), 45000);
+        let navigating = false;
+
+        try {
+            const body = new URLSearchParams();
+            for (const [key, value] of new FormData(form)) {
+                if (typeof value === 'string') body.append(key, value);
+            }
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                credentials: 'omit',
+                body,
+                signal: controller.signal,
+            });
+            if (!response.ok) throw new Error('Unexpected response');
+
+            const result = await response.json();
+            if (result.received === true) {
+                window.location.assign('/contact.html?sent=1');
+                navigating = true;
+                return;
+            }
+
+            if (result.received !== false || typeof result.message !== 'string') {
+                throw new Error('Invalid confirmation');
+            }
+            status.textContent = result.message;
+        } catch {
+            status.textContent =
+                'We could not confirm receipt. Your inquiry may already have been saved.';
+        } finally {
+            window.clearTimeout(timeout);
+            if (!navigating) {
+                form.removeAttribute('aria-busy');
+                if (button) button.disabled = false;
+            }
+        }
+    });
+</script>
 </body>
 
 </html>
