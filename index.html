@@ -506,6 +506,64 @@
   gtag('config', 'G-KZ82K3CGYC');
 </script>
 
+
+<style id="portfolio-home-spacing">
+#building > .row > .col-lg-6 {
+    display: flex;
+    min-width: 0;
+}
+#building .mil-product-card.mil-product-card--secondary {
+    box-sizing: border-box;
+    min-height: 0;
+    margin-bottom: 32px;
+    border: 0;
+    border-top: 1px solid rgb(128 128 128 / 28%);
+    padding: 24px clamp(12px, 2vw, 28px) 0;
+}
+#building .mil-product-card .portfolio-card-label {
+    margin: 0 0 10px;
+}
+#building .mil-product-card h5 {
+    margin: 0 0 12px;
+}
+#building .mil-product-card .portfolio-card-copy {
+    margin: 0;
+    max-width: 42ch;
+}
+#building .mil-product-actions {
+    margin-top: auto;
+    padding-top: 22px;
+    max-width: 100%;
+}
+#building .mil-product-actions .mil-btn {
+    min-width: 0;
+    max-width: 100%;
+    padding-inline: clamp(14px, 2vw, 28px);
+    white-space: normal;
+    text-align: center;
+}
+#marketing {
+    padding-top: 32px;
+}
+#marketing .portfolio-marketing-content {
+    margin: 24px auto 0;
+    max-width: 58ch;
+    text-align: center;
+}
+#marketing ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    list-style: none;
+    margin: 18px 0 24px;
+    padding: 0;
+}
+#marketing li a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+</style>
 </head>
 
 <body>
@@ -738,8 +796,8 @@
                         <div class="row justify-content-center">
 
                             <!-- LeadsTrackr -->
-                            <div class="col-lg-12">
-                                <div class="mil-icon-box mil-product-card mil-product-card--flagship mil-center mil-mb-60">
+                            <div class="col-lg-6">
+                                <div class="mil-icon-box mil-product-card mil-product-card--secondary mil-center mil-mb-60">
 
                                     <div class="mil-service-icon mil-up">
                                         <img
@@ -751,23 +809,9 @@
                                         >
                                     </div>
 
-                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
-                                        Flagship product · Active development
-                                    </p>
-
-                                    <h5 class="mil-up mil-mb-30">
-                                        LeadsTrackr
-                                    </h5>
-
-                                    <p class="mil-up mil-mb-20">
-                                        A Ruby on Rails CRM and growth platform for agencies and businesses,
-                                        connecting leads, pipelines, appointments, automations, websites and
-                                        AI-powered customer conversations inside one multi-tenant system.
-                                    </p>
-
-                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
-                                        CRM · Automations · Website Builder · AI Chatbots
-                                    </p>
+                                    <p class="mil-upper mil-dark mil-up portfolio-card-label">CRM &amp; Growth Platform</p>
+                                    <h5 class="mil-up">LeadsTrackr</h5>
+                                    <p class="mil-up portfolio-card-copy">A CRM for agencies and businesses that brings leads, pipelines, appointments, and automated follow-up together. It also includes a website builder and AI chatbots.</p>
 
                                     <div class="mil-up mil-product-actions">
                                         <a
@@ -784,6 +828,22 @@
                             <!-- LeadsTrackr end -->
 
 
+
+                            <div class="col-lg-6">
+                                <div class="mil-icon-box mil-product-card mil-product-card--secondary mil-center mil-mb-60">
+                                    <div class="mil-service-icon mil-up">
+                                        <img src="img/icons/icons8-coding-50.png"
+                                             alt="" class="mil-mb-30" width="50" height="50">
+                                    </div>
+                                    <p class="mil-upper mil-dark mil-up portfolio-card-label">Workflow Automation Platform</p>
+                                    <h5 class="mil-up">MSP Automate</h5>
+                                    <p class="mil-up portfolio-card-copy">A platform for managing workflows across MSP client environments. Teams can start with 100+ prebuilt automation definitions or draft workflows with AutoMate, then review approvals and track runs.</p>
+                                    <div class="mil-up mil-product-actions">
+                                        <a href="msp-automate.html" class="mil-btn mil-sm-btn" data-no-swup>View MSP Automate Case Study</a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- LeadMath -->
                             <div class="col-lg-6">
                                 <div class="mil-icon-box mil-product-card mil-product-card--secondary mil-center mil-mb-60">
@@ -798,23 +858,9 @@
                                         >
                                     </div>
 
-                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
-                                        MVP complete · Deployment pending
-                                    </p>
-
-                                    <h5 class="mil-up mil-mb-30">
-                                        LeadMath
-                                    </h5>
-
-                                    <p class="mil-up mil-mb-20">
-                                        A free Ruby on Rails forecasting tool that models the path from ad
-                                        spend to leads, appointments, customers, revenue, contribution,
-                                        CAC and ROAS across three practical scenarios.
-                                    </p>
-
-                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
-                                        Ad Forecasting · Scenario Planning · Break-Even Economics
-                                    </p>
+                                    <p class="mil-upper mil-dark mil-up portfolio-card-label">Paid Advertising Forecasting</p>
+                                    <h5 class="mil-up">LeadMath</h5>
+                                    <p class="mil-up portfolio-card-copy">A free calculator that forecasts how ad spend translates into leads, appointments, customers, and revenue. Compare three scenarios to see acquisition costs and break-even targets.</p>
 
                                     <div class="mil-up mil-product-actions">
                                         <a
@@ -845,23 +891,9 @@
                                         >
                                     </div>
 
-                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
-                                        Private tool · Launch-ready MVP
-                                    </p>
-
-                                    <h5 class="mil-up mil-mb-30">
-                                        HookScribe
-                                    </h5>
-
-                                    <p class="mil-up mil-mb-20">
-                                        A private Ruby on Rails application that transforms uploaded video
-                                        and audio into transcripts, campaign hooks, advertising angles and
-                                        structured copy through a reusable OpenAI and FFmpeg-powered workflow.
-                                    </p>
-
-                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
-                                        Transcription · Media Processing · AI Ad Copy
-                                    </p>
+                                    <p class="mil-upper mil-dark mil-up portfolio-card-label">Transcription &amp; Ad Copy</p>
+                                    <h5 class="mil-up">HookScribe</h5>
+                                    <p class="mil-up portfolio-card-copy">A private tool that turns uploaded audio and video into transcripts, campaign hooks, and ad copy. It brings transcription and creative drafting into one workflow.</p>
 
                                     <div class="mil-up mil-product-actions">
                                         <a
@@ -903,23 +935,9 @@
                                         </svg>
                                     </div>
 
-                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
-                                        Functional MVP · Deployment pending
-                                    </p>
-
-                                    <h5 class="mil-up mil-mb-30">
-                                        MSP Margin Audit
-                                    </h5>
-
-                                    <p class="mil-up mil-mb-20">
-                                        A focused Ruby on Rails diagnostic that estimates leakage from
-                                        unbilled cloud seats, technician administration and manual dispatch,
-                                        then models potential reclaimed hours, value, ROI and payback.
-                                    </p>
-
-                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
-                                        MSP Operations · Leakage Analysis · ROI Planning
-                                    </p>
+                                    <p class="mil-upper mil-dark mil-up portfolio-card-label">MSP Profitability Analysis</p>
+                                    <h5 class="mil-up">MSP Margin Audit</h5>
+                                    <p class="mil-up portfolio-card-copy">A diagnostic tool that estimates losses from unbilled cloud seats, technician administration, and manual dispatch. It models potential time savings, financial return, and payback.</p>
 
                                     <div class="mil-up mil-product-actions">
                                         <a
@@ -964,23 +982,9 @@
 
                                     </div>
 
-                                    <p class="mil-upper mil-dark mil-up mil-mb-15">
-                                        Independent business · 34 validated workflows
-                                    </p>
-
-                                    <h5 class="mil-up mil-mb-30">
-                                        MSP Automations
-                                    </h5>
-
-                                    <p class="mil-up mil-mb-20">
-                                        My independent MSP automation business, focused on workflow audits,
-                                        implementation, integrations and operational systems for managed
-                                        service providers.
-                                    </p>
-
-                                    <p class="mil-upper mil-dark mil-up mil-mb-30">
-                                        MSP-001–MSP-034 · n8n · Power Automate · APIs
-                                    </p>
+                                    <p class="mil-upper mil-dark mil-up portfolio-card-label">MSP Automation Services</p>
+                                    <h5 class="mil-up">MSP Automations</h5>
+                                    <p class="mil-up portfolio-card-copy">My automation business for managed service providers. I audit workflows, connect existing tools, and implement automations. The public library documents 34 workflows I built in n8n.</p>
 
                                     <div class="mil-up mil-product-actions">
 
@@ -1003,6 +1007,21 @@
                         </div>
                     </section>
                     <!-- services end -->
+                    <section id="marketing" class="mil-p-90-60">
+                        <div class="mil-section-title mil-up">
+                            <div class="mil-divider"></div>
+                            <h3>Marketing &amp; Lead Generation</h3>
+                        </div>
+                        <div class="portfolio-marketing-content mil-up">
+                            <p>I run Google and Meta campaigns, build landing pages, and connect inquiries to CRM follow-up. My work includes Google Search campaigns for Le Wagon Bangalore and a booking funnel for Cypress Christmas Lights.</p>
+                            <ul aria-label="LeadsFlo industry services">
+                                <li><a href="https://leadsflo.co/msp-lead-generation/" data-no-swup>Managed IT &amp; MSPs</a></li>
+                                <li><a href="https://leadsflo.co/cybersecurity-marketing-agency/" data-no-swup>Cybersecurity</a></li>
+                                <li><a href="https://leadsflo.co/it-services-lead-generation/" data-no-swup>IT Services</a></li>
+                            </ul>
+                            <a href="https://leadsflo.co/" class="mil-btn mil-sm-btn" target="_blank" rel="noopener noreferrer" data-no-swup aria-label="Visit LeadsFlo (opens in a new tab)">Visit LeadsFlo <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </section>
 
                     <div id="skills" class="mil-section-title mil-up">
                         <div class="mil-divider"></div>
